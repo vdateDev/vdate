@@ -303,13 +303,12 @@ Route::set('actual', '<language>/actual(/page-<page>)',
             'action'        => 'index',
         ));
 
-Route::set('news_show', '<language>/news/<url>/n<id>',
+Route::set('news_show', '<language>/news/<url>',
         array(
-            'id'            => '[0-9]*',
             'url'           => '[a-z0-9_-]*',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'News',
             'action'        => 'show',

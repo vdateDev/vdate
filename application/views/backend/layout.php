@@ -58,12 +58,13 @@
                 </li>
                 <?php endif; ?>
                 <?php if (HTML::access('news', $access)): ?>
-                <li <?php if ($controller == 'news') echo 'class="cur"';?>>
+                <li <?php if ($controller == 'news' or $controller=='reviews') echo 'class="cur"';?>>
                     <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'news'))); ?>">News</a>
-                    <?php if($controller == 'news'):?>
+                    <?php if($controller == 'news' or $controller=='reviews'):?>
                     <ul>                        
                         <li <?php if ($action == 'index') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'news'))); ?>">All news<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
                         <li <?php if ($action == 'add') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'news', 'action' => 'add'))); ?>">Add news<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
+                        <li <?php if ($controller=='reviews') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'reviews', 'action' => 'index'))); ?>">Reviews<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
                     </ul>
                     <?php endif; ?>
                 </li>
@@ -172,6 +173,18 @@
                     <ul>                        
                         <li <?php if ($action == 'index') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'girls'))); ?>">All girls<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
                         <li <?php if ($action == 'add') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'girls', 'action' => 'add'))); ?>">Add girl<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
+                    </ul>
+                    <?php endif; ?>
+                </li>
+                <?php endif; ?>
+                
+                <?php if (HTML::access('men', $access)): ?>
+                <li <?php if ($controller == 'men') echo 'class="cur"';?>>
+                    <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'men'))); ?>">Men profiles</a>
+                    <?php if($controller == 'men'):?>
+                    <ul>                        
+                        <li <?php if ($action == 'index') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'men'))); ?>">All men<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
+                        <li <?php if ($action == 'add') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'men', 'action' => 'add'))); ?>">Add man<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
                     </ul>
                     <?php endif; ?>
                 </li>

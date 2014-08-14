@@ -132,5 +132,46 @@ class Model_GiftGroups extends ORM {
         return $groups->count_all();
         
     }
+    
+    public static function get_groups_frontend_by_parent($lang,$id_parent) {
+        
+        $groups = ORM::factory('GiftGroups')
+                    ->join('gift_groups_languages')
+                    ->on('giftgroups.id', '=', 'gift_groups_languages.group_id')                    
+                    ->select(
+                        array('gift_groups_languages.name', 'name')
+                    )
+                    ->where('giftgroups.group_id', '=', $id_parent)
+                    ->where('gift_groups_languages.language', '=', $lang)
+                    ->where('giftgroups.status','=','1')
+                    ->order_by('sort', 'ASC');
+        
+        
+        $groups = $groups->find_all();
+        
+        return $groups;
+    }
+    
+    public static function get_groups_with_gifts($lang,$id_parent,$tpl) {
+        
+        $groups=self::get_groups_frontend_by_parent($lang, $id_parent);
+        $res='';
+        if (count($groups)>0) { 
+            foreach ($groups as $group) {
+                $gifts=  Model_Gifts::get_gifts_fronted_by_group($lang,$group->id);
+                $res.=View::factory($tpl)
+                    ->bind('group',$group)
+                    ->bind('gifts',$gifts);
+            } 
+        } else {
+            $group=NULL;
+            $gifts=  Model_Gifts::get_gifts_fronted_by_group($lang,$id_parent);
+            $res.=View::factory($tpl)
+                ->bind('group',$group)
+                ->bind('gifts',$gifts);
+        }
+
+        return $res;
+    }
 
 }

@@ -227,4 +227,19 @@ class Model_VirtualGifts extends ORM {
         
         
     }
+    
+    public static function get_gifts_frontend($lang) {
+        
+        $gifts = ORM::factory('VirtualGifts')
+                    ->join('virtualgifts_languages','left')
+                    ->on('virtualgifts.id', '=', 'virtualgifts_languages.gift_id')                    
+                    ->select(
+                        array('virtualgifts_languages.name', 'name')
+                    )
+                    ->where('virtualgifts_languages.language', '=', $lang);
+
+        $gifts = $gifts->find_all();
+        
+        return $gifts;
+    }
 }

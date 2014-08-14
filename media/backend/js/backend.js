@@ -1938,3 +1938,53 @@ function admins() {
         });               
     });
 }
+
+function page_reviews() {
+    $(document).ready(function(e) {
+        $('.delete_this').click(function(e) {
+            _div = $('#message_to_delete');
+            _this = $(this);
+            $('#dialog').attr('title',_div.attr('title')).html(_div.html());
+
+            $("#dialog").dialog({
+                width:700,
+                buttons: {
+                    'Yes' : function () {
+                        document.location=_this.attr('href');;
+                        $(this).dialog( "close" ).dialog("destroy");
+                    },
+                    'Cancel': function() {
+                        $(this).dialog( "close" ).dialog("destroy");
+                    }
+                }
+            });
+            return false;
+        });
+
+    });
+}
+
+function page_men() {
+    $(document).ready(function(e) {
+        $('.delete_this').click(function(e) {
+            _div = $('#message_to_delete');
+            _this = $(this);
+            $('#dialog').attr('title',_div.attr('title')).html(_div.html());
+
+            $("#dialog").dialog({
+                width:700,
+                buttons: {
+                    'Yes' : function () {
+                        document.location=_this.attr('href');;
+                        $(this).dialog( "close" ).dialog("destroy");
+                    },
+                    'Cancel': function() {
+                        $(this).dialog( "close" ).dialog("destroy");
+                    }
+                }
+            });
+            return false;
+        });
+
+    });
+}

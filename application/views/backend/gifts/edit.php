@@ -73,5 +73,10 @@
                 <input class="b middle" type="submit" name="save_and_back" value="Save and back to the list">         
             </div>	
         </form>	
+    
+    
+    
+    
+    
     </div>
 </div>

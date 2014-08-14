@@ -9,6 +9,11 @@ class Model_News extends ORM {
             'model' => 'NewsLanguage',
             'foreign_key' => 'news_id',
         ),
+        
+        'reviews' => array (
+            'model' => 'Reviews',
+            'foreign_key' => 'news_id',
+        )
     );
     
     public function filters() {
@@ -220,7 +225,7 @@ class Model_News extends ORM {
         return $news;
     }
     
-    public static function get_one($id, $url, $language) {
+    public static function get_one($url, $language) {
         
         $news = self::factory('News')
                     ->join('news_languages')
@@ -233,7 +238,6 @@ class Model_News extends ORM {
                         array('news_languages.page_description', 'page_description'),
                         array('news_languages.text', 'text')
                     )
-                    ->where('news.id', '=', $id)
                     ->where('news.url', '=', $url)
                     ->where('news_languages.language', '=', $language)
                     ->where('news.status', '=', 1)

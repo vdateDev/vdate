@@ -10,6 +10,7 @@ class Model_User extends Model_Auth_User {
     protected $_has_one = array(
         'girl' => array('model' => 'Girls', 'foreign_key' => 'user_id'),
         'agency' => array('model' => 'Agency', 'foreign_key' => 'user_id'),
+        'men' => array('model' => 'Men', 'foreign_key' => 'user_id'),
     );
 
     

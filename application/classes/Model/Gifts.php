@@ -207,24 +207,7 @@ class Model_Gifts extends ORM {
         
         return $gifts;
     }
-    
-    public static function get_gifts_frontend_by_group($lang,$group_id) {
-        
-        $gifts = ORM::factory('Gifts')
-                    ->join('gifts_languages','left')
-                    ->on('gifts.id', '=', 'gifts_languages.gift_id')                    
-                    ->select(
-                        array('gifts_languages.name', 'name')
-                    )
-                    ->where('gifts_languages.language', '=', 'en')
-                    ->where('gifts.status', '=', '1')
-                    ->where('gifts.group_id', '=', $group_id);
 
-        
-        $gifts = $gifts->find_all();
-        
-        return $gifts;
-    }
     
    
     public static function count_by_status($status) {
@@ -259,6 +242,24 @@ class Model_Gifts extends ORM {
         
         return $gifts->count_all();
         
+        
+    }
+    
+    public static function get_gifts_fronted_by_group($lang,$id_parent) {
+        
+        $gifts=ORM::factory('Gifts')
+                ->join('gifts_languages')
+                ->on('gifts.id', '=', 'gifts_languages.gift_id')
+                ->where('gifts.status','=','1')
+                ->select(
+                        array('gifts_languages.name','name')
+                )
+                ->where('gifts.group_id','=',$id_parent)
+                ->where('gifts_languages.language', '=', $lang)
+                ->order_by('sort', 'ASC')
+                ->find_all();
+        
+        return $gifts;
         
     }
 }

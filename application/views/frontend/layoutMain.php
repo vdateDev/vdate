@@ -90,7 +90,7 @@
                                                     <div class="rightSIDE_title">This is Main Page!</div>
 						</div>
 						<div class="rightSIDE_content clearFix">
-                                                       This is Main Page! 
+                                                      <?php echo $content; ?>
 						</div>
 					</div>
 				</div><!-- .rightSIDE -->

@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Frontend_Gifts extends Controller_Frontend {
+class Controller_Frontend_VirtualGifts extends Controller_Frontend {
     
     public $template   = 'frontend/layoutMain';
     
@@ -14,11 +14,10 @@ class Controller_Frontend_Gifts extends Controller_Frontend {
     public function action_index() {
         
         
-        $groups=  Model_GiftGroups::get_groups_frontend_by_parent($this->language,0);
+        $gifts= Model_VirtualGifts::get_gifts_frontend($this->language);
                 
-        $this->template->content = View::factory('frontend/gifts/index')  
-                                    ->bind('lang',$this->language)
-                                    ->bind('groups', $groups);
+        $this->template->content = View::factory('frontend/virtualgifts/index')  
+                                        ->bind('gifts', $gifts);
     }
     
 }
