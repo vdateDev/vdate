@@ -29,7 +29,7 @@ class Controller_Frontend extends Controller_Base {
         
             $this->settings = Kohana::$config->load('site');
 
-           /* $seo = Model_Seo::get_seo_frontend($this->language, $this->controller, $this->action);
+            $seo = Model_Seo::get_seo_frontend($this->language, $this->controller, $this->action);
 
             if ($seo->loaded()) {
 
@@ -37,7 +37,7 @@ class Controller_Frontend extends Controller_Base {
                 $this->page_description = $seo->page_description;
                 $this->page_keywords = $seo->page_keywords;
                 $this->page_name = $seo->page_h1;
-            }*/
+            }
 
             $this->template->controller = $this->controller;
             $this->template->action     = $this->action;

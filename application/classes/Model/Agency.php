@@ -85,6 +85,19 @@ class Model_Agency extends ORM {
         );
     }
     
+    public function validate($post) {
+        
+        $validation = Validation::factory($post)            
+            ->bind(':params', $post)
+            ->rule('name', 'not_empty')
+            ->labels(array(
+                'name' => 'agency name',
+            ));
+            
+        return $validation;
+        
+    }
+    
     
     public function add_agency($id,$data, $contract, $certificate, $passport) {
         

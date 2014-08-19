@@ -141,4 +141,28 @@ class Model_Sprav extends ORM {
         return $data;
         
     }
+    
+    public static function get_sprav_frontend($lang,$category=NULL) {
+        
+        $data = ORM::factory('Sprav')
+                    ->join('sprav_languages')
+                    ->on('sprav.id', '=', 'sprav_languages.sprav_id')                    
+                    ->select(
+                        array('sprav_languages.text', 'name')
+                    )
+                    ->join('sprav_categories')
+                    ->on('sprav.category_id', '=', 'sprav_categories.id')  
+                    ->where('sprav_languages.language', '=', $lang)
+                    ->where('status','=','1')
+                    ->order_by('sort', 'ASC');
+        
+        if (isset($category)) {
+            $data->where('sprav_categories.name', '=', $category) ;
+        }
+        
+        
+        $data = $data->find_all();
+        
+        return $data;
+    }
 }

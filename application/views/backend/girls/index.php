@@ -5,6 +5,18 @@
         <div class="textcenter">
             <form method="get" id="submitGetForm">
                 <div class="filter_item">
+                    <label class="middle"><strong>First name:</strong></label>
+                    <input class="middle" name="firstname" value="<?php echo $firstname; ?>">
+                </div>  
+                <div class="filter_item">
+                    <label class="middle"><strong>Last name:</strong></label>
+                    <input class="middle" name="lastname" value="<?php echo $lastname; ?>">
+                </div>  
+                <div class="filter_item">
+                    <label class="middle"><strong>Login:</strong></label>
+                    <input class="middle" name="login" value="<?php echo $login; ?>">
+                </div>  
+                <div class="filter_item">
                     <label class="middle"><strong>Status:</strong></label>
                     <select class="middle" name="status">
                         <option value="2" <?php echo $status == 2 ? 'selected' : ''; ?>>All</option>

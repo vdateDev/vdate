@@ -75,4 +75,13 @@ class Model_Height extends ORM {
           return $height;
           
     }
+ 
+    public static function cm_to_feet($val) {
+        
+        $zna=array();
+        $zna['feet']=floor($val/30.48);
+        $inches=$val-$zna['feet']*30.48;
+        $zna['inches'] = round($inches/2.54);
+        return $zna;
+    }
 }

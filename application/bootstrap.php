@@ -250,7 +250,7 @@ Route::set('pages', '<language>/<url>.html',
             'url'           => '[a-z0-9_-]*',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Pages',
             'action'        => 'index',
@@ -274,7 +274,7 @@ Route::set('contact', '<language>/<action>',
             'action'        => 'contact',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Pages',
             'action'        => 'contact',
@@ -329,7 +329,7 @@ Route::set('auth', '<language>/<action>(/<code>)',
             'action'        => 'login|registration|logout|forgot_password|confirm',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Auth',            
         ));

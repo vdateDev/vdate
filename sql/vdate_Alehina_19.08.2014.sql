@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50525
 File Encoding         : 65001
 
-Date: 2014-08-13 14:28:20
+Date: 2014-08-19 14:41:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,7 +84,7 @@ CREATE TABLE `agency` (
   `updated_at` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of agency
@@ -237,12 +237,12 @@ CREATE TABLE `gift_groups` (
 -- ----------------------------
 INSERT INTO `gift_groups` VALUES ('1', '0', '1', '1', null, '1407324548', '1407332896');
 INSERT INTO `gift_groups` VALUES ('2', '1', '1', null, null, '1407325477', '1407332808');
-INSERT INTO `gift_groups` VALUES ('3', '1', '1', null, null, '1407325661', null);
+INSERT INTO `gift_groups` VALUES ('3', '1', '1', null, null, '1407325661', '1407937522');
 INSERT INTO `gift_groups` VALUES ('6', '0', '1', '3', null, '1407326323', '1407326327');
 INSERT INTO `gift_groups` VALUES ('7', '0', '1', '4', null, '1407326428', null);
 INSERT INTO `gift_groups` VALUES ('8', '0', '1', '5', null, '1407326471', null);
 INSERT INTO `gift_groups` VALUES ('9', '0', '1', '6', null, '1407326501', null);
-INSERT INTO `gift_groups` VALUES ('10', '1', '0', null, null, '1407332422', null);
+INSERT INTO `gift_groups` VALUES ('10', '1', '1', null, null, '1407332422', null);
 INSERT INTO `gift_groups` VALUES ('11', '0', '1', '2', null, '1407488357', null);
 
 -- ----------------------------
@@ -266,7 +266,7 @@ INSERT INTO `gift_groups_languages` VALUES ('1', '1', 'en', 'Flowers');
 INSERT INTO `gift_groups_languages` VALUES ('2', '1', 'ru', 'Цветы');
 INSERT INTO `gift_groups_languages` VALUES ('3', '2', 'en', 'Roses');
 INSERT INTO `gift_groups_languages` VALUES ('4', '2', 'ru', 'Розы');
-INSERT INTO `gift_groups_languages` VALUES ('5', '3', 'en', 'Orhids');
+INSERT INTO `gift_groups_languages` VALUES ('5', '3', 'en', 'Orhids (in a pot)');
 INSERT INTO `gift_groups_languages` VALUES ('6', '3', 'ru', 'Орхидеи');
 INSERT INTO `gift_groups_languages` VALUES ('11', '6', 'en', 'Toys');
 INSERT INTO `gift_groups_languages` VALUES ('12', '6', 'ru', 'Игрушки');
@@ -321,13 +321,13 @@ CREATE TABLE `girls` (
   `agency_id` int(11) DEFAULT NULL,
   `video` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of girls
 -- ----------------------------
 INSERT INTO `girls` VALUES ('1', '5', 'firstname1', 'lastname1', 'email1@email.com', 'FL', '654235', 'bqh9nc95gsdq5p7eytmox2ytosqanibo.jpg', 'k2y8xfqjg1jefung7qey7snmauk6lc2f.jpg', '813362400', '', '', 'city1', 'address 1', '3', '3', '2', '7', 'place of work1', '27', '22', '19', '11', '8', '2', '6545646456', '<p>hobbies1</p>', '<p>about me1</p>', '<p>perfect relationships</p>', '1', '1407762858', '1407819909', '4', '');
-INSERT INTO `girls` VALUES ('2', '6', 'first name 2', 'last name 2', 'email2@email.com', 'LP', '987657', 'bsvks8rhpvkvg8221ubkrfub3mr78stx.jpg', 'sh2xee4ajdovs3gabwdqhnmvd8wod2x5.jpg', '650412000', '', '', 'city 2', 'home address 2', '3', '2', '2', '6', 'place of work 2', '27', '22', '20', '12', '9', 'none', '987654', '<p>hobbies 2</p>', '<p>about me 2</p>', '<p>perfect relationships 2</p>', '1', '1407820104', '1407907758', '5', 'video 2');
+INSERT INTO `girls` VALUES ('2', '6', 'first name 2', 'last name 2', 'email2@email.com', 'LP', '987657', 'bsvks8rhpvkvg8221ubkrfub3mr78stx.jpg', 'sh2xee4ajdovs3gabwdqhnmvd8wod2x5.jpg', '650412000', '', '', 'city 2', 'home address 2', '3', '2', '2', '6', 'place of work 2', '27', '22', '20', '11', '8', 'none', '987654', '<p>hobbies 2</p>', '<p>about me 2</p>', '<p>perfect relationships 2</p>', '1', '1407820104', '1408108340', '5', 'video 2');
 
 -- ----------------------------
 -- Table structure for `height`
@@ -335,7 +335,7 @@ INSERT INTO `girls` VALUES ('2', '6', 'first name 2', 'last name 2', 'email2@ema
 DROP TABLE IF EXISTS `height`;
 CREATE TABLE `height` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `zna` int(11) DEFAULT NULL,
+  `zna` varchar(255) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
@@ -366,12 +366,13 @@ CREATE TABLE `infos` (
   `created_at` int(14) DEFAULT NULL,
   `updated_at` int(14) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of infos
 -- ----------------------------
 INSERT INTO `infos` VALUES ('1', 'message_add_contact', 'Message after contact form', 'alert', '2.50', '1', '0', '1407828430', '1407829908');
+INSERT INTO `infos` VALUES ('2', 'after_register', 'Message after registration man at site', 'alert', '2.50', '1', '0', '1408350398', null);
 
 -- ----------------------------
 -- Table structure for `infos_languages`
@@ -385,13 +386,15 @@ CREATE TABLE `infos_languages` (
   PRIMARY KEY (`id`),
   KEY `info_id` (`info_id`),
   CONSTRAINT `infos_languages_ibfk_1` FOREIGN KEY (`info_id`) REFERENCES `infos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of infos_languages
 -- ----------------------------
 INSERT INTO `infos_languages` VALUES ('1', '1', 'en', 'Thanks for message!');
 INSERT INTO `infos_languages` VALUES ('2', '1', 'ru', 'Благодарим за сообщение!');
+INSERT INTO `infos_languages` VALUES ('3', '2', 'en', 'Thank you for registration at site');
+INSERT INTO `infos_languages` VALUES ('4', '2', 'ru', 'Благодарим Вас за регистрацию на нашем сайте');
 
 -- ----------------------------
 -- Table structure for `languages`
@@ -429,7 +432,7 @@ CREATE TABLE `letters` (
   `created_at` int(14) DEFAULT NULL,
   `updated_at` int(14) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of letters
@@ -440,6 +443,9 @@ INSERT INTO `letters` VALUES ('3', 'Letter to agency after agency registration',
 INSERT INTO `letters` VALUES ('4', 'Letter to admin after registration of girl', '{{site}} - Site name\n{{girl}} - Girl name\n{{agency}} - Agency name', 'mail_admin_registration_girl', '1', '0', '1407851695', null);
 INSERT INTO `letters` VALUES ('5', 'Letter to agency after registration of girl', '{{site}} - Site name\n{{girl}} - Girl name\n{{agency}} - Agency name', 'mail_agency_registration_girl', '1', '0', '1407851822', null);
 INSERT INTO `letters` VALUES ('6', 'Letter to girl after registration', '{{site}} - Site name\n{{girl}} - Girl name\n{{agency}} - Agency name', 'mail_girl_registration_girl', '1', '0', '1407851947', null);
+INSERT INTO `letters` VALUES ('7', 'Letter to admin after registration of man', '{{site}} - Site name\n{{man}} - Man name', 'mail_admin_registration_man', '1', '0', '1408014153', null);
+INSERT INTO `letters` VALUES ('8', 'Letter to man after registration at site', '{{site}} - Site name\n{{man}} - Man name', 'mail_man_registration_man', '1', '0', '1408014248', null);
+INSERT INTO `letters` VALUES ('9', 'letter to user from admin', '{{site}} - Site name\n{{subject}} - Subject of letter\n{{text}} - text of letter', 'mail_man_letter_from_admin', '1', '0', '1408370159', null);
 
 -- ----------------------------
 -- Table structure for `letters_languages`
@@ -454,7 +460,7 @@ CREATE TABLE `letters_languages` (
   PRIMARY KEY (`id`),
   KEY `letters_languages` (`letter_id`),
   CONSTRAINT `letters_languages_ibfk_1` FOREIGN KEY (`letter_id`) REFERENCES `letters` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of letters_languages
@@ -471,6 +477,12 @@ INSERT INTO `letters_languages` VALUES ('9', '5', 'en', 'Registration girl at si
 INSERT INTO `letters_languages` VALUES ('10', '5', 'ru', '', '');
 INSERT INTO `letters_languages` VALUES ('11', '6', 'en', 'Registration girl at site {{site}}', '<p>Registration girl {{girl}} of agency {{agency}} at site {{site}}</p>');
 INSERT INTO `letters_languages` VALUES ('12', '6', 'ru', '', '');
+INSERT INTO `letters_languages` VALUES ('13', '7', 'en', 'Registration man at site {{site}}', '<p>Registration man {{man}} at site {{site}}</p>');
+INSERT INTO `letters_languages` VALUES ('14', '7', 'ru', '', '');
+INSERT INTO `letters_languages` VALUES ('15', '8', 'en', 'Registration at site {{site}}', '<p>Registration {{man}} at site {{site}}</p>');
+INSERT INTO `letters_languages` VALUES ('16', '8', 'ru', '', '');
+INSERT INTO `letters_languages` VALUES ('17', '9', 'en', '{{site}} - {{subject}}', '<p>{{text}}</p>');
+INSERT INTO `letters_languages` VALUES ('18', '9', 'ru', '', '');
 
 -- ----------------------------
 -- Table structure for `men`
@@ -507,11 +519,15 @@ CREATE TABLE `men` (
   `updated_at` int(11) DEFAULT NULL,
   `balance` double(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of men
 -- ----------------------------
+INSERT INTO `men` VALUES ('1', '8', 'first name man 1', 'last name man 1', 'emailman1@email.com', null, '335048400', '', '', 'city man 1', '4', '6', '2', '0', 'place of work man 1', '27', '22', '19', '13', '8', 'none', '12354646', '<p>hobbies man 1</p>', '<p>about me&nbsp; man 1</p>', '<p>perfect relationships man 1</p>', '1', '1408014370', '1408014779', null);
+INSERT INTO `men` VALUES ('2', '11', 'first name man 2', 'last name man 2', 'email2man@email.com', null, '1408309200', '', '', '', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '', '', '', '', '', '1', '1408346572', '1408346805', null);
+INSERT INTO `men` VALUES ('4', '13', 'first name man 3', 'last name man 3', 'email3man@email.com', null, '1408309200', '', '', '', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '', '', '', '', '', '1', '1408346763', '1408346814', null);
+INSERT INTO `men` VALUES ('5', '14', 'first name man 4', 'last name man 4', 'emailman4@email.com', null, '1408395600', '', '', '', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '', '', '', '', '', '0', '1408435348', '1408436978', null);
 
 -- ----------------------------
 -- Table structure for `news`
@@ -578,11 +594,13 @@ CREATE TABLE `news_reviews` (
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news_reviews
 -- ----------------------------
+INSERT INTO `news_reviews` VALUES ('2', '1', 'name', 'Email@email.com', null, 'comment', '1', '1408002554', '1408006208');
+INSERT INTO `news_reviews` VALUES ('3', '3', 'name', 'email@email.com', null, 'comment', '1', '1408364172', '1408364191');
 
 -- ----------------------------
 -- Table structure for `pages`
@@ -601,16 +619,17 @@ CREATE TABLE `pages` (
   `show_footer` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
 INSERT INTO `pages` VALUES ('2', '1', 'terms-conditions', '4', '0', '0', '0', '1407309583', '1407315556', '1');
-INSERT INTO `pages` VALUES ('3', '0', 'privacy', '5', '0', '0', '0', '1407310154', '1407315568', '1');
-INSERT INTO `pages` VALUES ('4', '0', 'contact-us', '3', '0', '0', '0', '1407310262', '1407315578', '1');
-INSERT INTO `pages` VALUES ('5', '0', 'main', '1', '0', '0', '0', '1407311209', null, '0');
-INSERT INTO `pages` VALUES ('6', '0', 'about-us', '2', '0', '0', '0', '1407311502', '1407315586', '1');
+INSERT INTO `pages` VALUES ('3', '1', 'privacy', '5', '0', '0', '0', '1407310154', '1407315568', '1');
+INSERT INTO `pages` VALUES ('4', '1', 'contact', '3', '0', '0', '0', '1407310262', '1407315578', '1');
+INSERT INTO `pages` VALUES ('5', '1', 'main', '1', '0', '0', '0', '1407311209', null, '0');
+INSERT INTO `pages` VALUES ('6', '1', 'about-us', '2', '0', '0', '0', '1407311502', '1407315586', '1');
+INSERT INTO `pages` VALUES ('7', '1', 'registration', '0', '0', '0', '0', '1408338654', '1408341240', '0');
 
 -- ----------------------------
 -- Table structure for `pages_languages`
@@ -629,7 +648,7 @@ CREATE TABLE `pages_languages` (
   PRIMARY KEY (`id`),
   KEY `pages_langages` (`page_id`),
   CONSTRAINT `pages_languages_ibfk_1` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of pages_languages
@@ -644,6 +663,8 @@ INSERT INTO `pages_languages` VALUES ('9', '5', 'en', 'Main', '<p>Main</p>', 'Ma
 INSERT INTO `pages_languages` VALUES ('10', '5', 'ru', 'Главная страница', '<p>Главная страница</p>', 'Главная страница', 'Главная страница', 'Главная страница', 'Главная страница');
 INSERT INTO `pages_languages` VALUES ('11', '6', 'en', 'About us', '<p>About us text</p>', 'About us H1', 'About us title', 'About us description', 'About us keywords');
 INSERT INTO `pages_languages` VALUES ('12', '6', 'ru', 'О нас', '<p>О нас</p>', 'О нас', 'О нас', 'О нас', 'О нас');
+INSERT INTO `pages_languages` VALUES ('13', '7', 'en', 'Registration', '<p><strong>Fill in registration form</strong>, if you do not have personal ID, and get free membership on VictoriaDate.</p>', 'Registration h1', 'Registration title', 'Registration description', 'Registration keywords');
+INSERT INTO `pages_languages` VALUES ('14', '7', 'ru', 'Регистрация', '<p>Заполните форму регистрации, есои&nbsp; у Вас нет персонального ID, и общайтесь бесплатно на VictoriaDate.</p>', 'Регистрация', 'Регистрация', 'Регистрация', 'Регистрация');
 
 -- ----------------------------
 -- Table structure for `photo_likes`
@@ -673,7 +694,7 @@ CREATE TABLE `roles` (
   `role_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of roles
@@ -682,6 +703,7 @@ INSERT INTO `roles` VALUES ('1', 'login', 'Login privileges, granted after accou
 INSERT INTO `roles` VALUES ('2', 'admin', 'Administrative user, has access to everything.', 'SuperAdmin');
 INSERT INTO `roles` VALUES ('3', 'agency', 'Agency', 'Agency ');
 INSERT INTO `roles` VALUES ('4', 'girls', 'Girls', 'Girl');
+INSERT INTO `roles` VALUES ('5', 'man', 'Man account', 'Man');
 
 -- ----------------------------
 -- Table structure for `roles_users`
@@ -704,11 +726,19 @@ INSERT INTO `roles_users` VALUES ('4', '1');
 INSERT INTO `roles_users` VALUES ('5', '1');
 INSERT INTO `roles_users` VALUES ('6', '1');
 INSERT INTO `roles_users` VALUES ('7', '1');
+INSERT INTO `roles_users` VALUES ('8', '1');
+INSERT INTO `roles_users` VALUES ('11', '1');
+INSERT INTO `roles_users` VALUES ('13', '1');
+INSERT INTO `roles_users` VALUES ('14', '1');
 INSERT INTO `roles_users` VALUES ('7', '2');
 INSERT INTO `roles_users` VALUES ('3', '3');
 INSERT INTO `roles_users` VALUES ('4', '3');
 INSERT INTO `roles_users` VALUES ('5', '4');
 INSERT INTO `roles_users` VALUES ('6', '4');
+INSERT INTO `roles_users` VALUES ('8', '5');
+INSERT INTO `roles_users` VALUES ('11', '5');
+INSERT INTO `roles_users` VALUES ('13', '5');
+INSERT INTO `roles_users` VALUES ('14', '5');
 
 -- ----------------------------
 -- Table structure for `role_admin_actions`
@@ -739,7 +769,7 @@ CREATE TABLE `seo` (
   `created_at` int(14) DEFAULT NULL,
   `updated_at` int(14) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of seo
@@ -747,6 +777,7 @@ CREATE TABLE `seo` (
 INSERT INTO `seo` VALUES ('1', 'News list', 'news', 'index', '1', '1407824285', '1407824298');
 INSERT INTO `seo` VALUES ('2', 'News archive', 'news', 'archive', '1', '1407824447', null);
 INSERT INTO `seo` VALUES ('3', 'Gifts', 'gifts', 'index', '1', '1407909310', '1407909322');
+INSERT INTO `seo` VALUES ('4', 'Virtual gifts', 'virtualgifts', 'index', '1', '1408341553', '1408341591');
 
 -- ----------------------------
 -- Table structure for `seo_languages`
@@ -763,7 +794,7 @@ CREATE TABLE `seo_languages` (
   PRIMARY KEY (`id`),
   KEY `seo_languages` (`seo_id`),
   CONSTRAINT `seo_languages_ibfk_1` FOREIGN KEY (`seo_id`) REFERENCES `seo` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of seo_languages
@@ -774,6 +805,8 @@ INSERT INTO `seo_languages` VALUES ('3', '2', 'en', 'News archive titlle', 'News
 INSERT INTO `seo_languages` VALUES ('4', '2', 'ru', 'Архив новостей title', 'Архив новостей H1', 'Архив новостей description', 'Архив новостей keywords');
 INSERT INTO `seo_languages` VALUES ('5', '3', 'en', 'Gifts and flowers  title', 'Gifts and flowers H1', 'Gifts and flowers description', 'Gifts and flowers keywords');
 INSERT INTO `seo_languages` VALUES ('6', '3', 'ru', 'Подарки и цветы Title', 'Подарки и цветы H1', 'Подарки и цветы description', 'Подарки и цветы keywords');
+INSERT INTO `seo_languages` VALUES ('7', '4', 'en', 'Virtual Gifts title', 'Virtual Gifts H1', 'Virtual Gifts Description', 'Virtual Gifts Keywords');
+INSERT INTO `seo_languages` VALUES ('8', '4', 'ru', 'Виртуальные подарки  Title', 'Виртуальные подарки H1', 'Виртуальные подарки Description', 'Виртуальные подарки keywords');
 
 -- ----------------------------
 -- Table structure for `sprav`
@@ -911,7 +944,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_username` (`username`),
   UNIQUE KEY `uniq_email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
@@ -921,6 +954,35 @@ INSERT INTO `users` VALUES ('4', 'mail@mail.com', 'login2', '7bdcd76f83c6297370d
 INSERT INTO `users` VALUES ('5', 'email1@email.com', 'girl1', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, null);
 INSERT INTO `users` VALUES ('6', 'email2@email.com', 'girl22', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, null);
 INSERT INTO `users` VALUES ('7', 'emailadmin@emal.com', 'loginadmin1', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, '1');
+INSERT INTO `users` VALUES ('8', 'emailman1@email.com', 'man1', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, '0');
+INSERT INTO `users` VALUES ('11', 'email2man@email.com', 'loginman2', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, '0');
+INSERT INTO `users` VALUES ('13', 'email3man@email.com', 'loginman3', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, '0');
+INSERT INTO `users` VALUES ('14', 'emailman4@email.com', 'loginman4', '7bdcd76f83c6297370d3b3ed057f66b1fba7377f2a0c83300e478bdc2c40363a', '0', null, '0');
+
+-- ----------------------------
+-- Table structure for `user_admin_letters`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_admin_letters`;
+CREATE TABLE `user_admin_letters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `text` text,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '0',
+  `type` tinyint(1) DEFAULT NULL,
+  `status_del_user` tinyint(1) DEFAULT '0',
+  `status_del_admin` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_admin_letters
+-- ----------------------------
+INSERT INTO `user_admin_letters` VALUES ('2', '11', 'subject2', 'text', '1408371092', null, '1', '2', '0', '0');
+INSERT INTO `user_admin_letters` VALUES ('3', '11', 'subject2', 'text2', '1408428379', null, '1', '1', '0', '0');
+INSERT INTO `user_admin_letters` VALUES ('4', '8', 'letter1', 'text1', '1408428505', null, '0', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for `user_gifts`
@@ -928,13 +990,14 @@ INSERT INTO `users` VALUES ('7', 'emailadmin@emal.com', 'loginadmin1', '7bdcd76f
 DROP TABLE IF EXISTS `user_gifts`;
 CREATE TABLE `user_gifts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_who` int(11) DEFAULT NULL,
+  `id_from` int(11) DEFAULT NULL,
   `id_to` int(11) DEFAULT NULL,
   `id_gift` int(11) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `cost` double(10,2) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '0',
   `photo_with_girl` varchar(255) DEFAULT NULL,
+  `text` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -948,15 +1011,16 @@ CREATE TABLE `user_gifts` (
 DROP TABLE IF EXISTS `user_letters`;
 CREATE TABLE `user_letters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_who` int(11) DEFAULT NULL,
+  `id_from` int(11) DEFAULT NULL,
   `id_to` int(11) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `cost` double(10,2) DEFAULT NULL,
   `letter_title` varchar(255) DEFAULT NULL,
   `letter_text` text,
-  `letter_status` tinyint(1) DEFAULT NULL,
-  `del_status` tinyint(1) DEFAULT NULL,
+  `letter_status` tinyint(1) DEFAULT '0',
+  `del_status_from` tinyint(1) DEFAULT '0',
+  `del_status_to` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -974,12 +1038,23 @@ CREATE TABLE `user_photos` (
   `photo` varchar(255) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
+  `default_image` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_photos
 -- ----------------------------
+INSERT INTO `user_photos` VALUES ('1', '6', 'hgpk5yfc7ahkkhikoitab9ybsx7ffrtc.jpg', '1408110839', null, null);
+INSERT INTO `user_photos` VALUES ('2', '6', 'xzjzb7q3umbpd1y15c6edbcv5h11np61.jpg', '1408110839', null, '1');
+INSERT INTO `user_photos` VALUES ('3', '6', 's87t8yeuh3xhokiw347zl40pmi9iytto.jpg', '1408110840', null, null);
+INSERT INTO `user_photos` VALUES ('4', '6', 'jt00faz89al4powgy7jxshryne7ec9ic.jpg', '1408110840', null, null);
+INSERT INTO `user_photos` VALUES ('5', '6', 'o3cbsj9rphpwtalwbw64ulcql7qk8nv6.jpg', '1408110840', null, null);
+INSERT INTO `user_photos` VALUES ('6', '6', 'udkdqbm0wyptaxgyaftn5jdqfovs2co3.jpg', '1408110840', null, null);
+INSERT INTO `user_photos` VALUES ('7', '6', '65zrgioskz7rqesrmvilro7byhfgikay.jpg', '1408110841', null, null);
+INSERT INTO `user_photos` VALUES ('8', '6', 'b9rnkogivqfowwcgvoqmmfc4baudlpt2.jpg', '1408110841', null, null);
+INSERT INTO `user_photos` VALUES ('9', '6', 'inpp3blvx1peyjk0grakvkwvynicnh9c.jpg', '1408110841', null, null);
+INSERT INTO `user_photos` VALUES ('10', '6', 'd2eyk8tkq4rvfn9lwdfpi2bjgttgkrvc.jpg', '1408110842', null, null);
 
 -- ----------------------------
 -- Table structure for `user_tokens`
@@ -1017,7 +1092,7 @@ CREATE TABLE `virtualgifts` (
   `image` varchar(255) DEFAULT NULL,
   `type` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of virtualgifts
@@ -1037,7 +1112,7 @@ CREATE TABLE `virtualgifts_languages` (
   PRIMARY KEY (`id`),
   KEY `gift_lang` (`gift_id`),
   CONSTRAINT `gift_lang` FOREIGN KEY (`gift_id`) REFERENCES `virtualgifts` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of virtualgifts_languages
@@ -1053,7 +1128,7 @@ INSERT INTO `virtualgifts_languages` VALUES ('24', '2', 'ru', 'Подарок 2'
 DROP TABLE IF EXISTS `weight`;
 CREATE TABLE `weight` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `zna` int(11) DEFAULT NULL,
+  `zna` varchar(255) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `sort` int(11) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,

@@ -75,4 +75,11 @@ class Model_Weight extends ORM {
           return $weight;
           
     }
+    
+    public static function kg_to_ibs($val) {
+        
+        $res=round($val/0.45359237,1);
+        return $res;
+        
+    }
 }

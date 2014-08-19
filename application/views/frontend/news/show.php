@@ -25,4 +25,6 @@
     E-mail <input type="text" name="email" <?php echo $data['email']; ?>><br/>
     Comment <textarea name="comment"><?php echo $data['comment']; ?></textarea><br/>
     <input type="submit" value="Send">
+    <?php echo $captcha; ?>
+    <input type="text" autocomplete="off" class="captchaField" name="captcha" maxlength="4" size="4" />
 </form>

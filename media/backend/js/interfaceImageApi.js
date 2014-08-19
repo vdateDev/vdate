@@ -22,7 +22,7 @@ $(document).ready(function() {
     // Стандарный input для файлов
     var fileInput = $('#file-field-image');
     
-    var id = $('#productId').val();
+    var id = $('#user_id').val();
 
 
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     fileInput.damnUploader({
         // куда отправлять
-        url: '/backend/ajax/upload_images/'+id,
+        url: '/backend_ajax/photos/load',
         // имитация имени поля с файлом (будет ключом в $_FILES, если используется PHP)
         fieldName:  'file',
         // дополнительно: элемент, на который можно перетащить файлы (либо объект jQuery, либо селектор)
@@ -55,18 +55,18 @@ $(document).ready(function() {
             imgSize = 0;
             updateInfo();
             
-            var productId = $('#productId').val();
+            var user_id = $('#user_id').val();
             
             $.ajax({
                 type: 'POST',
-                url: '/backend/ajax/uploaded_images',
+                url: '/backend_ajax/photos/list',
                 data: {                    
-                    productId : productId                
+                    user_id : user_id                
                 },
                 dataType: 'JSON',
                 success: function(data) {
-                    if (data.content !== null) {
-                        $('#uploaded-images').empty().html(data.content);
+                    if (data.images !== null) {
+                        $('#uploaded-images').empty().html(data.images);
                         $('#image-list').empty();
                     }
                 }
@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     // Вывод инфы о выбранных
     function updateInfo() {
-        countInfo.text( (imgCount == 0) ? 'Изображений не выбрано' : ('Изображений выбрано: '+imgCount));
+        countInfo.text( (imgCount == 0) ? 'There is no images' : ('Selected images: '+imgCount));
         sizeInfo.text( (imgSize == 0) ? '-' : Math.round(imgSize / 1024));
     }
 

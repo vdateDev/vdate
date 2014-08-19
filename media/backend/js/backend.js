@@ -1988,3 +1988,112 @@ function page_men() {
 
     });
 }
+
+function list_photos() {
+    $(document).ready(function(e){
+            /* Delete photo */
+        $('#uploaded-images').on('click', '.delete-catalog-image', function(){
+            if (!confirm('Are you sure?')) 
+                return; 
+
+            var image = $(this);
+            var id = image.attr('data-id');
+
+            $.ajax({
+                type: 'POST',
+                url: '/backend_ajax/photos/delete',
+                dataType: 'JSON',
+                data: {
+                    id: id,                
+                },
+                success: function(data) {
+                    image.parent().parent().remove();
+                }
+            });
+        });
+        
+        /* set default catalog photo */
+        $('#uploaded-images').on('click', '.default-image', function(event) {        
+
+            var target = event.target || event.srcElement;
+            if (target.nodeName != 'INPUT') return;
+
+            var imageId = $(this).children('input:last-child').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/backend_ajax/photos/defaultimage',
+                dataType: 'JSON',
+                data: {
+                    id : imageId      
+                },
+                success: {}
+            });
+        });
+        /* .set default catalog photo */
+        
+        /* Sort catalog images */
+            $("#uploaded-images").sortable({		        
+                    stop: function () {
+                            var order = [];
+                            $("#uploaded-images > .catalog-image").each(function() {
+                                    order.push($(this).attr('data-image'));
+                            });			
+                            $.ajax({
+                                    type: 'POST',
+                                    url: '/backend_ajax/photos/sort',
+                                    dataType: 'JSON',
+                                    data: {
+                                            order : order					
+                                    },
+                                    success: {}
+                            });
+                    }		
+        });
+        $('#uploaded-images .catalog-image').each(function(){
+            $(this).width($(this).width())
+        })
+	
+	/* .Sort catalog images */
+        
+        /* Colorbox for catalog images */
+            $('#uploaded-images').on('click', '.colorbox', function() {       
+            var rel = $(this).attr('rel');
+            var parent = $(this).parent().parent().parent();
+
+            parent.find('a[rel="'+rel+'"]').colorbox({
+                open: false,
+                rel: rel
+            });
+
+            $(this).colorbox();    
+            return false;
+        });
+	/* .Colorbox for catalog images */
+    })
+}
+
+function page_adminletters() {
+    $(document).ready(function(e) {
+        $('.delete_this').click(function(e) {
+            _div = $('#message_to_delete');
+            _this = $(this);
+            $('#dialog').attr('title',_div.attr('title')).html(_div.html());
+
+            $("#dialog").dialog({
+                width:700,
+                buttons: {
+                    'Yes' : function () {
+                        document.location=_this.attr('href');;
+                        $(this).dialog( "close" ).dialog("destroy");
+                    },
+                    'Cancel': function() {
+                        $(this).dialog( "close" ).dialog("destroy");
+                    }
+                }
+            });
+            return false;
+        });
+
+    });
+}

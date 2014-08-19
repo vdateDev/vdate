@@ -223,9 +223,17 @@
                 <input class="b middle" type="submit" name="save_and_back" value="Save and back to the list">         
             </div>	
         </form>	
+    
+        <div class="item_1">
+            <label class="block title_1">Loaded photos:</label>
+            <div id="uploaded-images" class="uploaded_images">
+               <?php echo $photos; ?>
+            </div>
+        </div>
     </div>
 </div>
 
+<script type="text/javascript">list_photos()</script>
 <script type="text/javascript">
 $(document).ready(function() {    
     $.datepicker.setDefaults( $.extend($.datepicker.regional["en"]) );

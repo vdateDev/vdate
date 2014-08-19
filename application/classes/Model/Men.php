@@ -3,6 +3,8 @@
 class Model_Men extends ORM {
     
     protected $_table_name = 'men';
+    
+    
 
     
     public function filters() {
@@ -45,6 +47,21 @@ class Model_Men extends ORM {
         );
     }
     
+    public function validate($post) {
+        
+        $validation = Validation::factory($post)            
+            ->bind(':params', $post)
+            ->rule('firstname', 'not_empty')
+            ->rule('lastname', 'not_empty')
+            ->labels(array(
+                'firstname' => 'first name',
+                'lastname' => 'last name',
+            ));
+            
+        return $validation;
+        
+    }
+    
     public function set_date($value) {
         
         if (empty($value)) {
@@ -56,7 +73,7 @@ class Model_Men extends ORM {
         return strtotime($value);
     }
     
-    public static function get_men($id) {
+    public static function get_man($id) {
         
             $men= self::factory('Men')
                 ->join('users')
@@ -71,7 +88,7 @@ class Model_Men extends ORM {
     }
     
     
-    public function add_men($id,$data) {
+    public function add_man($id,$data) {
         
         if ($this->loaded()) {
             
@@ -109,15 +126,33 @@ class Model_Men extends ORM {
     }
     
     
-    public static function get_men_backend($status=NULL,$limit = NULL, $offset = NULL) {
+    public static function get_men_backend($status=NULL, $firstname=NULL, $lastname=NULL, $login=NULL,$limit = NULL, $offset = NULL) {
         
         $men = ORM::factory('Men')
+                    ->join('users')
+                    ->on('users.id','=','men.user_id')
+                    ->select(array('users.username','username'))
                     ->order_by('men.firstname', 'ASC');
         
         if (isset($status) and $status<2){
             
             $men->where('men.status', '=', $status);
             
+        }
+        
+        if (isset($firstname) and $firstname!='') {
+            
+            $men->where('men.firstname', 'like', '%'.$firstname.'%');
+        }
+        
+        if (isset($lastname) and $lastname!='') {
+            
+            $men->where('men.lastname', 'like', '%'.$lastname.'%');
+        }
+        
+        if (isset($login) and $login!='') {
+            
+            $men->where('users.username', 'like', '%'.$login.'%');
         }
         
         if (isset($limit)) {
@@ -137,14 +172,32 @@ class Model_Men extends ORM {
         return $men;
     }
     
-    public static function count_men($status=NULL) {
+    public static function count_men($status=NULL,$firstname=NULL,$lastname=NULL,$login=NULL) {
         
-        $men = ORM::factory('Men');
+        $men = ORM::factory('Men')
+                    ->join('users')
+                    ->on('users.id','=','men.user_id')
+                    ->select(array('users.username','username'));
         
         if (isset($status) and $status<2) {
             
             $men->where('men.status', '=', $status);
             
+        }
+        
+        if (isset($firstname) and $firstname!='') {
+            
+            $men->where('men.firstname', 'like', '%'.$firstname.'%');
+        }
+        
+        if (isset($lastname) and $lastname!='') {
+            
+            $men->where('men.lastname', 'like', '%'.$lastname.'%');
+        }
+        
+        if (isset($login) and $login!='') {
+            
+            $men->where('users.username', 'like', '%'.$login.'%');
         }
         
         return $men->count_all();
@@ -189,5 +242,6 @@ class Model_Men extends ORM {
                         ->send();
 
     }
+
 
 }

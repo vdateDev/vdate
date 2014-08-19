@@ -291,12 +291,49 @@
                 <input class="b middle" type="submit" name="save_and_back" value="Save and back to the list">         
             </div>	
         </form>	
+    
+    <input type="hidden" name="user" value="<?php echo $user->id; ?>" id="user_id">
+        <div class="item_1" style="width:20%;display: inline-block;vertical-align: top; height: 130px;">
+			<div id="leftpanel" style="padding-left:25px;">
+				<div id="actions">
+					<span id="info-count-image">No photos selected</span><br/>
+					Total size: <span id="info-size-image">0</span> Kb<br/><br/>
+					<button id="upload-all-image">Download all</button>
+					<button id="cancel-all-image">Cancel</button>
+				</div>
+			</div>
+		</div>
+		<div class="item_1" style="width:35%;display: inline-block;vertical-align: top; height: 130px;">
+			<div>
+				
+                                To add an image, select it in the field<br/><br/>
+				<input type="file" name="price" id="file-field-image" /><br/><br/>
+				<span id="dropBox-label">... or just drag and drop them into the area below &dArr;</span>
+
+			</div>
+		</div>
+        
+        <div class="item_1">
+            <div id="image-container">
+				<ul id="image-list"></ul>
+			</div>
+        </div>
+        
+        <div class="item_1">
+            <label class="block title_1">Loaded photos:</label>
+            <div id="uploaded-images" class="uploaded_images">
+               <?php echo $photos; ?>
+            </div>
+        </div>
+    
     </div>
 </div>
-
+<script type="text/javascript">list_photos()</script>
 <script type="text/javascript">
 $(document).ready(function() {    
     $.datepicker.setDefaults( $.extend($.datepicker.regional["en"]) );
     $(".datepicker").datepicker();
+    
+    $('')
 });
 </script>

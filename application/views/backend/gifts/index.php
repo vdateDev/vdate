@@ -87,7 +87,7 @@
                         </span>
                     </span>
                     <span class="name">
-                        <?php echo $item->name;?>
+                         <?php echo $item->name;?>
                     </span>
                 </span>
             </li>
@@ -109,7 +109,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {    
-    $.datepicker.setDefaults( $.extend($.datepicker.regional["ru"]) );
+    $.datepicker.setDefaults( $.extend($.datepicker.regional["en"]) );
     $(".datepicker").datepicker();
 });
 </script>

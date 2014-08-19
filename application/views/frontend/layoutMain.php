@@ -3,9 +3,9 @@
 <!-- (c) Wezom web-студия | www.wezom.com.ua -->
     <head>
         <meta charset="utf-8">
-        <title>Верстка | (c) Wezom web-студия | www.wezom.com.ua</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        <title><?php echo $page_title; ?></title>
+        <meta name="description" content="<?php echo $page_description; ?>">
+        <meta name="keywords" content="<?php echo $page_keywords; ?>">
         <meta http-equiv="imagetoolbar" content="no">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -87,7 +87,7 @@
 				<div class="rightSIDE">
 					<div class="rightSIDE_contentWrapp">
 						<div class="rightSIDE_head">
-                                                    <div class="rightSIDE_title">This is Main Page!</div>
+                                                    <div class="rightSIDE_title"><?php echo $page_name; ?></div>
 						</div>
 						<div class="rightSIDE_content clearFix">
                                                       <?php echo $content; ?>

@@ -20,7 +20,7 @@ tinyMCE.init({
 	theme_advanced_resizing : true,
 	
 
-	content_css : "/media/css/backend/tiny.css",
+	content_css : "/media/backend/css/tiny.css",
     
 	// Style formats
 	style_formats : [

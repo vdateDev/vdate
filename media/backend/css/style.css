@@ -1020,3 +1020,99 @@ a.go-back-link {
 a.go-back-link:hover {
     text-decoration: underline;
 }
+
+/* user photos */
+#image-list div {
+    word-break: break-all;
+}
+#image-container {
+    margin-top: 30px;
+    min-width: 400px;
+    min-height: 250px;
+    border: 2px solid steelblue;
+    background: #fff;
+}
+.highlighted {
+    border: 4px solid gold !important;
+}
+
+#image-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#image-list li {
+    margin: 10px;
+    width: 152px;
+    text-align: center;
+    display: inline-block;
+}
+
+#image-list div.progress {
+    width: 150px;
+    border: 1px solid #888888;
+    height: 18px;
+    text-align: center;
+    background-image: url('/media/backend/pic/pbar_bgr.png');
+    background-repeat: no-repeat;
+    background-position: -150px center;
+}
+
+input[type='button'], button {
+    padding: 3px 10px;
+}
+
+
+.diagramma {
+    height:15px;
+    padding:5px 0;
+    text-align:center;
+    color:#000000;
+    font-weight:bold;
+    border:1px solid #ffffff;
+    font-size:8px;
+}
+.uploaded_images {
+	margin-top: 30px;
+}
+.catalog-image {
+    display: inline-block;
+    position: relative;
+    min-height: 200px; 
+	min-width: 200px;
+    margin: 0 20px 0 20px;	
+    padding-bottom: 5px;
+	text-align: center;
+}
+.catalog-image .preview-image {
+    display: block;
+    min-height: 180px;
+    line-height: 180px;
+}
+.catalog-image .preview-image > a, 
+.catalog-image .preview-image > a > img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.catalog-image .default-image {
+    text-align: center;    
+    margin-top: 14px;    
+}
+.catalog-image .delete-catalog-image {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    top: -15px;
+    right: -14px;
+    background: url(/media/backend/pic/remove-icon.png) no-repeat;
+    z-index: 5;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.catalog-image .delete-catalog-image:hover {
+    box-shadow: 1px 1px 5px #FF0000;
+}
+.catalog-image:hover {
+     box-shadow: 1px 1px 3px #6C6C6C;
+}

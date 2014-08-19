@@ -9,7 +9,7 @@ return array(
 	'credit_card'   => ':field must be a credit card number',
 	'date'          => ':field must be a date',
 	'decimal'       => ':field must be a decimal with :param2 places',
-	'digit'         => 'Поле ":field" должно быть целым числом',
+	'digit'         => 'Поле":field" должно быть целым числом',
 	'email'         => ':field должнен быть E-mail адресом',
 	'email_domain'  => ':field must contain a valid email domain',
 	'equals'        => ':field must equal :param2',

@@ -30,7 +30,7 @@ class Model_User extends Model_Auth_User {
                 'username' => 'login',
                 'email' => 'E-mail',
                 'passowrd' => 'password',
-                'password_confirm' => 'password_confirm',
+                'password_confirm' => 'password confirn',
             ));
             
         return $validation;
@@ -44,7 +44,6 @@ class Model_User extends Model_Auth_User {
             return;
             
         }
-        
      
         $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm','role'));
         
@@ -176,5 +175,8 @@ class Model_User extends Model_Auth_User {
         return $role;
         
     }
+    
+    
+    
 
 }

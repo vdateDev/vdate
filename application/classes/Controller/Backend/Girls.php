@@ -10,15 +10,33 @@ class Controller_Backend_Girls extends Controller_Backend {
         $agency_id= Arr::get($get, 'agency_id');
         if (!isset($get['status'])) $status=2; else   $status= Arr::get($get, 'status');
         
+        if (isset($get['firstname'])) {
+             
+            $firstname=trim($get['firstname']);
+            
+        } else $firstname='';
+            
+        if (isset($get['lastname'])) {
+            
+            $lastname=trim($get['lastname']);
+            
+        } else $lastname='';
+        
+        if (isset($get['login'])) {
+            
+            $login=trim($get['login']);
+            
+        } else $login='';
+        
         $pagination = Pagination::factory(array(
             'items_per_page' => $limit,
             'view' => 'backend/pagination/basic',
-            'total_items' => Model_Girls::count_girls($agency_id,$status),
+            'total_items' => Model_Girls::count_girls($agency_id,$status,$firstname,$lastname,$login),
         ))->route_params(array(
             'controller' => $this->controller,            
         ));
         
-        $girls = Model_Girls::get_girls_backend($agency_id, $status,$limit, $pagination->offset);
+        $girls = Model_Girls::get_girls_backend($agency_id, $status,$firstname,$lastname,$login,$limit, $pagination->offset);
         $agency=  Model_Agency::get_agency_backend();
         
         $this->template->content = View::factory('backend/girls/index')
@@ -26,7 +44,10 @@ class Controller_Backend_Girls extends Controller_Backend {
                                     ->set('girls', $girls)
                                     ->set('agency_id',$agency_id)
                                     ->set('status',$status)
-                                    ->set('agency',$agency);
+                                    ->set('agency',$agency)
+                                    ->set('firstname',$firstname)
+                                    ->set('lastname',$lastname)
+                                    ->set('login',$login);
         
     }
     
@@ -34,25 +55,37 @@ class Controller_Backend_Girls extends Controller_Backend {
         
         
         $user=Model::factory('User');
+        $errors_user=array();
+        $errors_girl=array();
         
         if ($this->request->method() === HTTP_Request::POST) {
             
             $post = $this->request->post();
-                                    
             $passport = isset($_FILES['passport']) ? $_FILES['passport'] : NULL;
             $girl_passport = isset($_FILES['girl_passport']) ? $_FILES['girl_passport'] : NULL;
+            
+            $user_validate=$user->validate($post);
+            $check_user=$user_validate->check();
+            
+            $girl_validate=$user->girl->validate($post);
+            $check_girl=$girl_validate->check();
+            
             $post['role']=4;
-             try {
+            
+             if ($check_user and $check_girl) {
                 $user->add_user($post);
                 $user->girl->add_girl($user->id, $post, $passport, $girl_passport);
                 $user->girl->send_letter_registration($user->girl->firstname,$user->girl->lastname,$user->girl->email,$user->girl->agency_id);
                 $this->session->set('backend_success_message', 'Data saved successfully!');
                 $this->other_redirect($post, $user->id);
-             } catch (ORM_Validation_Exception $e) {
-                  $errors = $e->errors();
+             } else {
+                $errors_user=$user_validate->errors('validation');
+                $errors_girl=$girl_validate->errors('validation');
              }
             
         }
+        
+        $errors=Arr::merge($errors_girl, $errors_user);
         
         $eyes=Model_Sprav::get_list_by_category('eyes', 'en');
         $hair=Model_Sprav::get_list_by_category('hair', 'en');
@@ -147,6 +180,11 @@ class Controller_Backend_Girls extends Controller_Backend {
         $girl=$user->girl;
         $data=$girl->as_array();
         
+        $photos=  Model_Photos::get_photos_by_user($user->id);
+        $list_photos=  View::factory('backend/photos/list')
+                            ->bind('photos', $photos);
+                
+        
         $this->template->content = View::factory('backend/girls/edit')
                                     ->bind('data', $data)
                                     ->bind('user',$user)
@@ -161,7 +199,8 @@ class Controller_Backend_Girls extends Controller_Backend {
                                     ->bind('weight',$weight)
                                     ->bind('country',$country)
                                     ->bind('region',$region)
-                                    ->bind('agency',$agency);
+                                    ->bind('agency',$agency)
+                                    ->bind('photos',$list_photos);
     }
     
     public function action_delete() {

@@ -34,6 +34,9 @@ class Controller_Frontend_News extends Controller_Frontend {
     
     public function action_show() {
         
+        $capthca_arr=array();
+        $errors_review=array();
+        
         $url = $this->request->param('url');
         
         $news = Model_News::get_one($url, $this->language);
@@ -47,10 +50,18 @@ class Controller_Frontend_News extends Controller_Frontend {
         if ($this->request->method()==HTTP_Request::POST) {
             $post=$this->request->post();
             
+            $captcha=Arr::get($post, 'captcha');
+            
             $review_validate=$news->reviews->validate($post);
             $check_review=$review_validate->check();
             
-            if ($check_review) {
+            $captcha_validate=  Captcha::valid($captcha);
+            
+            if (!$captcha_validate) {
+                $captcha_arr['captcha'] = __('wrong_captcha_number');
+            }
+            
+            if ($check_review AND empty($captcha_arr)) {
                 $news->reviews->add_review($news->id,$post);
                                   
               //  $this->set_site_message('after_add_comment_news');
@@ -59,18 +70,26 @@ class Controller_Frontend_News extends Controller_Frontend {
                     
              } else  {
                 
-                 $errors_profile = $review_validate->errors('validation');
+                 $errors_review = $review_validate->errors('validation');
  
              }
         }
         
+        $this->page_name = $news->name;
+        
+        $this->page_title = $news->page_title;
+        $this->page_description = $news->page_description;
+        $this->page_keywords = $news->page_keywords;
+        
         $reviews=  Model_Reviews::get_reviews_by_news($news->id, 1);
+        $captcha=  Captcha::instance();
 
         $this->template->content = View::factory('frontend/news/show')
                                     ->bind('language', $this->language)
                                     ->bind('news', $news)
                                     ->bind('reviews', $reviews)
                                     ->bind('data',$post)
-                                    ->bind('errors',$errors_profile);
+                                    ->bind('captcha', $captcha)
+                                    ->bind('errors',$errors_review);
     }
 }

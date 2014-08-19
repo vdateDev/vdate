@@ -190,6 +190,18 @@
                 </li>
                 <?php endif; ?>
                 
+                <?php if (HTML::access('adminltters', $access)): ?>
+                <li <?php if ($controller == 'adminletters') echo 'class="cur"';?>>
+                    <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters' , 'action'=>'inbox'))); ?>">Admin letters</a>
+                    <?php if($controller == 'adminletters'):?>
+                    <ul>                        
+                        <li <?php if ($action == 'inbox') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'inbox'))); ?>">Inbox<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
+                        <li <?php if ($action == 'outbox') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'outbox'))); ?>">Outobx<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
+                    </ul>
+                    <?php endif; ?>
+                </li>
+                <?php endif; ?>
+                
                 <?php if (HTML::access('languages', $access)): ?>
                 <li <?php if($controller == 'languages') echo 'class="cur"';?>>
                     <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'languages'))); ?>">Languages</a>             

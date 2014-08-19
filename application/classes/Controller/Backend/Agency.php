@@ -25,6 +25,9 @@ class Controller_Backend_Agency extends Controller_Backend {
         
         
         $user=Model::factory('User');
+        
+        $errors_user=array();
+        $errors_agency=array();
      
         
         if ($this->request->method() === HTTP_Request::POST) {
@@ -35,17 +38,27 @@ class Controller_Backend_Agency extends Controller_Backend {
             $certificate = isset($_FILES['certificate']) ? $_FILES['certificate'] : NULL;
             $passport = isset($_FILES['passport']) ? $_FILES['passport'] : NULL;
             $post['role']=3;
-             try {
+            
+            $user_validate=$user->validate($post);
+            $check_user=$user_validate->check();
+            
+            $agency_validate=$user->agency->validate($post);
+            $check_agency=$agency_validate->check();
+            
+            if ($check_user and $check_agency) {
                 $user->add_user($post);
                 $user->agency->add_agency($user->id,$post, $contract, $certificate, $passport);
                 $user->agency->send_letter_registration($user->username,$user->email,$user->agency->name);
                 $this->session->set('backend_success_message', 'Data saved successfully!');
                 $this->other_redirect($post, $user->id);
-             } catch (ORM_Validation_Exception $e) {
-                  $errors = $e->errors();
+             } else {
+                $errors_user=$user_validate->errors('validation');
+                $errors_agency=$agency_validate->errors('validation');
              }
             
         }
+        
+        $errors=Arr::merge($errors_agency, $errors_user);
         
         $this->template->content = View::factory('backend/agency/add')
                                     ->bind('data', $post)

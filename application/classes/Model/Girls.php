@@ -57,6 +57,21 @@ class Model_Girls extends ORM {
         );
     }
     
+    public function validate($post) {
+        
+        $validation = Validation::factory($post)            
+            ->bind(':params', $post)
+            ->rule('firstname', 'not_empty')
+            ->rule('lastname', 'not_empty')
+            ->labels(array(
+                'firstname' => 'first name',
+                'lastname' => 'last name',
+            ));
+            
+        return $validation;
+        
+    }
+    
     public function set_date($value) {
         
         if (empty($value)) {
@@ -237,13 +252,18 @@ class Model_Girls extends ORM {
         }
     }
     
-    public static function get_girls_backend($agency=NULL, $status=NULL,$limit = NULL, $offset = NULL) {
+    public static function get_girls_backend($agency=NULL, $status=NULL, $firstname=NULL, $lastname=NULL, $login=NULL,$limit = NULL, $offset = NULL) {
         
         $girls = ORM::factory('Girls')
                     ->join('agency','left')
                     ->on('girls.agency_id', '=', 'agency.id')
                     ->select(
                             array('agency.name','agency_name')
+                        )
+                    ->join('users')
+                    ->on('users.id','=','girls.user_id')
+                    ->select(
+                            array('users.username','username')
                         )
                     ->order_by('girls.firstname', 'ASC');
         
@@ -257,6 +277,21 @@ class Model_Girls extends ORM {
             
             $girls->where('girls.status', '=', $status);
             
+        }
+        
+        if (isset($firstname) and $firstname!='') {
+            
+            $girls->where('girls.firstname', 'like', '%'.$firstname.'%');
+        }
+        
+        if (isset($lastname) and $lastname!='') {
+            
+            $girls->where('girls.lastname', 'like', '%'.$lastname.'%');
+        }
+        
+        if (isset($login) and $login!='') {
+            
+            $girls->where('users.username', 'like', '%'.$login.'%');
         }
         
         if (isset($limit)) {
@@ -276,9 +311,14 @@ class Model_Girls extends ORM {
         return $girls;
     }
     
-    public static function count_girls($agency=NULL,$status=NULL) {
+    public static function count_girls($agency=NULL,$status=NULL,$firstname=NULL,$lastname=NULL,$login=NULL) {
         
-        $girls = ORM::factory('Girls');
+        $girls = ORM::factory('Girls')                    
+                    ->join('users')
+                    ->on('users.id','=','girls.user_id')
+                    ->select(
+                            array('users.username','username')
+                    );
         
         if (isset($agency) and $agency>0) {
             
@@ -291,6 +331,21 @@ class Model_Girls extends ORM {
             $girls->where('girls.status', '=', $status);
             
         }
+        if (isset($firstname) and $firstname!='') {
+            
+            $girls->where('girls.firstname', 'like', '%'.$firstname.'%');
+        }
+        
+        if (isset($lastname) and $lastname!='') {
+            
+            $girls->where('girls.lastname', 'like', '%'.$lastname.'%');
+        }
+        
+        if (isset($login) and $login!='') {
+            
+            $girls->where('users.username', 'like', '%'.$login.'%');
+        }
+        
         
         return $girls->count_all();
         
@@ -353,6 +408,21 @@ class Model_Girls extends ORM {
                         ->to($email)
                         ->send();
 
+    }
+    
+    public static function get_girl_frontend($id) {
+        $girl=ORM::factory('Girls')
+             ->join('height','left')
+             ->on('girls.height','=','height.id')
+             ->select(array('height.zna','height_zna'))
+             ->join('weight','left')
+             ->on('girls.weight','=','weight.id')
+             ->select(array('weight.zna','weight_zna'))
+             ->where('user_id', '=', $id)
+             ->find();
+        
+        return $girl;
+                
     }
 
 }

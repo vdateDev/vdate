@@ -5,6 +5,18 @@
         <div class="textcenter">
             <form method="get" id="submitGetForm">
                 <div class="filter_item">
+                    <label class="middle"><strong>First name:</strong></label>
+                    <input class="middle" name="firstname" value="<?php echo $firstname; ?>">
+                </div>  
+                <div class="filter_item">
+                    <label class="middle"><strong>Last name:</strong></label>
+                    <input class="middle" name="lastname" value="<?php echo $lastname; ?>">
+                </div>  
+                <div class="filter_item">
+                    <label class="middle"><strong>Login:</strong></label>
+                    <input class="middle" name="login" value="<?php echo $login; ?>">
+                </div>  
+                <div class="filter_item">
                     <label class="middle"><strong>Status:</strong></label>
                     <select class="middle" name="status">
                         <option value="2" <?php echo $status == 2 ? 'selected' : ''; ?>>All</option>
@@ -53,12 +65,19 @@
                         </span>
                         <span class="coll_item">
                             [
+                            <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'new', 'id' => $item->user_id))); ?>">Write letter</a>
+                            ]
+                        </span>
+                        <span class="coll_item">
+                            [
                             <a class="ps_coll delete_this" href="<?php echo strtolower(Route::url('backend', array('controller' => 'men', 'action' => 'delete', 'id' => $item->user_id))); ?>">Delete</a>
                             ]
                         </span>
                     </span>
                     <span class="name">
                         <?php echo $item->firstname;?> <?php echo $item->lastname; ?>
+                        <br/>
+                        <strong>Login:</strong> <strong class="red"><?php echo $item->username; ?></strong>
                     </span>
                 </span>
             </li>

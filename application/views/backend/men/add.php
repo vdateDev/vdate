@@ -33,26 +33,32 @@
                         <div class="item_1">
                             <label class="block title_1">First name<span class="red">*</span>:</label>                           
                             <input name="firstname" type="text" class="s_name input_1" value="<?php echo $data['firstname']; ?>">
+                            <span class="red"><?php if (isset($errors['firstname'])) echo $errors['firstname']; ?></span>
                         </div>
                         <div class="item_1">
                             <label class="block title_1">Last name<span class="red">*</span>:</label>                           
                             <input name="lastname" type="text" class="s_name input_1" value="<?php echo $data['lastname']; ?>">
+                            <span class="red"><?php if (isset($errors['lastname'])) echo $errors['lastname']; ?></span>
                         </div>
                         <div class="item_1">
                             <label class="block title_1">Email<span class="red">*</span>:</label>                           
                             <input name="email" type="text" class="s_name input_1" value="<?php echo $data['email']; ?>">
+                            <span class="red"><?php if (isset($errors['email'])) echo $errors['email']; ?></span>
                         </div>
                         <div class="item_1">
                             <label class="block title_1">Login<span class="red">*</span>:</label>                           
                             <input name="username" type="text" class="s_name input_1" value="<?php echo $data['username']; ?>">
+                            <span class="red"><?php if (isset($errors['username'])) echo $errors['username']; ?></span>
                         </div>
                         <div class="item_1">
                             <label class="block title_1">Password<span class="red">*</span>:</label>                           
                             <input name="password" type="password" class="s_name input_1" value="<?php echo $data['password']; ?>">
+                            <span class="red"><?php if (isset($errors['password'])) echo $errors['password']; ?></span>
                         </div>
                         <div class="item_1">
                             <label class="block title_1">Confirm password<span class="red">*</span>:</label>                           
                             <input name="password_confirm" type="password" class="s_name input_1" value="<?php echo $data['password_confirm']; ?>">
+                            <span class="red"><?php if (isset($errors['password_confirm'])) echo $errors['password_confirm']; ?></span>
                         </div>
                      </div>
                 </div>

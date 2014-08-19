@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     fileInput.damnUploader({
         // куда отправлять
-        url: '/backend/ajax/catalog/upload_images.php',
+        url: '/backend/photos/load',
         // имитация имени поля с файлом (будет ключом в $_FILES, если используется PHP)
         fieldName:  'file',
         // дополнительно: элемент, на который можно перетащить файлы (либо объект jQuery, либо селектор)
@@ -48,16 +48,16 @@ $(document).ready(function() {
         },
         // когда все загружены
         onAllComplete: function() {
-            log('<span style="color: blue;">*** Все загрузки завершены! ***</span>');
+            log('<span style="color: blue;">*** All images uploaded! ***</span>');
             imgCount = 0;
             imgSize = 0;
             updateInfo();
             
-            var id = $('#id_good').val();
+            var id = $('#user_id').val();
             
             $.ajax({
                 type: 'POST',
-                url: '/backend/ajax/catalog/get_uploaded_images.php',
+                url: '/backend/photos/list',
                 data: {                    
                     id : id                
                 },
@@ -85,7 +85,7 @@ $(document).ready(function() {
 
     // Вывод инфы о выбранных
     function updateInfo() {
-        countInfo.text( (imgCount == 0) ? 'Изображений не выбрано' : ('Изображений выбрано: '+imgCount));
+        countInfo.text( (imgCount == 0) ? 'There is no images' : ('Count selected images: '+imgCount));
         sizeInfo.text( (imgSize == 0) ? '-' : Math.round(imgSize / 1024));
     }
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
         var title = $('<div/>').text(file.name+' ').appendTo(li);
         var cancelButton = $('<a/>').attr({
             href: '#cancel',
-            title: 'отменить'
+            title: 'Cancel'
         }).text('X').appendTo(title);
 
         // Если браузер поддерживает выбор файлов (иначе передается специальный параметр fake,
