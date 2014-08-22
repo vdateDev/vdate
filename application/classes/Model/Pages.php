@@ -101,6 +101,22 @@ class Model_Pages extends ORM {
         return $pages;
     }
     
+    public static function getPagesBottom($lang) {
+        
+        $pages = self::factory('Pages')
+                    ->join('pages_languages')
+                    ->on('pages.id', '=', 'pages_languages.page_id')
+                    ->select(
+                        array('pages_languages.name', 'name')
+                    )
+                    ->where('pages_languages.language', '=', $lang)
+                    ->where('pages.show_footer', '=', '1')
+                    ->order_by('pages_languages.name', 'ASC')
+                    ->find_all();
+        
+        return $pages;
+    }
+    
     public static function get_page_by_url($url, $language) {
         
         $page = self::factory('Page')

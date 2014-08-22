@@ -6,6 +6,6 @@ return array (
     'site_name'     => 'vdate',
     'facebook'      => '',
     'twitter'       => '',
-    'pinterest'     => '',
+
     
 );

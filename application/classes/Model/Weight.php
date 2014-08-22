@@ -76,10 +76,16 @@ class Model_Weight extends ORM {
           
     }
     
-    public static function kg_to_ibs($val) {
+    public function kg_to_ibs($val) {
         
         $res=round($val/0.45359237,1);
         return $res;
         
+    }
+    
+    public function get_weight_kg_ibs() {
+        $ibs=  self::kg_to_ibs($this->zna);
+        $str=$this->zna.__('kg').' ('.$ibs.' '.__('ibs').')';
+        return $str;
     }
 }

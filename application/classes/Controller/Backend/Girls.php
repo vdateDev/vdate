@@ -8,7 +8,7 @@ class Controller_Backend_Girls extends Controller_Backend {
         
         $get=$this->request->query();
         $agency_id= Arr::get($get, 'agency_id');
-        if (!isset($get['status'])) $status=2; else   $status= Arr::get($get, 'status');
+        if (!isset($get['status'])) $status=3; else   $status= Arr::get($get, 'status');
         
         if (isset($get['firstname'])) {
              

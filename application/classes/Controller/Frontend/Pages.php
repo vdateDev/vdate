@@ -2,14 +2,18 @@
 
 class Controller_Frontend_Pages extends Controller_Frontend {
 
-    public $template   = 'frontend/layoutMain';
+    public $template   = 'frontend/layout';
     public $page;
 
     public function before() {
         
         parent::before();
         
-        $this->widgets['MainMenu'] = Widget::load('MainMenu');     
+         if ($this->auth->logged_in()) {
+            
+            $this->widgets['ChatNow']=Widget::load('Chat_ChatNow');
+            
+        }   
         
         if ($this->action == 'contact') {
             

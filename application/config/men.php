@@ -2,5 +2,6 @@
 
 return array (
     'backend_per_page'      => '10',
+    'frontend_per_page'      => '2',
   
 );

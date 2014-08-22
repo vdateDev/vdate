@@ -4,6 +4,7 @@ class Controller_Base extends Controller_Template {
     
     protected $auth;
     protected $user;
+    protected $user_role;
 
     protected $controller;
     protected $action;
@@ -29,7 +30,8 @@ class Controller_Base extends Controller_Template {
         
         if ($this->auth->logged_in()) {
             
-            //$this->user = $this->auth->get_user();
+            $this->user = $this->auth->get_user();
+            $this->user_role = $this->user->get_admin_role();
             
         }
         

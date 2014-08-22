@@ -2,6 +2,7 @@
 
 class Controller_Backend_Pages extends Controller_Backend {
     
+    
     public function action_index() {
         
         $pages = Model_Page::get_backend_pages();

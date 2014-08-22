@@ -9,19 +9,25 @@ class Controller_Frontend_Main extends Controller_Frontend {
         
         parent::before();
         
-        $this->widgets['MainMenu'] = Widget::load('MainMenu');        
-        $this->pagesModel = Model::factory('Pages');
+        $this->widgets['Slider']             = Widget::load('SliderMainPage');
+        $this->widgets['OnlineInMainPage']   = Widget::load('Chat_OnlineInMainPage');
+        $this->widgets['FreeVideoChat']      = Widget::load('Chat_FreeVideoChat');
+        $this->widgets['NewGirlsOnMainPage'] = Widget::load('Girls_NewGirlsOnMainPage');
+        if (!$this->auth->logged_in()) {
+            $this->widgets['JoinForFreeMainPage']= Widget::load('JoinForFreeMainPage');
+        }
+        
+        $page = Model_Page::get_page_by_url('main', $this->language);
+        
+        $this->page_title = $page->page_title;
+        $this->page_description = $page->page_description;
+        $this->page_keywords = $page->page_keywords;
+        $this->page_name = $page->page_h1;
+        
     }
 
     public function action_index() {     
       
-       $pages = $this->pagesModel->getPages();
-       
-       /*foreach($pages as $page) {
-           echo $page->name;
-       }
-       /* $this->template->content = View::factory('frontend/main/index')                                    
-                                    ->bind('content', $content);*/
         
     }
     

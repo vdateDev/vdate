@@ -42,6 +42,23 @@ class Controller_Frontend extends Controller_Base {
             $this->template->controller = $this->controller;
             $this->template->action     = $this->action;
             $this->template->content    = NULL;
+            $this->template->language = $this->language;
+            
+            if (!$this->auth->logged_in()) {
+                
+                 $this->widgets['MainMenu']           = Widget::load('Menu_MainMenu');  
+                 $this->widgets['Auth']               = Widget::load('Auth');
+            } else {
+                
+                $this->widgets['MainMenu']           = Widget::load('Menu_MainMenuLogged');  
+                $this->widgets['MyAccount']          = Widget::load('MyAccount');
+                
+            }
+            
+            $this->widgets['BottomMenu']         = Widget::load('Menu_BottomMenu');
+            $this->widgets['Langs']              = Widget::load('Langs');
+            
+            
         }
         
     }
@@ -61,9 +78,12 @@ class Controller_Frontend extends Controller_Base {
             
             $this->template->widgets = $this->widgets;
                         
-            $this->template->footer = NULL; /*View::factory('frontend/templates/footer', array('session' => $this->session))  
+          
+            
+            $this->template->footer = View::factory('frontend/templates/footer', array('session' => $this->session))  
+                                            ->bind('bottommenu',$this->widgets['BottomMenu'])
                                             ->bind('language', $this->language)                                            
-                                            ->bind('settings', $this->settings);*/
+                                            ->bind('settings', $this->settings);
         }
         
         parent::after();

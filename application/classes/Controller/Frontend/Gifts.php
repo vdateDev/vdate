@@ -2,13 +2,17 @@
 
 class Controller_Frontend_Gifts extends Controller_Frontend {
     
-    public $template   = 'frontend/layoutMain';
+    public $template   = 'frontend/layout';
     
     public function before() {
         
         parent::before();
         
-        $this->widgets['MainMenu'] = Widget::load('MainMenu');        
+        if ($this->auth->logged_in()) {
+            
+            $this->widgets['ChatNow']=Widget::load('Chat_ChatNow');
+            
+        }
     }
     
     public function action_index() {

@@ -15,8 +15,8 @@
                     <div class="item_col">
                         <label class="title_1">Status:</label>                        
                         <select name='status'>
-                            <option value="0" <?php echo $data['status'] == 0 ? 'selected' : ''; ?>>Unpublished</option>
-                            <option value="1" <?php echo $data['status'] == 1 ? 'selected' : ''; ?>>Published</option>
+                            <option value="0" <?php echo $user->status == 0 ? 'selected' : ''; ?>>Unpublished</option>
+                            <option value="1" <?php echo $user->status == 1 ? 'selected' : ''; ?>>Published</option>
                         </select>
                     </div>            
                 </div>

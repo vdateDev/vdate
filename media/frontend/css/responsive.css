@@ -6,9 +6,7 @@
 		padding-left: 10px;
 		padding-right: 10px;
     }
-
     .chatModule {margin-left: 8%;}
-
     .sliInf {
     	-webkit-transform: scale(0.9);
     	-moz-transform: scale(0.9);
@@ -26,25 +24,10 @@
 		white-space: nowrap;
 		box-sizing: border-box;
 	}
-	.presentCatList ul li {
-		margin-bottom: 0;
-		height: 270px;
-	}
-	
-	.presentCatList li {
-		width: auto;
-		overflow: visible;
-		margin-bottom: 0;
-	}
-	.presentCatList {	
-		overflow-y: hidden;
-		overflow-x: auto;
-		white-space: nowrap;
-		margin-bottom: 20px;
-	}
+	.presentCatList ul li {margin-bottom: 0; height: 270px; }
+	.presentCatList li {width: auto; overflow: visible; margin-bottom: 0; }
+	.presentCatList {overflow-y: hidden; overflow-x: auto; white-space: nowrap; margin-bottom: 20px; }
 }
-
-
 
 @media only screen and (max-width:1024px) {
 	.presentList {
@@ -55,16 +38,8 @@
 		white-space: nowrap;
 		box-sizing: border-box;
 	}
-	.presentCatList ul li {
-		margin-bottom: 0;
-		height: 270px;
-	}
-	
-	.presentCatList li {
-		width: auto;
-		overflow: visible;
-		margin-bottom: 0;
-	}
+	.presentCatList ul li {margin-bottom: 0; height: 270px; }
+	.presentCatList li {width: auto; overflow: visible; margin-bottom: 0; }
 	.presentCatList {	
 		overflow-y: hidden;
 		overflow-x: auto;
@@ -75,17 +50,56 @@
 }
 
 @media only screen and (max-width:980px) {
+	.chatConteinerWrapp { margin-top: -10px; }
+	.topModule.unLogin:before { display: none;}
+	.unLogin { border-radius: 5px;}
+	.langOpen { display: block;}
+	.langSelect {
+		position: fixed;
+		top: 97px;
+		width: 100px;
+		margin: 0 !important;
+		right: -130px;
+		background: #f53885;
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top, #f53885 0%, #c51a66 100%);
+		background: -webkit-linear-gradient(top, #f53885 0%,#c51a66 100%);
+		background: -ms-linear-gradient(top, #f53885 0%,#c51a66 100%);
+		background: linear-gradient(to bottom, #f53885 0%,#c51a66 100%);
+		-webkit-transition: right 0.4s ease;
+		-moz-transition: right 0.4s ease;
+		transition: right 0.4s ease;
+		z-index: 100;
+		z-index: 700;
+		padding: 7px 15px;
+		border-radius: 5px 0 0 5px;
+	}
+	.langSelect li {display: block; width: auto; } .langSelect a {
+		color: #fff;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.sliderIndex { visibility: hidden !important; height: 0 !important;}
+	.indexPage .rightSIDE:before { display: none;}
 	.chatModule {margin-left: 4%;}
+	.indexModuleWrapp { margin-top: 0;}
+	.indexMod01 { width: 100%;}
+	.slidersList { height: 174px; overflow: hidden; }
+	.indexMod02 {width: 49%; margin-left: 0;}
+	.indexMod03 { width: 49%; margin-left: 1%;}
+
 	.sliChat span { display: none; }
 	.form_settings.registerform { padding-left: 5%; padding-right: 5%; }
 	.chatLeft {padding: 10px 0; float: none; }
-	.chatRight { width: 100%; position: relative; top: auto; right: auto; }
+	.chatRight { width: 100%; position: relative; top: auto; right: auto; margin-top: 10px; }
 	.webCamWrapp { margin-top: 0; position: absolute; top: 0; left: 0;}
 	.webYourWrapp { margin: 0 0 80px 320px; }
 	.webCameraPlaceholder {width: 300px; height: 202px; }
 }
 
 @media only screen and (max-width:900px) {
+	.favSortBlock { text-align: center;}
+	.sortPagin { float: none; margin: 12px 0; text-align: center;}
     .sliInf {-webkit-transform: scale(0.7); -moz-transform: scale(0.7); transform: scale(0.7); }
 	.chr { display: none; }
 	.chatModule { overflow: hidden; margin-left: 2%; width: 123px; border-radius: 4px; }
@@ -96,46 +110,19 @@
 }
 
 @media only screen and (max-width:800px) {
-
-	.regBlock .flr.w40, .regBlock .fll.w60, .myaccountinform .flr.w40, .myaccountinform .fll.w60 {
-		float: none;
-		width: 100%;
-	}
+	.tab_history { text-align: center; }
+	.tab_history input[type="submit"] {display: block; margin: 7px auto !important;  }
+	.regBlock .flr.w40, .regBlock .fll.w60, .myaccountinform .flr.w40, .myaccountinform .fll.w60 {float: none; width: 100%; }
 	.webYourPlaceholder {position: relative; top: auto; left: auto;}
 	.webYourWrapp {margin-bottom: 10px; }
-	.webYour {
-		margin: 10px 0 0;
-	}
-
-	.uploadPhoto {
-		width: 100%;
-		padding-left: 0;
-	}
-
-	.photoPlaceholder {
-	    width: 24%;	
-	    float: left;
-	}
-
-	.upl {
-		float: right;
-		width: 70%;
-	}
-
-	.sliChat span {
-		display: inline-block;
-		vertical-align: top;
-	}
+	.webYour {margin: 10px 0 0; }
+	.uploadPhoto {width: 100%; padding-left: 0; }
+	.photoPlaceholder {width: 24%; float: left; }
+	.upl {float: right; width: 70%; }
+	.sliChat span {display: inline-block; vertical-align: top; }
 	.invt { text-align: center;}
 	.sliderRegister { padding-bottom: 10%;}
-
-	.sliInf {
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		transform: scale(1);
-		width: auto;
-	}
-	
+	.sliInf {-webkit-transform: scale(1); -moz-transform: scale(1); transform: scale(1); width: auto; }
 	.statusModule.isOpen .smOpen, .myAcc:after { display: none; }
 	.topModule { width: 200px; }
 	.statusModule {
@@ -161,7 +148,6 @@
 	.myAcc { display: block; text-align: left; padding-bottom: 7px; border-bottom: 1px solid #9c1d53; margin: 0; }
 	.chs { display: block; text-align: left; border-top: 1px solid #E972A5; padding-top: 7px; }
 	.chs span:first-child { display: block; }
-	
 	.leftContentOptions a { font-size: 12px; }
 	.footerUp {line-height: 0;}
 	.footerMenu, .contactInform { float: none; display: block; padding-top: 10px; }
@@ -181,27 +167,15 @@
 		text-transform: uppercase;
 		text-decoration: none !important;
 	}
-
-	.pplOnline.ulOpen, .pplOnline.ulOpen span {
-		color: #fff !important;
-		background: #ed1a77;
-	}
-
-	.pplOnline:after {
-		content: ' ▼';
-	}
-
-	.pplOnline.ulOpen:after {
-		content: ' ▲';
-	}
-
+	.pplOnline.ulOpen, .pplOnline.ulOpen span {color: #fff !important; background: #ed1a77; }
+	.pplOnline:after {content: ' ▼'; }
+	.pplOnline.ulOpen:after {content: ' ▲'; }
 	.chatListWrapp { position: relative; top: auto; left: auto; width: auto; }
 	.chatConteinerSide { padding-left: 0; }
 	.chatConteinerWrapp { margin-top: 10px; }
 	.pplList {display: none;}
 	.pplInfo { float: left; width: auto;  margin-left: 10px;}
 	.cchtop span { margin-right: 20px; }
-
 	.presentCatList {
 		display: none;	
 		overflow-y: hidden;
@@ -209,7 +183,6 @@
 		white-space: nowrap;
 		margin-bottom: 20px;
 	}
-
 	.titleOpener {
 		padding: 10px 0 !important;
 		text-align: center !important;
@@ -217,37 +190,14 @@
 		border-radius: 4px;
 		cursor: pointer;
 	}
-	.presentCatList li {
-		width: auto;
-		overflow: visible;
-		margin-bottom: 0;
-	}
-
-	.titleOpener:after {
-		content: ' ▼';
-	}
-	.titleOpener.ulOpen {
-		color: #fff;
-		background: #ed1a77;
-	}
-	.titleOpener.ulOpen:after {
-		content: ' ▲';
-	}
-
-	.rightSIDE_contentWrapp {
-		min-height: 0;
-	}
-
-	.accountListOpen {
-		display: block;
-	}
-	.accountList {
-		display: none;
-	}
-	.accountList li:last-child {
-		display: block;
-	}
-	
+	.presentCatList li {width: auto; overflow: visible; margin-bottom: 0; }
+	.titleOpener:after {content: ' ▼'; }
+	.titleOpener.ulOpen {color: #fff; background: #ed1a77; }
+	.titleOpener.ulOpen:after {content: ' ▲'; }
+	.rightSIDE_contentWrapp {min-height: 0; }
+	.accountListOpen {display: block; }
+	.accountList {display: none; }
+	.accountList li:last-child {display: block; }
 	.chatModule.isOpen .chOpen, .topModule.isOpen .tmOpen, .liveChat.isOpen .lvOpen, .tmUp:before, .topModule.isOpen .tpOpen, .liveChat:before { display: none; }
 	.chatModule, .topModule, .liveChat {
 		overflow: visible;
@@ -276,19 +226,9 @@
 		background: -webkit-linear-gradient(top, #f53885 0%,#c51a66 100%);
 		background: -ms-linear-gradient(top, #f53885 0%,#c51a66 100%);
 	}
-	.topModule.usrLogin {
-		padding-left: 15px;
-		width: 140px;
-		position: fixed;
-	}
-	.topModule.usrLogin .usrFoto {
-		position: relative;	
-		top: -2px;
-		left: 0;
-	}
-	.usrID {
-		margin: 10px 20px 10px 0;
-	}
+	.topModule.usrLogin {padding-left: 15px; width: 140px; position: fixed; }
+	.topModule.usrLogin .usrFoto {position: relative; top: -2px; left: 0; }
+	.usrID {margin: 10px 20px 10px 0; }
 	.chatModule { top: 50px; }
 	.liveChat { top: 145px; text-align: left; }
 	.liveChat a { color: #fff !important; font: 13px/1em 'museo700'; text-transform: uppercase; }
@@ -311,41 +251,56 @@
 	.leftContentOptions { float: right; width: 30%;}
 	.leftContentOptions li { width: 49%; }
 	.leftContentOptions a { font-size: 13px; }
-	.accountList a {
-		padding-top: 12px;
-		padding-bottom: 12px;
-	}
-	.accountList a:before {
-		background-position: center 11px;
-	}
+	.accountList a {padding-top: 12px; padding-bottom: 12px; }
+	.accountList a:before {background-position: center 11px; }
 	
+}
+@media only screen and (max-width:670px) {
+	.favOneDel { width: 30px; margin-right: 10px;}
+	.tab_history input { display: block; margin: 6px 0 !important; width: 100% !important; -moz-box-sizing: border-box; box-sizing: border-box;}
+	.tNav { text-align: center;}
+	.tNav p {float: none; display: block; margin-bottom: 7px; text-align: center; }
+	.tConteiner .row label { float: none;}
+	.tab_parchaseLeft { float: none; width: 100%;}
+	.tab_parchaseRight {margin-left: 0;}
+	.tConteiner .controls {margin-left: 0; width: 100%; }
+	.toolTip02 { padding-top: 16px;}
+	.toolTip02:before { left: auto; right: 5px; margin-bottom: -12px; }
+	.toolTip02:after { display: none;}
+	.tConteiner .rowPad2 { padding: 0;}
+	.toolTip02.respH:before { display: none; }
+	.indexMod02 {width: 100%; margin-right: 0; }
+	.indexMod03 {width: 100%; margin-left: 0; }
 }
 
 @media only screen and (max-width:600px) {
 	.ladiesParams {font-size: 11px; }
-	.myCartFooter .isSubmit, .myCartFooter p {
-		float: none;
-		width: 100%;
-	}
+	.myCartFooter .isSubmit, .myCartFooter p {float: none; width: 100%; }
 }
 
 @media only screen and (max-width:570px) {
+	.favOne > * {margin-right: 10px;}
+	.favBlock .favOneIni { display: block; float: none; width: 100%; margin: 10px 0;}
+	.favWrapp { width: 100%;}
+	.favBlock .favOneIni .favWrapp > * { display: inline-block; vertical-align: top; width: 46%; margin: 0 1%;}
 	.webCamWrapp {margin: 10px auto;width: 300px; position: relative; top: auto; left: auto; }
 	.webYourWrapp {margin: 10px auto;width: 200px;}
 }
 
 @media only screen and (max-width:540px) {
-	.left50, .right50 {
-		float: none;
-		width: 100%;
-		margin-left: 0;
-	}
+	.chatControlBottom .fll { float: none; width: 100%; }
+	.chatControlBottom .flr { float: none; width: 100%;}
+	.cSend { display: block; width: 100% !important; margin: 0 0 15px;}
+	.textTR { position: relative; top: auto; right: auto; width: 100%; background: #efefef; }
+	.chatControlBottom .flr > * { display: block; width: 100% !important; margin: 0 0 15px;}
+	.chatControlBody .textWrapp {padding: 5px !important;}
+	.textTR > * { display: block; width: 80% !important; margin: 0 auto 15px !important;}
+	.left50, .right50 {float: none; width: 100%; margin-left: 0; }
 	.ladiesPhoto { float: left; width: 60%;}
 	.leftContentOptions { float: right; width: 38%;}
 	.headMenu { text-align: left; }
 	.headMenu a { padding: 13px; }
-	
-	.chOpen, .tmOpen, .smOpen, .lvOpen {
+	.chOpen, .tmOpen, .smOpen, .lvOpen, .langOpen {
 		-webkit-transform: scale(0.7);
 		-o-transform: scale(0.7);
 		transform: scale(0.7);
@@ -358,65 +313,43 @@
 	.footerMenu li, .contactInform a, .contactInform span { font-size: 11px; line-height: 1em;}
 	.rightSIDE_title, .rightSIDE_title a, .rightSIDE_title h1 { font-size: 30px }
 	.copyR { font-size: 11px; }
-	.settRow > .fll, .settRow > .flr {
-		float: none;
-		width: 100%;
-		text-align: center;
-	}
-	.settRow > .fll {
-		margin-bottom: 10px;
-	}
-	.settRow > .flr > * {
-		margin-bottom: 30px;
-	}
+	.settRow > .fll, .settRow > .flr {float: none; width: 100%; text-align: center; }
+	.settRow > .fll {margin-bottom: 10px; }
+	.settRow > .flr > * {margin-bottom: 30px; }
 	.settRow input[type="text"], .settRow input[type="submit"], .settRow input[type="button"], .form_settings.myaccountinform .settRow input[type="text"] {
 		width: 80%;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
 		text-align: center;
-	
 		margin: 0 auto;
 	}
 	.settInf { text-align: center; }
-
-	.settRowInline li {
-		width: 80% !important;
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	.settRowInline li:last-child {
-		margin-top: -15px;
-	}
-	.settRowInline {
-		margin: 20px 0;
-	}
-
+	.settRowInline li {width: 80% !important; margin-left: auto; margin-right: auto; display: block; margin-bottom: 10px; }
+	.settRowInline li:last-child {margin-top: -15px; }
+	.settRowInline {margin: 20px 0; }
+	.tNav span { padding: 7px; font-size: 13px; }
 }
 
 @media only screen and (max-width:480px) {
-
+	.sortPagin a { border-radius: 4px; min-width: 20px;}
+	.sortPagin > * { font: 13px/20px Tahoma, Segoe, sans-serif; height: 24px; padding: 0 5px; width: auto;}
+	.sortBy { display: block; line-height: 20px; margin: 10px 0; display: none; }
+	.favSortDel { margin-right: 7px; }
+	.tConteiner .respH:before { display: block; }
+	.controls .inp03 { margin-left: 0 !important; }
+	.inLine { float: none !important; width: 100% !important; margin-left: 0 !important;}
+	.tConteiner .inLine p { display: block; }
+	.tConteiner .inLine input {display: block; width: 100% !important; }
+	.inp01 + .inp01 { float: right;}
+	.inp03, .inp04 { display: block !important; width: 100% !important; /* margin: 32px 0; */ }
 	.cartPrice, .delivPrice { width: 120px; }
 	.deliveryTime p:before, .cartImg { display: none; }
 	.deliveryTime p { margin-left: 10px; margin-right: 130px; }
 	.cartItem { margin-left: 40px; margin-right: 130px;}
 	.myCartTotal p { margin-left: 10px; }
-
-
-	.photoPlaceholder {
-		float: none;
-		width: 120px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.upl {
-		float: none;
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
-	}
+	.rowPHN .inp01 { width: 48%; }
+	.photoPlaceholder {float: none; width: 120px; margin-left: auto; margin-right: auto; }
+	.upl {float: none; width: 80%; margin-left: auto; margin-right: auto; }
 	#conteiner { padding: 0; }
 	#footer { height: auto; margin: 0 auto 0; }
 	.footerUp, .footerBottom { height: auto; text-align: center; }
@@ -427,21 +360,19 @@
 	.copyR { display: block; height: 28px;}
 	.leftContentOptions a, .footerMenu li { font-size: 11px;}
 	.headMenu a { padding: 13px 9px; }
-	.site_size {
-        min-width: 310px;
-		padding-left: 5px;
-		padding-right: 5px;
-    }
+	.site_size {min-width: 310px; padding-left: 5px; padding-right: 5px; }
     .sliderRegister {display: none;}
+    .indexModuleWrapp .sliderRegister {display: block !important; }
     .invt { margin-bottom: 20px; }
     .form_settings.registerform { margin: 0; padding-left: 5%; padding-right: 5%; }
     .rightSIDE_title, .rightSIDE_title a, .rightSIDE_title h1 { font-size: 26px }
 }
+@media only screen and (max-width:430px) {
+	.favOneInf { margin-left: 0; }
+	.favBlock .favOneOpt { display: none; }
+}
 
-@media only screen and (max-width:360px) {
-	.site_size {
-        min-width: 320px;
-		padding-left: 0;
-		padding-right: 0;
-    }
+@media only screen and (max-width:380px) {
+	.indexMod01 {visibility: hidden; height: 0 !important;}
+	.site_size {min-width: 320px; padding-left: 0; padding-right: 0; }
 }

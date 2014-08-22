@@ -6,9 +6,7 @@ class Controller_Widgets_Auth extends Controller_Widgets {
 
     public function action_index() {
         
-      /*  $pages = ORM::factory('Pages')->getPages();
         
-        $this->template->bind('pages', $pages)
-                       ->bind('language', $this->language);*/
+        $this->template->bind('language', $this->language);
     }
 }

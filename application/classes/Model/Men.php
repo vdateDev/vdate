@@ -79,7 +79,8 @@ class Model_Men extends ORM {
                 ->join('users')
                 ->on('men.user_id', '=', 'users.id')
                 ->select(
-                    array('users.username', 'username')
+                    array('users.username', 'username'),
+                    array('users.status', 'status')
                 )
                 ->where('men.id', '=', $id)
                 ->find();
@@ -96,7 +97,7 @@ class Model_Men extends ORM {
             
         }
         
-        $values = Arr::extract($data, array('status', 'created_at','user_id','firstname','lastname','email','birthday','country','region','city','height','weight',
+        $values = Arr::extract($data, array('created_at','user_id','firstname','lastname','email','birthday','country','region','city','height','weight',
                                             'eyes','hair','place_work','education','religion','marital_status','smoking','drinking','children','phone',
                                             'hobbies','about','relationships'));
         $values['user_id']=$id;
@@ -115,7 +116,7 @@ class Model_Men extends ORM {
             
         }
         
-         $values = Arr::extract($data,  array('status', 'updated_at','firstname','lastname','email','birthday','country','region','city','height','weight',
+         $values = Arr::extract($data,  array( 'updated_at','firstname','lastname','email','birthday','country','region','city','height','weight',
                                             'eyes','hair','place_work','education','religion','marital_status','smoking','drinking','children','phone',
                                             'hobbies','about','relationships'));
         
@@ -131,12 +132,15 @@ class Model_Men extends ORM {
         $men = ORM::factory('Men')
                     ->join('users')
                     ->on('users.id','=','men.user_id')
-                    ->select(array('users.username','username'))
+                    ->select(
+                            array('users.username','username'),
+                            array('users.status','status')
+                            )
                     ->order_by('men.firstname', 'ASC');
         
-        if (isset($status) and $status<2){
+        if (isset($status) and $status<3){
             
-            $men->where('men.status', '=', $status);
+            $men->where('users.status', '=', $status);
             
         }
         
@@ -177,11 +181,13 @@ class Model_Men extends ORM {
         $men = ORM::factory('Men')
                     ->join('users')
                     ->on('users.id','=','men.user_id')
-                    ->select(array('users.username','username'));
+                    ->select(array('users.username','username'),
+                             array('users.status','status')
+                            );
         
-        if (isset($status) and $status<2) {
+        if (isset($status) and $status<3) {
             
-            $men->where('men.status', '=', $status);
+            $men->where('users.status', '=', $status);
             
         }
         
@@ -242,6 +248,90 @@ class Model_Men extends ORM {
                         ->send();
 
     }
+    
+    public static function get_online($time,$limit=NULL,$sort=NULL,$offset=NULL) {
+        
+        $men=ORM::factory('User')
+            ->join('men')
+            ->on('men.user_id','=','user.id')
+            ->select(
+                    array('men.firstname','firstname'),
+                    array('men.city','city'),
+                    array('men.country','country'),
+                    array('men.birthday','birthday'),
+                    array('men.weight','weight'),
+                    array('men.height','height')
+                )
+          /*  ->where('user.last_activity','>=',$time)*/
+            ->where('user.status','=','1')
+            ->join('user_photos','LEFT')
+            ->on('user_photos.user_id','=','user.id')
+            ->on('user_photos.default_image','=',DB::expr('1'))
+            ->select(
+                    array('user_photos.photo','photo'),
+                    array('user_photos.default_image','default_image')
+                    );
+            
+        
+        if (isset($sort)) {
+            
+            if($sort=='activity')  $men->order_by('user.last_activity','DESC');
+            if($sort=='age')  $men->order_by('men.birthday','DESC');
+            if($sort=='name')  $men->order_by('men.firstname','ASC');
+            if($sort=='city')  $men->order_by('men.city','ASC');
+            
+        } else {
+            $men->order_by( DB::expr('RAND()'));
+        }
+        
+        if (isset($limit)) {
+            $men->limit($limit);
+        }
+        
+        if (isset($offset)) {
+            
+            $men->offset($offset);
+
+        }
+                    
+        return $men->find_all(); 
+        
+    }
+    
+    public static function count_men_online($time) {
+         $men=ORM::factory('User')
+            ->join('men')
+            ->on('men.user_id','=','user.id')
+            ->where('user.status','=',1)
+            /* ->where('user.last_activity','>=',$time)*/;
+          return $men->count_all();
+    }
+    
+    public static function get_man_frontend($id) {
+        $girl=ORM::factory('Men')
+             ->join('users')
+             ->on('users.id','=','men.user_id')
+             ->where('user_id', '=', $id)
+             ->where('users.status','=','1')
+             ->find();
+        
+        return $girl;
+                
+    }
+    
+    public function get_weight() {
+        
+        $weight=ORM::factory('weight',$this->weight);
+        return $weight->get_weight_kg_ibs();
+    }
+    
+    public function get_height() {
+        
+        $height=ORM::factory('height',$this->height);
+        return $height->get_height_cm_feet();
+        
+    }
+    
 
 
 }

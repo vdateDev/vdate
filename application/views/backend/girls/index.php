@@ -19,9 +19,10 @@
                 <div class="filter_item">
                     <label class="middle"><strong>Status:</strong></label>
                     <select class="middle" name="status">
-                        <option value="2" <?php echo $status == 2 ? 'selected' : ''; ?>>All</option>
+                        <option value="3" <?php echo $status == 3 ? 'selected' : ''; ?>>All</option>
                         <option value="1" <?php echo $status == 1 ? 'selected' : ''; ?>>Published</option>
                         <option value="0" <?php echo $status == 0 ? 'selected' : ''; ?>>Unpublished</option>
+                        <option value="2" <?php echo $status == 2 ? 'selected' : ''; ?>>Blocked</option>
                     </select>
                 </div>  
                 
@@ -58,6 +59,8 @@
                             [
                               <?php if ($item->status==1):?>
                                 <span class="ps_coll active" >Published</span>
+                              <?php elseif ($item->status==2):?>
+                                <span class="ps_coll">Blocked</span>
                               <?php else:?>
                                 <span class="ps_coll">Unpublished</span>
                               <?php endif;?>

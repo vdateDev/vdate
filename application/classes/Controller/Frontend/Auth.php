@@ -2,16 +2,70 @@
 
 class Controller_Frontend_Auth extends Controller_Frontend {
     
-    public $template   = 'frontend/layoutMain';
+    public $template   = 'frontend/layout';
     
     public function before() {
         
         parent::before();
         
-        $this->widgets['MainMenu'] = Widget::load('MainMenu');        
+        if ($this->auth->logged_in()) {
+            
+            $this->widgets['ChatNow']=Widget::load('Chat_ChatNow');
+            
+        }
     }
     
     public function action_login() {
+        
+           
+        if ($this->request->method() === HTTP_Request::POST) {
+            
+            $post = $this->request->post();
+            $data = Arr::extract($post, array('email', 'password', 'remember'));
+            
+            $tmp_user = Model_User::get_user_by_login($data['email']);
+            
+            if ($tmp_user->loaded()) {
+                
+                 if ($tmp_user->status == 2 or $tmp_user->status==0)  {
+                    
+                    $this->set_site_message('blocked_account');
+                    
+                } else {
+                    
+                    $status = $this->auth->login($data['email'], $data['password'], isset($data['remember']));
+                    
+                    if ($status) {
+                        
+                        $this->set_site_message('sign_in_success');
+                        
+                    } else {
+                        
+                        $this->set_site_message('sign_in_error');
+                        
+                    }
+                }
+                
+            } else {
+                
+                $this->set_site_message('sign_in_error');
+                
+            }
+        }
+        
+        $this->redirect(strtolower(Route::url('default', array('language' => $this->language))));
+        
+    }
+    
+    public function action_logout() {
+        
+        if ($this->auth->logout(FALSE, TRUE)) {
+            
+            $this->set_site_message('logout');
+            
+            $this->redirect(strtolower(Route::url('default', array('language' => $this->language))));
+            
+        }
         
     }
     
@@ -77,8 +131,14 @@ class Controller_Frontend_Auth extends Controller_Frontend {
         $this->page_keywords = $page->page_keywords;
         $this->page_title = $page->page_title;
         
+        $online_time_diff = Kohana::$config->load('users')->get('online_diff_time');
+        $time=time()-$online_time_diff;
+        $limit = Kohana::$config->load('girls')->get('count_girls_registration_form');
+        $girls=  Model_Girls::get_online($time, $limit);
+        
         $this->template->content= View::factory('frontend/auth/registration')
                                         ->bind('content', $content)
+                                        ->bind('girls',$girls)
                                         ->bind('errors', $errors)
                                         ->bind('captcha',$captcha)
                                         ->bind('data',$post)

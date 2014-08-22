@@ -67,12 +67,17 @@ class Model_Photos extends ORM {
             if ($im->width < $im->height) {
                 
                 $master = Image::HEIGHT;
-                
+               
             }
             
-            $im->resize($settings['small_image_width'], $settings['small_image_height'], $master)
-              ->crop($settings['small_image_width'], $settings['small_image_height'])
-              ->save($dir.'/small/'.$filename);
+            $im->resize($settings['tiny_image_width'], $settings['tiny_image_height'], $master)
+              ->crop($settings['tiny_image_width'], $settings['tiny_image_height'])
+              ->save($dir.'/tiny/'.$filename);
+            
+            Image::factory($file)
+                ->resize($settings['small_image_width'], $settings['small_image_height'], $master)
+                ->crop($settings['small_image_width'], $settings['small_image_height'], $master)
+                ->save($dir.'/small/'.$filename);
             
             Image::factory($file)
                 ->resize($settings['medium_image_width'], $settings['medium_image_height'], $master)
@@ -82,11 +87,21 @@ class Model_Photos extends ORM {
             if ($im->width>$settings['big_image_width'] or $im->height>$settings['big_image_height']){
             
                 Image::factory($file)
-                    ->resize($settings['big_image_width'], $settings['big_image_height'], $master)
+                ->resize($settings['big_image_width'], $settings['big_image_height'], $master)
                 ->save($dir.'/big/'.$filename); 
             
             } else {
                  Image::factory($file)->save($dir.'/big/'.$filename); 
+            }
+            
+            if ($im->width>$settings['large_image_width'] or $im->height>$settings['large_image_height']){
+            
+                Image::factory($file)
+                    ->resize($settings['large_image_width'], $settings['large_image_height'], $master)
+                    ->save($dir.'/large/'.$filename); 
+            
+            } else {
+                 Image::factory($file)->save($dir.'/large/'.$filename); 
             }
             
             unlink($file);
@@ -106,6 +121,10 @@ class Model_Photos extends ORM {
             
         }
         
+        if (HTML::isset_img('upload/photos/large/'.$this->photo)) {
+            unlink(DOCROOT.'upload/photos/large/'.$this->photo);
+        }
+        
         if (HTML::isset_img('upload/photos/big/'.$this->photo)) {
             unlink(DOCROOT.'upload/photos/big/'.$this->photo);
         }
@@ -116,6 +135,10 @@ class Model_Photos extends ORM {
         
         if (HTML::isset_img('upload/photos/small/'.$this->photo)) {
             unlink(DOCROOT.'upload/photos/small/'.$this->photo);
+        }
+        
+        if (HTML::isset_img('upload/photos/tiny/'.$this->photo)) {
+            unlink(DOCROOT.'upload/photos/tiny/'.$this->photo);
         }
         
         $this->delete();

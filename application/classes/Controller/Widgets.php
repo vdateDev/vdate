@@ -6,6 +6,7 @@ class Controller_Widgets extends Controller_Template {
 
     protected $auth = NULL;
     protected $user = NULL;
+    protected $user_role = NULL;
     
     protected $language = NULL;
     protected $settings = NULL;
@@ -24,6 +25,7 @@ class Controller_Widgets extends Controller_Template {
         if ($this->auth->logged_in()) {
             
             $this->user = $this->auth->get_user();
+            $this->user_role = $this->user->get_user_role();
             
         }
         

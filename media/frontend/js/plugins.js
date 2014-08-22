@@ -373,6 +373,7 @@ var debug = function(f) {
 
 
 jQuery.fn.liValidForm = function(options) {
+    console.log(12345);
     // настройки по умолчанию
     var o = jQuery.extend({
         valid: 'valid', //valid element selector 

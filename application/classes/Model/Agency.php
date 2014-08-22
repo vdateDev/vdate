@@ -107,7 +107,7 @@ class Model_Agency extends ORM {
             
         }
         
-        $values = Arr::extract($data, array('status', 'created_at', 'name', 'director', 'contact_person','address', 'contact_phone','skype','email',
+        $values = Arr::extract($data, array('created_at', 'name', 'director', 'contact_person','address', 'contact_phone','skype','email',
                                             'working_time','signed_contract','certificate','passport','beneficiary_name','beneficiary_account','beneficiary_address',
                                             'beneficiary_phone','beneficiary_bank_name','aba_swift_national_id','beneficiary_bank_address','country','bank_name',
                                             'bank_address','bank_city','bank_country','bank_swift_code','comments','user_id'));
@@ -146,7 +146,7 @@ class Model_Agency extends ORM {
             
         }
         
-         $values = Arr::extract($data, array('status', 'updated_at', 'name', 'director', 'contact_person','address', 'contact_phone','skype','email',
+         $values = Arr::extract($data, array( 'updated_at', 'name', 'director', 'contact_person','address', 'contact_phone','skype','email',
                                             'working_time','signed_contract','certificate','passport','beneficiary_name','beneficiary_account','beneficiary_address',
                                             'beneficiary_phone','beneficiary_bank_name','aba_swift_national_id','beneficiary_bank_address','country','bank_name',
                                             'bank_address','bank_city','bank_country','bank_swift_code','comments'));
@@ -285,6 +285,9 @@ class Model_Agency extends ORM {
     public static function get_agency_backend($limit = NULL, $offset = NULL) {
         
         $agency = ORM::factory('Agency')
+                    ->join('users')
+                    ->on('users.id','=','agency.user_id')
+                    ->select(array('users.status','status'))
                     ->order_by('name', 'ASC');
         
         if (isset($limit)) {
@@ -307,7 +310,9 @@ class Model_Agency extends ORM {
     public static function get_agency_frontend($limit = NULL, $offset = NULL) {
         
         $agency = ORM::factory('Agency')
-                    ->where('status', '=', 1)
+                    ->join('users')
+                    ->on('users.id','=','agency.user_id')
+                    ->where('users.status', '=', 1)
                     ->order_by('name', 'ASC');
         
         if (isset($limit)) {

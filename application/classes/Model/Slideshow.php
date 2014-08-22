@@ -4,6 +4,13 @@ class Model_SlideShow extends ORM {
     
     protected $_table_name = 'slideshow';
     
+    protected $_has_many = array(
+        'languages' => array(
+            'model' => 'SlideshowLanguage',
+            'foreign_key' => 'slide_id',
+        ),
+    );
+    
     public function rules() {
         
         return array(
@@ -34,7 +41,7 @@ class Model_SlideShow extends ORM {
         );
     }
     
-    public function add_slide($data, $file) {
+    public function add_slide($data, $file,$languages) {
         
         if ($this->loaded()) {
             
@@ -52,11 +59,17 @@ class Model_SlideShow extends ORM {
         $this->values($values);
         $this->save();
         
+        foreach($languages AS $lang) {
+         
+            $this->languages->add_language($this->id, $lang->key, $data[$lang->key]);
+            
+        }
+        
         return $this;
         
     }
     
-    public function edit_slide($data, $file) {
+    public function edit_slide($data, $file,$languages) {
         
         if (!$this->loaded()) {
             
@@ -72,6 +85,14 @@ class Model_SlideShow extends ORM {
         }
         $this->values($values);
         $this->update();
+        
+        $letters_languages = $this->languages->find_all();
+        
+        foreach ($letters_languages AS $letter_lang) {
+            
+            $letter_lang->edit_language($data[$letter_lang->language]);
+            
+        }
         
         
         return $this;
@@ -154,9 +175,13 @@ class Model_SlideShow extends ORM {
         return $slides->find_all();
     }
     
-    public static function get_frontend_slides($limit = NULL) {
+    public static function get_frontend_slides($lang,$limit = NULL) {
         
         $slides = self::factory('Slideshow')
+                    ->join('Slideshow_languages')
+                    ->on('slideshow.id','=','slideshow_languages.slide_id')
+                    ->select(array('slideshow_languages.text','text'))
+                    ->where('slideshow_languages.language','=',$lang)
                     ->where('status', '=', 1)
                     ->order_by('sort', 'ASC');
         

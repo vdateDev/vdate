@@ -228,7 +228,7 @@ Route::set('backend_sprav', '<directory>/<controller>/<category>/<action>(/<id>)
  */
 Route::set('ajax', 'request/<language>/<controller>/<action>')
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',            
         ));
 
@@ -239,7 +239,7 @@ Route::set('search', '<language>/<controller>(/<action>(/page-<page>))',
             'page'          => '[0-9]*',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Search',            
             'action'        => 'index',
@@ -264,7 +264,7 @@ Route::set('users', '<language>/<controller>/<action>/<url>-u<id>',
             'id'            => '[0-9]*',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Users',            
         ));
@@ -297,7 +297,7 @@ Route::set('actual', '<language>/actual(/page-<page>)',
             'id'            => '[0-9]*',            
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Actual',
             'action'        => 'index',
@@ -318,7 +318,7 @@ Route::set('news', '<language>/news(/page-<page>)',
             'page'          => '[0-9]*',
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'News',
             'action'        => 'index'
@@ -341,15 +341,19 @@ Route::set('new_users', '<language>/<controller>/<action>(/page-<page>)',
             'page'          => '[0-9]*'
         ))
         ->defaults(array(
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Users',
             'action'        => 'new'
         ));
 
-Route::set('default', '(<language>(/<controller>(/<action>(/<id>))))')
+Route::set('default', '(<language>(/<controller>(/<action>(/<id>)(/page-<page>))))',
+        array(
+            'page'          => '[0-9]*',
+            'id'            => '[0-9]*'
+        ))
 	->defaults(array(       
-            'language'      => 'ru',
+            'language'      => 'en',
             'directory'     => 'Frontend',
             'controller'    => 'Main',
             'action'        => 'index',

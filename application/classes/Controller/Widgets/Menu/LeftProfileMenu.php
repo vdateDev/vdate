@@ -6,9 +6,12 @@ class Controller_Widgets_Menu_LeftProfileMenu extends Controller_Widgets {
 
     public function action_index() {
         
-        $pages = ORM::factory('Pages')->getPages();
+        $controller = strtolower(Request::initial()->controller());
+        $action = strtolower(Request::initial()->action());
         
-        $this->template->bind('pages', $pages)
-                       ->bind('language', $this->language);
+        $this->template->bind('role', $this->user_role)
+                       ->bind('language', $this->language)
+                       ->bind('controller',$controller)
+                       ->bind('action',$action);
     }
 }

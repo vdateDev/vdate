@@ -2,8 +2,8 @@
 
 return array (
     
-    'image_width'       => '844',
-    'image_height'      => '350',
+    'image_width'       => '1140',
+    'image_height'      => '360',
     
     'backend_per_page'  => '20',
 );

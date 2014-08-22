@@ -70,6 +70,18 @@
                 </li>
                 <?php endif; ?>
                 
+                <?php if (HTML::access('slideshow', $access)): ?>
+                <li <?php if ($controller == 'slideshow') echo 'class="cur"';?>>
+                    <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'slideshow'))); ?>">Slideshow</a>
+                    <?php if($controller == 'slideshow'):?>
+                    <ul>                        
+                        <li <?php if ($action == 'index') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'slideshow'))); ?>">All images<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
+                        <li <?php if ($action == 'add') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'slideshow', 'action' => 'add'))); ?>">Add image<img src="/media/backend/pic/m_ic_add.png" class="m_ic"></a></li>
+                    </ul>
+                    <?php endif; ?>
+                </li>
+                <?php endif; ?>
+                
                 <?php if (HTML::access('giftgroups', $access)): ?>
                 <li <?php if ($controller == 'giftgroups') echo 'class="cur"';?>>
                     <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'giftgroups'))); ?>">Gift Categories</a>

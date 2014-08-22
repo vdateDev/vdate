@@ -45,9 +45,9 @@ class Model_User extends Model_Auth_User {
             
         }
      
-        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm','role'));
+        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm','role', 'status'));
         
-        $this->create_user($values, array('username', 'password', 'email'));
+        $this->create_user($values, array('username', 'password', 'email', 'status'));
         $role = ORM::factory('Role')->where('name', '=', 'login')->find();
         $roles = array();
         $roles[] = $role->id;
@@ -65,17 +65,17 @@ class Model_User extends Model_Auth_User {
             
         }
       
-        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'role'));
+        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'role','status'));
         
         if (empty($values['passowrd'])) {
             
             unset($values['passowrd']);
             unset($values['password_confirm']);
-            $this->update_user($values, array('username', 'email'));        
+            $this->update_user($values, array('username', 'email','status'));        
             
         } else {
             
-            $this->update_user($values, array('username', 'password', 'email'));        
+            $this->update_user($values, array('username', 'password', 'email','status'));        
             
         }
         
@@ -112,10 +112,10 @@ class Model_User extends Model_Auth_User {
             
         }
         
-        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'admin', 'role'));
+        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'admin', 'role','status'));
         $values['admin'] = 1;
         
-        $this->create_user($values, array('username', 'password', 'email', 'admin'));
+        $this->create_user($values, array('username', 'password', 'email', 'admin','status'));
         $role = ORM::factory('Role')->where('name', '=', 'login')->find();
         $roles = array();
         $roles[] = $role->id;
@@ -133,18 +133,18 @@ class Model_User extends Model_Auth_User {
             
         }
         
-        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'admin', 'role'));
+        $values = Arr::extract($data, array('username', 'password', 'email', 'password_confirm', 'admin', 'role','status'));
         $values['admin'] = 1;
         
         if (empty($values['passowrd'])) {
             
             unset($values['passowrd']);
             unset($values['password_confirm']);
-            $this->update_user($values, array('username', 'email', 'admin'));        
+            $this->update_user($values, array('username', 'email', 'admin','status'));        
             
         } else {
             
-            $this->update_user($values, array('username', 'password', 'email', 'admin'));        
+            $this->update_user($values, array('username', 'password', 'email', 'admin','status'));        
             
         }
         
@@ -175,6 +175,67 @@ class Model_User extends Model_Auth_User {
         return $role;
         
     }
+    
+    public function  get_age(){
+        
+        $age=floor((time()-$this->birthday)/(60*60*24*365.25));
+        return $age;
+        
+    }
+    
+    public function is_online() {
+        
+        $diff_time = Kohana::$config->load('users')->get('online_diff_time');
+        
+        if ($this->last_activity>=(time()-$diff_time))  return TRUE;
+        else return FALSE;
+        
+    }
+    
+    public static function get_user_by_login($login, $admin = FALSE) {
+        
+        $admin = $admin ? 1 : 0;
+        
+        return self::factory('User')
+                ->where('admin', '=', $admin)                
+                ->and_where_open()
+                    ->where('username', '=', $login)
+                    ->or_where('email', '=', $login)
+                ->and_where_close()
+                ->find();
+        return 1;
+    }
+    
+    
+    public function get_user_role() {
+        
+        if (!$this->loaded()) {
+            
+            return;
+            
+        }
+        
+        $login = ORM::factory('Role')->where('name', '=', 'login')->find();
+        $role = $this->roles->where('id', '!=', $login->id)->find();
+        
+        return $role;
+        
+    }
+    
+    public function get_weight() {
+        
+        $weight=ORM::factory('weight',$this->weight);
+        return $weight->get_weight_kg_ibs();
+    }
+    
+    public function get_height() {
+        
+        $height=ORM::factory('height',$this->height);
+        return $height->get_height_cm_feet();
+        
+    }
+    
+    
     
     
     

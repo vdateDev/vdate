@@ -385,3 +385,629 @@
 2014-08-19 13:00:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
 2014-08-19 13:00:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-08-19 15:25:23 --- CRITICAL: ErrorException [ 1 ]: Maximum function nesting level of '100' reached, aborting! ~ MODPATH\database\classes\Kohana\Database.php [ 590 ] in file:line
+2014-08-19 15:25:23 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:36:55 --- CRITICAL: ErrorException [ 1 ]: Maximum function nesting level of '100' reached, aborting! ~ MODPATH\database\classes\Kohana\Database.php [ 590 ] in file:line
+2014-08-19 15:36:55 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:38:27 --- CRITICAL: ErrorException [ 1 ]: Maximum function nesting level of '100' reached, aborting! ~ MODPATH\database\classes\Kohana\Database.php [ 590 ] in file:line
+2014-08-19 15:38:27 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:30 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:30 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:31 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:31 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:31 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:31 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:31 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:31 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:31 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:31 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:32 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:32 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:33 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:33 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:33 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:33 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:33 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:33 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:33 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:33 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:34 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:34 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:35 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:35 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:37 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:37 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:38 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:38 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:39 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:39 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:40 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:40 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:44 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:44 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:44 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:44 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:44 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:44 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:45 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:46 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:46 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:47 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:47 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:47 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:47 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:47 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:47 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:44:49 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:44:49 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:51 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:51 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:52 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:52 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:52 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:52 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:52 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:52 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:45:52 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:45:52 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:47:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:47:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:47:48 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:47:48 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:47:49 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:47:49 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:47:49 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:47:49 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:48:08 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:48:08 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:48:09 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:48:09 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:48:09 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:48:09 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:48:21 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:48:21 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:48:22 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:48:22 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:53:32 --- CRITICAL: ErrorException [ 8 ]: Undefined index: Lang ~ APPPATH\views\frontend\layoutMain.php [ 57 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:57
+2014-08-19 15:53:32 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(57): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 57, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(69): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:57
+2014-08-19 15:58:47 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:58:47 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:58:52 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:58:52 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:59:10 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:59:10 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:59:12 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:59:12 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:59:13 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:59:13 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:59:14 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:59:14 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 15:59:16 --- CRITICAL: ErrorException [ 1 ]: Call to a member function controller() on a non-object ~ APPPATH\classes\Widget.php [ 53 ] in file:line
+2014-08-19 15:59:16 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 16:19:34 --- CRITICAL: Kohana_Exception [ 0 ]: Required route parameter not passed: action ~ SYSPATH\classes\Kohana\Route.php [ 572 ] in Z:\home\vdate\www\system\classes\Kohana\Route.php:581
+2014-08-19 16:19:34 --- DEBUG: #0 Z:\home\vdate\www\system\classes\Kohana\Route.php(581): {closure}('<language>/<act...', true)
+#1 Z:\home\vdate\www\system\classes\Kohana\Route.php(221): Kohana_Route->uri(Array)
+#2 Z:\home\vdate\www\application\views\widgets\Auth.php(4): Kohana_Route::url('auth', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#4 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#5 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Kohana_Controller_Template->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Auth))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#12 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#13 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(14): Widget::load('Auth')
+#14 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#15 [internal function]: Kohana_Controller->execute()
+#16 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#17 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#18 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#19 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#20 {main} in Z:\home\vdate\www\system\classes\Kohana\Route.php:581
+2014-08-19 16:31:18 --- CRITICAL: ErrorException [ 1 ]: Call to undefined function strtolow() ~ APPPATH\views\frontend\layoutMain.php [ 40 ] in file:line
+2014-08-19 16:31:18 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 16:32:03 --- CRITICAL: ErrorException [ 8 ]: Undefined variable: language ~ APPPATH\views\frontend\layoutMain.php [ 40 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:40
+2014-08-19 16:32:03 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(40): Kohana_Core::error_handler(8, 'Undefined varia...', 'Z:\home\vdate\w...', 40, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(69): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:40
+2014-08-19 16:35:27 --- CRITICAL: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\Controller\Frontend.php [ 66 ] in Z:\home\vdate\www\application\classes\Controller\Frontend.php:66
+2014-08-19 16:35:27 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Controller\Frontend.php(66): Kohana_Core::error_handler(2048, 'Creating defaul...', 'Z:\home\vdate\w...', 66, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\vdate\www\application\classes\Controller\Frontend.php:66
+2014-08-19 16:35:59 --- CRITICAL: ErrorException [ 2048 ]: Creating default object from empty value ~ APPPATH\classes\Controller\Frontend.php [ 66 ] in Z:\home\vdate\www\application\classes\Controller\Frontend.php:66
+2014-08-19 16:35:59 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Controller\Frontend.php(66): Kohana_Core::error_handler(2048, 'Creating defaul...', 'Z:\home\vdate\w...', 66, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\vdate\www\application\classes\Controller\Frontend.php:66
+2014-08-19 16:45:16 --- CRITICAL: ErrorException [ 1 ]: Maximum function nesting level of '100' reached, aborting! ~ MODPATH\database\classes\Kohana\Database.php [ 590 ] in file:line
+2014-08-19 16:45:16 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 16:53:25 --- CRITICAL: ErrorException [ 8 ]: Undefined index: SliderMainPage ~ APPPATH\views\frontend\layoutMain.php [ 53 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:53
+2014-08-19 16:53:25 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(53): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 53, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:53
+2014-08-19 17:00:41 --- CRITICAL: ErrorException [ 1 ]: Call to undefined method Model_Pages::getPagesBottom() ~ APPPATH\classes\Controller\Widgets\Menu\BottomMenu.php [ 9 ] in file:line
+2014-08-19 17:00:41 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-08-19 17:00:54 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Model_Pages::getPagesBottom(), called in Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php on line 9 and defined ~ APPPATH\classes\Model\Pages.php [ 104 ] in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:00:54 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\Pages.php(104): Kohana_Core::error_handler(2, 'Missing argumen...', 'Z:\home\vdate\w...', 104, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php(9): Model_Pages::getPagesBottom()
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Widgets_Menu_BottomMenu->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Menu_BottomMenu))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#8 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#9 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(19): Widget::load('Menu_BottomMenu')
+#10 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#11 [internal function]: Kohana_Controller->execute()
+#12 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#13 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#16 {main} in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:00:54 --- CRITICAL: ErrorException [ 8 ]: Undefined index: BottomMenu ~ APPPATH\views\frontend\layoutMain.php [ 528 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:00:54 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(528): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 528, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:01:35 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Model_Pages::getPagesBottom(), called in Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php on line 9 and defined ~ APPPATH\classes\Model\Pages.php [ 104 ] in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:01:35 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\Pages.php(104): Kohana_Core::error_handler(2, 'Missing argumen...', 'Z:\home\vdate\w...', 104, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php(9): Model_Pages::getPagesBottom()
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Widgets_Menu_BottomMenu->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Menu_BottomMenu))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#8 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#9 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(19): Widget::load('Menu_BottomMenu')
+#10 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#11 [internal function]: Kohana_Controller->execute()
+#12 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#13 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#16 {main} in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:01:35 --- CRITICAL: ErrorException [ 8 ]: Undefined index: BottomMenu ~ APPPATH\views\frontend\layoutMain.php [ 528 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:01:35 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(528): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 528, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:01:37 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Model_Pages::getPagesBottom(), called in Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php on line 9 and defined ~ APPPATH\classes\Model\Pages.php [ 104 ] in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:01:37 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\Pages.php(104): Kohana_Core::error_handler(2, 'Missing argumen...', 'Z:\home\vdate\w...', 104, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php(9): Model_Pages::getPagesBottom()
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Widgets_Menu_BottomMenu->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Menu_BottomMenu))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#8 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#9 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(19): Widget::load('Menu_BottomMenu')
+#10 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#11 [internal function]: Kohana_Controller->execute()
+#12 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#13 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#16 {main} in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:01:37 --- CRITICAL: ErrorException [ 8 ]: Undefined index: BottomMenu ~ APPPATH\views\frontend\layoutMain.php [ 528 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:01:37 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(528): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 528, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:02:27 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Model_Pages::getPagesBottom(), called in Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php on line 9 and defined ~ APPPATH\classes\Model\Pages.php [ 104 ] in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:02:27 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\Pages.php(104): Kohana_Core::error_handler(2, 'Missing argumen...', 'Z:\home\vdate\w...', 104, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php(9): Model_Pages::getPagesBottom()
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Widgets_Menu_BottomMenu->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Menu_BottomMenu))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#8 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#9 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(19): Widget::load('Menu_BottomMenu')
+#10 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#11 [internal function]: Kohana_Controller->execute()
+#12 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#13 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#16 {main} in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:02:27 --- CRITICAL: ErrorException [ 8 ]: Undefined index: mm ~ APPPATH\views\frontend\layoutMain.php [ 528 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:02:27 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(528): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 528, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:03:00 --- CRITICAL: ErrorException [ 2 ]: Missing argument 1 for Model_Pages::getPagesBottom(), called in Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php on line 9 and defined ~ APPPATH\classes\Model\Pages.php [ 104 ] in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:03:00 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\Pages.php(104): Kohana_Core::error_handler(2, 'Missing argumen...', 'Z:\home\vdate\w...', 104, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Widgets\Menu\BottomMenu.php(9): Model_Pages::getPagesBottom()
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Widgets_Menu_BottomMenu->action_index()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Widgets_Menu_BottomMenu))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\application\classes\Widget.php(72): Kohana_Request->execute()
+#8 Z:\home\vdate\www\application\classes\Widget.php(33): Widget->render()
+#9 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(19): Widget::load('Menu_BottomMenu')
+#10 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#11 [internal function]: Kohana_Controller->execute()
+#12 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#13 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#14 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#15 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#16 {main} in Z:\home\vdate\www\application\classes\Model\Pages.php:104
+2014-08-19 17:03:00 --- CRITICAL: ErrorException [ 8 ]: Undefined index: BottomMenu ~ APPPATH\views\frontend\layoutMain.php [ 528 ] in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528
+2014-08-19 17:03:00 --- DEBUG: #0 Z:\home\vdate\www\application\views\frontend\layoutMain.php(528): Kohana_Core::error_handler(8, 'Undefined index...', 'Z:\home\vdate\w...', 528, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\View.php(61): include('Z:\home\vdate\w...')
+#2 Z:\home\vdate\www\system\classes\Kohana\View.php(348): Kohana_View::capture('Z:\home\vdate\w...', Array)
+#3 Z:\home\vdate\www\system\classes\Kohana\Controller\Template.php(44): Kohana_View->render()
+#4 Z:\home\vdate\www\application\classes\Controller\Base.php(49): Kohana_Controller_Template->after()
+#5 Z:\home\vdate\www\application\classes\Controller\Frontend.php(71): Controller_Base->after()
+#6 Z:\home\vdate\www\system\classes\Kohana\Controller.php(87): Controller_Frontend->after()
+#7 [internal function]: Kohana_Controller->execute()
+#8 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#9 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#10 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#11 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#12 {main} in Z:\home\vdate\www\application\views\frontend\layoutMain.php:528

@@ -40,6 +40,45 @@ $(document).ready(function() {
 
     $(window).load(function() {
 
+        // newPage 
+
+        if ($('.langSelect').length) {
+            $('.isHeader').on('click', '.langOpen', function(event) {
+                console.log(345);
+                event.preventDefault();
+                $(this).addClass('isOpen');
+            });
+            $('.isHeader').on('click', '.langOverlay', function(event) {
+                event.preventDefault();
+                $('.langOpen').removeClass('isOpen');
+            });
+        }
+
+        if ($('.sliderIndex').length) {
+            $('.sliderIndex ul').carouFredSel({
+                responsive: true,
+                auto: true,
+                scroll: {
+                    duration: 1000,
+                    pauseOnHover: true
+                }
+            });
+        }
+
+        if ($('.sliList').length) {
+            $('.sliList').each(function(index, el) {
+                var sliPar = $(this).children('.sliList_ini');
+                sliPar.children('ul').carouFredSel({
+                    auto: true,
+                    scroll: {
+                        pauseOnHover: true
+                    },
+                    prev: '.sliList_Prev' + index,
+                    next: '.sliList_Next' + index
+                });
+            });
+        }
+
         //console.log($.date());
 
         if ($('.isChat').length) {
@@ -150,12 +189,14 @@ $(document).ready(function() {
                     $('.' + v + '').show();
                     $('.' + z + ', .' + w + ', .' + t + '').css('left', '0px');
                     $('.' + y + '').addClass(opn);
+                    $('.langOpen').css('visibility', 'hidden');
                 });
                 $('.' + v + '').on('click', function(event) {
                     event.preventDefault();
                     $('.' + v + '').hide();
                     $('.' + z + ', .' + w + ', .' + t + '').css('left', '-40px');
                     $('.' + y + '').removeClass(opn);
+                    $('.langOpen').css('visibility', 'visible');
                 });
             }
         }
@@ -313,6 +354,30 @@ $(document).ready(function() {
             });
         }
 
-    });
+        /* ----------------*/
+
+        if ($(".buyCreditLength").length) {
+
+            $(".datepicker").datepicker({
+                onSelect: function(selectedDate) {}
+            });
+
+            $('.tNav').on('click', 'span', function(event) {
+                if ($(this).hasClass('curr')) {
+                    return false;
+                } else {
+                    tabsNew($(this));
+                }
+            });
+
+        }
+
+        function tabsNew(x) {
+            x.parent('.tNav').children('.curr').removeClass('curr');
+            x.addClass('curr');
+            x.parent('.tNav').next('.tConteiner').children('.curr').removeClass('curr').parent('.tConteiner').children('.' + x.attr('data-tab-nav')).addClass('curr');
+        }
+
+    }); // END WINDOW LOAD
 
 });

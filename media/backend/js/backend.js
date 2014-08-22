@@ -343,11 +343,11 @@ function page_slideshow() {
 			$("#dialog").dialog({
 				width:700,
 				buttons: {
-					'Да' : function () {
+					'Yes' : function () {
 						document.location=_this.attr('href');;
 						$(this).dialog( "close" ).dialog("destroy");
 					},
-					'Отмена': function() {
+					'Cancel': function() {
 						$(this).dialog( "close" ).dialog("destroy");
 					}
 				}

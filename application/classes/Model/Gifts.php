@@ -111,6 +111,9 @@ class Model_Gifts extends ORM {
                 
             }
             
+            if ($im->width<$settings['image_width']) $settings['image_width']=$im->width;
+            if ($im->height<$settings['image_height']) $settings['image_height']=$im->height;
+            
             $im->resize($settings['image_width'], $settings['image_height'], $master)
                ->crop($settings['image_width'], $settings['image_height'])
                ->save($dir.$filename);

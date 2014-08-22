@@ -1,12 +1,15 @@
 <div class="pb20"><?php echo $content; ?></div>
 <div class="regBlock clearFix">
         <div class="flr w40">
-                <p class="invt">Thousand of Ladies Online, waiting for you! Sign up &amp; enjoy!</p>
+                <p class="invt"><?php echo __('sign_up_and_enjoy');?></p>
                 <div class="sliderRegister">
                         <div class="beforeUlRegister">
                                 <ul>
+                                        <?php foreach ($girls as $item): ?>
                                         <li>
-                                                <img src="pic/images/photo01.jpg" alt="">
+                                                <?php if (HTML::isset_img('upload/photos/big/'.$item->photo)): ?>
+                                                <img src="<?php echo HTML::isset_img('upload/photos/big/'.$item->photo); ?>" alt="">
+                                                <?php endif; ?>
                                                 <div class="sliInf">
                                                         <div class="favOneOpt">
                                                                 <a href="#" class="oneChat"></a>
@@ -15,47 +18,14 @@
                                                                 <a href="#" class="oneDate"></a>
                                                                 <a href="#" class="oneFlirt"></a>
                                                         </div>
-                                                        <a href="#" class="sliName">Antonina</a>
-                                                        <span class="sliAdr">Nikolaev, Ukraine</span>
-                                                        <span class="sliID"><span>ID:</span> 0099887</span>
-                                                        <span class="sliAge"><span>Age:</span> 35</span>
-                                                        <a href="#" class="sliChat"><span>Live </span>Chat</a>
+                                                        <a href="#" class="sliName"><?php echo $item->firstname; ?></a>
+                                                        <span class="sliAdr"><?php echo $item->city; ?>, <?php echo $item->country; ?></span>
+                                                        <span class="sliID"><span>ID:</span><?php echo $item->id; ?></span>
+                                                        <span class="sliAge"><span><?php echo __('age'); ?>:</span> <?php echo $item->get_age(); ?></span>
+                                                        <a href="#" class="sliChat"><?php echo __('live_chat'); ?></a>
                                                 </div>
                                         </li>
-                                        <li>
-                                                <img src="pic/images/photo01.jpg" alt="">
-                                                <div class="sliInf">
-                                                        <div class="favOneOpt">
-                                                                <a href="#" class="oneChat"></a>
-                                                                <a href="#" class="oneMess"></a>
-                                                                <a href="#" class="oneFav"></a>
-                                                                <a href="#" class="oneDate"></a>
-                                                                <a href="#" class="oneFlirt"></a>
-                                                        </div>
-                                                        <a href="#" class="sliName">Vicrtoria</a>
-                                                        <span class="sliAdr">Nikolaev, Ukraine</span>
-                                                        <span class="sliID"><span>ID:</span> 0099887</span>
-                                                        <span class="sliAge"><span>Age:</span> 35</span>
-                                                        <a href="#" class="sliChat"><span>Live </span>Chat</a>
-                                                </div>
-                                        </li>
-                                        <li>
-                                                <img src="pic/images/photo01.jpg" alt="">
-                                                <div class="sliInf">
-                                                        <div class="favOneOpt">
-                                                                <a href="#" class="oneChat"></a>
-                                                                <a href="#" class="oneMess"></a>
-                                                                <a href="#" class="oneFav"></a>
-                                                                <a href="#" class="oneDate"></a>
-                                                                <a href="#" class="oneFlirt"></a>
-                                                        </div>
-                                                        <a href="#" class="sliName">Zlata</a>
-                                                        <span class="sliAdr">Nikolaev, Ukraine</span>
-                                                        <span class="sliID"><span>ID:</span> 0099887</span>
-                                                        <span class="sliAge"><span>Age:</span> 35</span>
-                                                        <a href="#" class="sliChat"><span>Live </span>Chat</a>
-                                                </div>
-                                        </li>
+                                        <?php endforeach; ?>
                                 </ul>
                                 <div class="sliderRegister_Prev slid_prev"></div>
                                 <div class="sliderRegister_Next slid_next"></div>
@@ -65,10 +35,6 @@
         <div class="fll w60">
                 <form class="form_settings registerform" method="post">
                         <div class="contentBlock_title tac"><?php echo __('join_the_secure_and_easy_way'); ?></div>
-                        <div class="tac">
-                                <a href="#" class="registerFromFacebook"><span><?php echo __('sign_in_fast_with_facebook'); ?></a>
-                                <p><?php echo __('or_create_an_account'); ?></p>
-                        </div>
                         <div class="settRow">
                                 <div class="fll">
                                         <span><?php echo __('your_name'); ?>:</span>
