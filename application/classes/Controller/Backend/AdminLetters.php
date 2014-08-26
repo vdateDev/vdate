@@ -55,6 +55,7 @@ class Controller_Backend_AdminLetters extends Controller_Backend {
     public function action_show() {
         $id=$this->request->param('id');
         $letter=  Model_AdminLetters::show_letter($id);
+        $user=  Model_User::get_profile($letter->user_id);
         
         if ($letter->type==2) {
             $letter->status=1;
@@ -62,7 +63,8 @@ class Controller_Backend_AdminLetters extends Controller_Backend {
         }
         
         $this->template->content = View::factory('backend/adminletters/show')
-                            ->bind('letter', $letter);
+                            ->bind('letter', $letter)
+                            ->bind('user',$user);
     }
     
 
@@ -88,8 +90,8 @@ class Controller_Backend_AdminLetters extends Controller_Backend {
     public function action_new() {
         
         $id=(int) $this->request->param('id');
-        $user=ORM::factory('User',$id);
-        $man=$user->men;
+
+        $user=  Model_User::get_profile($id);
         $letter=ORM::factory('AdminLetters');
         
         if ($this->request->method()== HTTP_Request::POST) {
@@ -103,7 +105,7 @@ class Controller_Backend_AdminLetters extends Controller_Backend {
         }
         
             $this->template->content = View::factory('backend/adminletters/new')
-                                    ->bind('user',$man)
+                                    ->bind('user',$user)
                                     ->bind('data', $post);
         
     }

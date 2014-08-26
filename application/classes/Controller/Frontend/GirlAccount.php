@@ -19,11 +19,20 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
     public function action_index() {
         
             $attention=  Model_Page::get_page_by_url('attention-for-girl-account', $this->language);
+            $cnt_favorites=  Model_Favorites::count_favorites($this->user->id);
+            $cnt_admires = Model_Favorites::count_admires($this->user->id);
+            $cnt_new_admires=  Model_Favorites::count_new_admires($this->user->id);
+            $cnt_matches=  Model_Favorites::count_matches($this->user->id);
+            
         
             $this->template->content= View::factory('frontend/girlaccount/profile')
                                ->bind('user',$this->user)
                                ->bind('attention',$attention)
-                               ->bind('language',$this->language);
+                               ->bind('language',$this->language)
+                               ->bind('cnt_favorites', $cnt_favorites)
+                               ->bind('cnt_admires',$cnt_admires)
+                               ->bind('cnt_new_admires',$cnt_new_admires)
+                               ->bind('cnt_matches',$cnt_matches);
         
     }
     
@@ -47,7 +56,7 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
                     
                     $this->set_site_message('success_password_change');
                     
-                    $this->redirect(strtolower(Route::url('default', array('language' => $this->language, 'controller' => 'account', 'action' => 'settings'))));
+                    $this->redirect(strtolower(Route::url('default', array('language' => $this->language, 'controller' => 'girlaccount', 'action' => 'settings'))));
                     
                 } else {
                     
@@ -104,6 +113,151 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
                                 ->bind('men',$men)
                                 ->bind('pagination',$pagination)
                                 ->bind('sort',$sort);
+        
+    }
+    
+     public function action_myFavorites() {
+         
+         if ($this->request->method()==HTTP_Request::POST) {
+             
+             $post=$this->request->post();
+             
+             if (isset($post['DeleteItem'])) {
+                 foreach ($post['DeleteItem'] as $key=>$val) {
+                     $favorite=ORM::factory('Favorites',$key);
+                     $favorite->delete();
+                 }
+                 
+                 $this->set_site_message('delete_man_from_favorites');
+             }
+         }
+        
+        $limit = Kohana::$config->load('men')->get('frontend_per_page');
+        $count=Model_Favorites::count_favorites($this->user->id);
+        
+        $pagination = Pagination::factory(array(
+            'items_per_page' => $limit,
+            'view' => 'frontend/pagination/floating',
+            'total_items' => $count,
+        ))->route_params(array(
+            'language' => $this->language,
+            'controller' => $this->controller,   
+            'action' => $this->action,
+        ));
+        
+        $get=$this->request->query();
+        
+        if (isset($get['sort'])) {
+            
+            $sort=$get['sort'];
+            
+        } else {
+            $sort='last';
+        }
+        
+        
+        $men=  Model_Favorites::get_girl_favorites($this->user->id, $limit, $sort, $pagination->offset);
+        
+        $id=$this->request->param('id');
+        if ($id>0) {
+            $new=  Model_Men::get_man_frontend($id);
+        }
+        
+        $this->template->content= View::factory('frontend/girlaccount/myfavorites')
+                       ->bind('language',$this->language)
+                       ->bind('men',$men)
+                       ->bind('pagination',$pagination)
+                       ->bind('sort',$sort)
+                       ->bind('count',$count)
+                       ->bind('new',$new);
+        
+    }
+    
+    public function action_delfavorite() {
+        
+        $id=$this->request->param('id');
+        
+        $favorite=ORM::factory('Favorites',$id);
+        $favorite->delete();
+        
+        $this->set_site_message('delete_man_from_favorites');
+        
+        $this->redirect(Route::url('default',array('language'=>$this->language,'controller'=>'girlaccount','action'=>'myfavorites')));
+        
+    }
+    
+    public function action_myAdmires() {
+        
+        Model_Favorites::upadte_new($this->user->id);
+        $limit = Kohana::$config->load('men')->get('frontend_per_page');
+        $count=Model_Favorites::count_admires($this->user->id);
+        
+        $pagination = Pagination::factory(array(
+            'items_per_page' => $limit,
+            'view' => 'frontend/pagination/floating',
+            'total_items' => $count,
+        ))->route_params(array(
+            'language' => $this->language,
+            'controller' => $this->controller,   
+            'action' => $this->action,
+        ));
+        
+        $get=$this->request->query();
+        
+        if (isset($get['sort'])) {
+            
+            $sort=$get['sort'];
+            
+        } else {
+            $sort='last';
+        }
+        
+        
+        $men=  Model_Favorites::get_girl_admires($this->user->id, $limit, $sort, $pagination->offset);
+        
+        $this->template->content= View::factory('frontend/girlaccount/myadmires')
+                       ->bind('language',$this->language)
+                       ->bind('men',$men)
+                       ->bind('pagination',$pagination)
+                       ->bind('sort',$sort)
+                       ->bind('count',$count);
+        
+    }
+    
+    public function action_myMatches() {
+        
+        $limit = Kohana::$config->load('men')->get('frontend_per_page');
+        $count=Model_Favorites::count_matches($this->user->id);
+        
+        $pagination = Pagination::factory(array(
+            'items_per_page' => $limit,
+            'view' => 'frontend/pagination/floating',
+            'total_items' => $count,
+        ))->route_params(array(
+            'language' => $this->language,
+            'controller' => $this->controller,   
+            'action' => $this->action,
+        ));
+        
+        $get=$this->request->query();
+        
+        if (isset($get['sort'])) {
+            
+            $sort=$get['sort'];
+            
+        } else {
+            $sort='last';
+        }
+        
+        
+        $men=  Model_Favorites::get_girl_matches($this->user->id, $limit, $sort, $pagination->offset);
+        
+        $this->template->content= View::factory('frontend/girlaccount/mymatches')
+                       ->bind('language',$this->language)
+                       ->bind('men',$men)
+                       ->bind('pagination',$pagination)
+                       ->bind('sort',$sort)
+                       ->bind('count',$count);
         
     }
     

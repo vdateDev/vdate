@@ -16,6 +16,14 @@ class Controller_Base extends Controller_Template {
 
     protected $content;
     protected $ajax;
+    
+    protected $orders_status=array( '0' => 'New',
+                                    '1' => 'In work',
+                                    '2' => 'Canceled by user',
+                                    '3' => 'Delivered',
+                );
+    
+    
 	
     public function before() {
         

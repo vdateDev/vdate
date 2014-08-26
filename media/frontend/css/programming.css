@@ -1,0 +1,55 @@
+.dialogues-list ul li {
+    display: block;
+    margin-bottom: 15px;
+    list-style: none;
+}
+.dialogues-list ul li span.num {
+    font-size: 15px;
+    font-weight: bold;
+}
+.dialogues-list ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #444;
+}
+.dialogues-list ul li a:hover {
+    text-decoration: underline;
+    color: black;
+}
+.dialog-container {
+    max-height: 790px;
+    overflow-y: auto;
+}
+.dialog-container ul li {
+    display: block;
+    margin-bottom: 15px;    
+    font-size: 14px;
+    list-style: none;
+}
+.dialog-container ul li span.from {
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+    color: white;
+}
+.dialog-container ul li span.from.sender {
+    background-color: red;
+}
+.dialog-container ul li span.from {    
+    background-color: blue;    
+}
+.dialog-container ul li span.message {
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+    max-width: 90%;
+    background-color: white;
+}
+.dialog-container ul li span.message span.time {
+    display: block;
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+}

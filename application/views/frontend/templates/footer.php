@@ -15,7 +15,7 @@
         </div>
 </div> <!-- .site_size -->
 </footer><!-- .footer -->
-
+<span style="display: none;" id="site-language"><?php echo $language; ?></span>
 <?php $message = $session->get('site_message'); ?>
 <span style="display: none;" data-type="<?php echo $message['type']; ?>" data-time="<?php echo $message['time'] * 1000; ?>" id="site-message"><?php echo $message['text']; ?></span>
 <?php $session->delete('site_message'); ?>

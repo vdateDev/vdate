@@ -46,24 +46,24 @@
                               <?php endif;?>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;">
                             [
                             <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'show', 'id' => $item->id))); ?>">Show</a>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;">
                             [
                             <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'new', 'id' => $item->user_id))); ?>" >Reply</a>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;"> 
                             [
                             <a class="ps_coll delete_this" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'delete', 'id' => $item->id))); ?>">Delete</a>
                             ]
                         </span>
                     </span>
                     <span class="name">
-                        <?php echo $item->firstname;?> <?php echo $item->lastname; ?>
+                        <?php $user=Model_User::get_profile($item->user_id); echo $user->firstname.' '.$user->lastname;  ?>
                         <br/>
                         <strong>Subject:</strong> <?php echo $item->subject; ?>
                     </span>

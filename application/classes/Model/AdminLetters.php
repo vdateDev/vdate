@@ -20,7 +20,7 @@ class Model_AdminLetters extends ORM {
         );
     }
     
-    //type: 1-from admin; 2 - from user
+    //type: 1-from admin; 2 - from user; 3 - authomatic letter
     public function add_letter($type,$user_id, $data) {
         
         if ($this->loaded()) {
@@ -57,12 +57,6 @@ class Model_AdminLetters extends ORM {
     
     public static function get_letters_type($type,$status=NULL,$limit = NULL, $offset = NULL) {
         $letters=self::factory('AdminLetters')
-                    ->join('men')
-                    ->on('men.user_id','=','adminletters.user_id')
-                    ->select(
-                        array('men.firstname','firstname'),
-                        array('men.lastname','lastname')
-                    )
                     ->where('type', '=', $type)
                     ->where('status_del_admin','=','0')
                     ->order_by('created_at','DESC');
@@ -91,12 +85,6 @@ class Model_AdminLetters extends ORM {
     public static function show_letter($id) {
         
         $letter=ORM::factory('AdminLetters')
-                    ->join('men')
-                    ->on('men.user_id','=','adminletters.user_id')
-                    ->select(
-                        array('men.firstname','firstname'),
-                        array('men.lastname','lastname')
-                    )
                     ->where('adminletters.id', '=', $id)
                     ->find();
         

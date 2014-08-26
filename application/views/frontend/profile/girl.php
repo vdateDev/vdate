@@ -11,7 +11,7 @@
                 </div><!-- .ladiesPhoto -->
                 <ul class="leftContentOptions">
                         <li><a href="#" class="lcoSM"><span><?php echo __('send_message'); ?></span></a></li>
-                        <li><a href="#" class="lcoSFG"><span><?php echo __('send_gifts_and_flowers'); ?></span></a></li>
+                        <li><a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'gifts','id'=>$girl->user_id))); ?>" class="lcoSFG"><span><?php echo __('send_gifts_and_flowers'); ?></span></a></li>
                         <li class="lco_available"><a href="#" class="lcoAFC"><span><?php echo __('available_for_chat'); ?></span></a></li>
                         <li class="lco_available"><a href="#" class="lcoCO"><span><?php echo __('camera_on'); ?></span></a></li>
                         <li><a href="#" class="lcoATF add_to_fav" data-id="<?php echo $girl->user_id; ?>"><span><?php echo __('add_to_favorites'); ?></span></a></li>

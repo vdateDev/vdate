@@ -21,10 +21,13 @@
 	<link rel="stylesheet" href="/media/frontend/css/video-js.css">
 	<link rel="stylesheet" href="/media/frontend/css/style.css">
 	<link rel="stylesheet" href="/media/frontend/css/responsive.css">
+        <link rel="stylesheet" href="/media/frontend/css/jquery-ui.css">    
+        <link rel="stylesheet" href="/media/frontend/css/programming.css">
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script src="/media/frontend/js/modernizr.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.9.0.min.js">\x3C/script>')</script>
+        <script src="/media/frontend/js/jquery-ui-1.10.1.min.js"></script>
 	<script src="/media/frontend/js/plugins.js"></script>
 	<script src="/media/frontend/js/video.js"></script>
 	<script src="/media/frontend/js/init.js"></script>

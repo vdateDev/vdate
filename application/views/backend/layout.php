@@ -106,6 +106,17 @@
                 </li>
                 <?php endif; ?>
                 
+                <?php if (HTML::access('ordergifts', $access)): ?>
+                <li <?php if ($controller == 'ordergifts') echo 'class="cur"';?>>
+                    <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'ordergifts'))); ?>">Orders of gifts</a>
+                    <?php if($controller == 'ordergifts'):?>
+                    <ul>                        
+                        <li <?php if ($action == 'index') echo 'class="cur"';?>><a href="<?php echo strtolower(Route::url('backend', array('controller' => 'ordergifts'))); ?>">All orders<img src="/media/backend/pic/m_ic_allPage.png" class="m_ic"></a></li>
+                    </ul>
+                    <?php endif; ?>
+                </li>
+                <?php endif; ?>
+                
                 <?php if (HTML::access('virtualgifts', $access)): ?>
                 <li <?php if ($controller == 'virtualgifts') echo 'class="cur"';?>>
                     <a href="<?php echo strtolower(Route::url('backend', array('controller' => 'virtualgifts'))); ?>">Virtual Gifts</a>

@@ -323,13 +323,13 @@ $(document).ready(function() {
         });
 
         if ($('.favSortBlock').length) {
-            $('.favSortDel').on('click', function(event) {
+           /* $('.favSortDel').on('click', function(event) {
                 event.preventDefault();
                 if ($('.favOneChk').length) {
                     $('.favOneChk').remove();
                     $('.favCHK').prop('checked', false);
                 }
-            });
+            });*/
             $('.favCHK').on('change', function(event) {
                 if ($(this).is(':checked')) {
                     $('.favOneDel').each(function(index, el) {

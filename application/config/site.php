@@ -6,6 +6,7 @@ return array (
     'site_name'     => 'vdate',
     'facebook'      => '',
     'twitter'       => '',
+    'cost_delivery' => '30',
 
     
 );

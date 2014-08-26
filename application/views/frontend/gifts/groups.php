@@ -10,7 +10,7 @@
                             <?php endif; ?>
                         </div>
                         <span class="presPrc"><span><?php echo $gift->cost; ?></span> <?php echo __('credits'); ?></span>
-                        <a href="#" class="presADD"><?php echo __('add'); ?></a>
+                        <a href="#" class="presADD" data-id="<?php echo $gift->id; ?>"><?php echo __('add'); ?></a>
                 </li>
                 <?php endforeach; ?>
         </ul>

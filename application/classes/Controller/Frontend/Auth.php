@@ -101,8 +101,8 @@ class Controller_Frontend_Auth extends Controller_Frontend {
                     $user->men->add_man($user->id,$post);
                     $user->men->send_letter_registration($user->men->firstname,$user->men->lastname,$user->email);
                     
-                   // $this->set_site_message('after_register');
-                    
+                    $this->set_site_message('after_register');
+
                     $this->redirect(strtolower(Route::url('default')));
                 
             } else {

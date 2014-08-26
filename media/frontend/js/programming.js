@@ -35,21 +35,90 @@ function checkForMessage(container) {
 $(document).ready(function() {
     
     checkForMessage($('#site-message'));
+    var language = $('#site-language').text();
+    
+    $('.delete_this').click(function(e) {
+        _div = $('#message_to_delete');
+        _this = $(this);
+        $('#dialog').attr('title',_div.attr('title')).html(_div.html());
+
+        $("#dialog").dialog({
+            width:700,
+            buttons: {
+                'Yes' : function () {
+                    document.location=_this.attr('href');;
+                    $(this).dialog( "close" ).dialog("destroy");
+                },
+                'Cancel': function() {
+                    $(this).dialog( "close" ).dialog("destroy");
+                }
+            }
+        });
+        return false;
+    });
+    
+    
+    /* add user to favorites */
     
     $('.add_to_fav').on('click', function() {
-        $.post('/ajax/en/profile/addtofavorite',
+        $.post('/request/'+language+'/profile/addtofavorite',
         {
-                id: $(this).attr('data-id'),
+                id: $(this).attr('data-id')
 
         },
         function(data){
-                if (data)
+                if (data.success)
                 {
-
+                    window.location.href = data.href;
+                } else {
+                    message({
+                        text: data.message['text'],
+                        type: data.message['type'],
+                        timeout: data.message['time'],
+                        callback: { 
+                            onClose: function() {
+                            }
+                        }
+                    });
                 }
         });
         return false; 
     })
+    
+    /*favorites group deleting */
+        $('.favSortDel').on('click', function(event) {
+            event.preventDefault();
+            if ($('.favOneChk').length) {
+                
+                    _div = $('#message_to_delete');
+                    _this = $(this);
+                    $('#dialog').attr('title',_div.attr('title')).html(_div.html());
+
+                    $("#dialog").dialog({
+                        width:700,
+                        buttons: {
+                            'Yes' : function () {
+                                delForm.submit();
+                                $(this).dialog( "close" ).dialog("destroy");
+                            },
+                            'Cancel': function() {
+                                $(this).dialog( "close" ).dialog("destroy");
+                            }
+                        }
+                    });
+                    return false;
+                
+               
+            }
+        });
+        
+    /*gifts and flowers */
+            /*add input to form*/
+            $('.contentBlock').on('click', '.presADD', function(event) {
+               var str ='<input type="hidden" name="items[]" value="'+$(this).attr('data-id')+'">';
+               $('.order').append(str);
+            });
+    
 
 });
 

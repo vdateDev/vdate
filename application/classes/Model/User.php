@@ -71,7 +71,7 @@ class Model_User extends Model_Auth_User {
             
             unset($values['passowrd']);
             unset($values['password_confirm']);
-            $this->update_user($values, array('username', 'email','status'));        
+            $this->update_user($values, array('username', 'email','status'));  
             
         } else {
             
@@ -233,6 +233,14 @@ class Model_User extends Model_Auth_User {
         $height=ORM::factory('height',$this->height);
         return $height->get_height_cm_feet();
         
+    }
+    
+    public static function get_profile($user_id) {
+        $user=self::factory('User',$user_id);
+        $role=$user->get_user_role();
+        if ($role->name=='man') $profile=$user->men;
+        if ($role->name=='girls') $profile=$user->girl;
+        return $profile;
     }
     
     

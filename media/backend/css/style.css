@@ -1116,3 +1116,5 @@ input[type='button'], button {
 .catalog-image:hover {
      box-shadow: 1px 1px 3px #6C6C6C;
 }
+
+.letter {background-color:#fff; width:500px; padding:5px;}

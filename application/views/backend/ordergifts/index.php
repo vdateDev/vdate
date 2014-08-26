@@ -1,5 +1,5 @@
 <div class="conteiner">
-    <h1>Admin Letters &rAarr; Outbox</h1>
+    <h1>Orders of virtual gifts and flowers</h1>
     
     <div class="filter_wrap">
         <div class="textcenter">
@@ -7,9 +7,11 @@
                 <div class="filter_item">
                     <label class="middle"><strong>Status:</strong></label>
                     <select class="middle" name="status">
-                        <option value="2" <?php echo $status == 2 ? 'selected' : ''; ?>>All</option>
-                        <option value="1" <?php echo $status == 1 ? 'selected' : ''; ?>>Read</option>
-                        <option value="0" <?php echo $status == 0 ? 'selected' : ''; ?>>New</option>
+                        <option value="4">All</option>
+                        <?php foreach ($arr_status as $key=>$val): ?>
+                            <option value="<?php echo $key; ?>" <?php if ($status==$key) echo 'selected'; ?>><?php echo $val; ?></option>
+                        <?php endforeach; ?>
+
                     </select>
                 </div>  
                 <button type="submit">Search</button>
@@ -24,12 +26,12 @@
                 <span class="coll_item">Status</span>
                 <span class="coll_item2">Actions</span>                
             </div>
-            <div class="name_page">Letters</div>
+            <div class="name_page">Orders</div>
         </div>
-        <?php if (sizeof($letters) > 0): ?>
+        <?php if (sizeof($orders) > 0): ?>
         <ul class="tree">
-            <?php foreach ($letters AS $item):?>
-                <li id="listItem_<?php echo $item->id;?>">
+            <?php foreach ($orders AS $item):?>
+                <li>
                 <span class="p_wr">
                     <span class="control_link">
                         <span class="coll_item">
@@ -39,43 +41,40 @@
                         </span>
                         <span class="coll_item">
                             [
-                              <?php if ($item->status==1):?>
-                                <span class="ps_coll active" >Read</span>
-                              <?php else:?>
-                                <span class="ps_coll">New</span>
-                              <?php endif;?>
+                                <span class="ps_coll" ><?php echo $arr_status[$item->status]; ?></span>
                             ]
                         </span>
                         <span class="coll_item">
                             [
-                            <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'show', 'id' => $item->id))); ?>">Show</a>
+                            <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'ordergifts', 'action' => 'edit', 'id' => $item->id))); ?>">Edit</a>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" > 
                             [
-                            <a class="ps_coll delete_this" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'delete', 'id' => $item->id))); ?>">Delete</a>
+                            <a class="ps_coll delete_this" href="<?php echo strtolower(Route::url('backend', array('controller' => 'ordergifts', 'action' => 'delete', 'id' => $item->id))); ?>">Delete</a>
                             ]
                         </span>
                     </span>
                     <span class="name">
-                        <?php $user=Model_User::get_profile($item->user_id); echo $user->firstname.' '.$user->lastname;  ?>
+                        Order # <?php echo $item->id; ?>
                         <br/>
-                        <strong>Subject:</strong> <?php echo $item->subject; ?>
+                        <strong>From:</strong> <?php echo $item->man_firstname.'(ID-'.$item->id_from.')'; ?>
+                        <strong>To:</strong> <?php echo $item->girl_firstname.'(ID-'.$item->id_to.')'; ?>
                     </span>
                 </span>
             </li>
             <?php endforeach; ?>
         </ul>
         <?php else: ?>
-            <div>There is no letters!</div>
+            <div>There is no orders!</div>
         <?php endif; ?>
     </div>
 </div>
 
 <?php echo $pagination; ?>
 
-<script type="text/javascript">page_adminletters();</script>
+<script type="text/javascript">page_orders();</script>
 <div id="dialog" style="display:none;"></div>
-<div id="message_to_delete" style="display:none;" title="Delete letter!">
+<div id="message_to_delete" style="display:none;" title="Delete order!">
     <h2 align="center">Are you sure?</h2>
 </div>

@@ -25,7 +25,6 @@
                         <a href="#" class="oneChat"></a>
                         <a href="#" class="oneMess"></a>
                         <a href="#" class="oneFav add_to_fav" data-id="<?php echo $item->id; ?>"></a>
-                        <a href="#" class="oneDate"></a>
                         <a href="#" class="oneFlirt"></a>
                 </div>
                 <div class="favOneInf">

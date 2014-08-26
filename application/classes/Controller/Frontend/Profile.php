@@ -29,7 +29,7 @@ class Controller_Frontend_Profile extends Controller_Frontend {
         $sprav=$sprav->as_array('id');
                 
         $this->template->content = View::factory('frontend/profile/girl')  
-                                    ->bind('lang',$this->language)
+                                    ->bind('language',$this->language)
                                     ->bind('girl', $girl)
                                     ->bind('photos', $photos)
                                     ->bind('def_photo',$def_photo)
@@ -61,7 +61,32 @@ class Controller_Frontend_Profile extends Controller_Frontend {
     
     public function action_addToFavorite() {
         
-        
+        if ($this->request->method() === HTTP_Request::POST) {
+            
+            $post = $this->request->post();
+            $id_favorit = Arr::get($post, 'id');
+
+            $favorite=ORM::factory('Favorites');
+            
+            if (!$favorite->is_favorite($id_favorit,$this->user->id)) {
+            
+                $favorite->add_favorit($this->user->id,$id_favorit);
+                if ($this->user_role->name=="man") 
+                {
+                    $href=strtolower(Route::url('default',array('language'=>$this->language,'controller'=>'manaccount', 'action'=> 'myfavorites', 'id'=>$id_favorit)));
+                } else {
+                    $href=strtolower(Route::url('default',array('language'=>$this->language,'controller'=>'girlaccount', 'action'=> 'myfavorites', 'id'=>$id_favorit)));
+                }
+
+                $this->ajax = json_encode(array('success' => TRUE,'href'=>$href));
+            
+            } else {
+                $message=Model_Info::get_info_by_key('user_in_favorites', $this->language)->as_array();
+                $this->ajax = json_encode(array('success' => FALSE, 'message'=>$message));
+                
+            }
+            
+        }
         
     }
     

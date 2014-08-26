@@ -11,9 +11,9 @@
                         <ul class="corrList">
                                 <li><a href="#" class="prf_message"><?php echo __('messages'); ?></a><span>136 <b>(13 new!)</b></span></li>
                                 <li><a href="#" class="prf_flirt"><?php echo __('flirts'); ?></a><span>0</span></li>
-                                <li><a href="#" class="prf_myadmire"><?php echo __('my_admires'); ?></a><span>154 <b>(3 new!)</b></span></li>
-                                <li><a href="#" class="prf_myfavorite"><?php echo __('my_favorites'); ?></a><span>20</span></li>
-                                <li><a href="#" class="prf_mymatch"><?php echo __('my_matches'); ?></a><span>15</span></li>
+                                <li><a href="<?php echo strtolower(Route::url('default', array('language'=>$language,'controller'=>'girlaccount','action'=>'myadmires'))); ?>" class="prf_myadmire"><?php echo __('my_admires'); ?></a><span><?php echo $cnt_admires; ?><?php if ($cnt_new_admires>0): ?><b>(<?php echo $cnt_new_admires; ?> new!)</b><?php endif; ?></span></li>
+                                <li><a href="<?php echo strtolower(Route::url('default', array('language'=>$language,'controller'=>'girlaccount','action'=>'myfavorites'))); ?>" class="prf_myfavorite"><?php echo __('my_favorites'); ?></a><span><?php echo $cnt_favorites; ?></span></li>
+                                <li><a href="<?php echo strtolower(Route::url('default', array('language'=>$language,'controller'=>'girlaccount','action'=>'mymatches'))); ?>" class="prf_mymatch"><?php echo __('my_matches'); ?></a><span><?php echo $cnt_matches; ?></span></li>
                                 <li><a href="#" class="prf_chatinvitations"><?php echo __('chat_invitations'); ?></a><span>3</span></li>
                                 <li><a href="#" class="prf_notifications"><?php echo __('notifications'); ?></a><span>2</span></li>
                                 <li><a href="#" class="prf_photolikes"><?php echo __('photo_likes'); ?></a><span>1354 <b>(23 new!)</b></span></li>

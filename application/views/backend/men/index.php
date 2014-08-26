@@ -61,17 +61,17 @@
                               <?php endif;?>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;">
                             [
                             <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'men', 'action' => 'edit', 'id' => $item->user_id))); ?>">Edit</a>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;">
                             [
                             <a class="ps_coll" href="<?php echo strtolower(Route::url('backend', array('controller' => 'adminletters', 'action' => 'new', 'id' => $item->user_id))); ?>">Write letter</a>
                             ]
                         </span>
-                        <span class="coll_item">
+                        <span class="coll_item" style="width:70px;">
                             [
                             <a class="ps_coll delete_this" href="<?php echo strtolower(Route::url('backend', array('controller' => 'men', 'action' => 'delete', 'id' => $item->user_id))); ?>">Delete</a>
                             ]

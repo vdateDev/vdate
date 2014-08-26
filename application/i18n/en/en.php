@@ -147,6 +147,31 @@ return array(
     'man_profile'                               => 'Man Profile' ,
     'send_letter'                               => 'Send Letter',
     
+    'there_is_no_women_in_favorites'            => 'There is no women in favorires!',
+    'there_is_no_women_online'                  => 'There is no women online',
+    'ladies_favorite_list'                      => 'Here are the Ladies you have added to your Contact List',
+    'ledies'                                    => 'Ledies',
+    'delete'                                    => 'Delete',
+    'has_been_added_to_favorites'               => 'has been added to your Favorites',
+    'click_chat_or_send_letter'                 => 'To get in touch click Chat Now or Send her a letter.',
+    'delete_favorite'                           => 'Delete favorite!',
+    'are_you_sure'                              => 'Are you sure?',
+    'men_favorite_list'                         => 'Here are the men you have added to your Contact List',
+    'men'                                       => 'Men',
+    'men_admire_list'                           => 'Here are the men who have added you to Favorite List',
+    'there_is_no_men_in_favorites'              => 'There is no men in favorires!',
+    'there_is_no_men_online'                    => 'There is no men online',
+    'men_matches_list'                          => 'Here are you matches',
+    'profile'                                   => 'Profile',
+    'your_email'                                => 'Your Email',
+    'country'                                   => 'Country',
+    'region'                                    => 'Region',
+    'phone_number'                              => 'Phone number',
+    'name_of_gift'                              => 'Name of gift',
+    'cost'                                      => 'Cost',
+    'delivery'                                  => 'Delivery',
+    'total_cost'                                => 'Total cost',
+    
     
 
 );
