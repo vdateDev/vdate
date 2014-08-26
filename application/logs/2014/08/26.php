@@ -274,3 +274,54 @@
 #6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #7 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
 #8 {main} in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:67
+2014-08-26 14:49:17 --- CRITICAL: ErrorException [ 8 ]: Indirect modification of overloaded property Model_OrderGifts::$delivery has no effect ~ APPPATH\classes\Model\OrderGifts.php [ 67 ] in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:67
+2014-08-26 14:49:17 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\OrderGifts.php(67): Kohana_Core::error_handler(8, 'Indirect modifi...', 'Z:\home\vdate\w...', 67, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Frontend\Gifts.php(44): Model_OrderGifts->letter_after_order('emailman1@email...', 'en')
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Frontend_Gifts->action_order()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Gifts))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:67
+2014-08-26 14:51:23 --- DEBUG: Email to emailman1@email.com with subject '=?UTF-8?B?dmRhdGUgLSBPcmRlciBnaWZ0cyBhbmQgZmxvd2Vycw==?=' accepted for delivery. in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:80
+2014-08-26 14:51:23 --- CRITICAL: ErrorException [ 8 ]: Indirect modification of overloaded property Model_OrderGifts::$delivery has no effect ~ APPPATH\classes\Model\OrderGifts.php [ 97 ] in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:97
+2014-08-26 14:51:23 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Model\OrderGifts.php(97): Kohana_Core::error_handler(8, 'Indirect modifi...', 'Z:\home\vdate\w...', 97, Array)
+#1 Z:\home\vdate\www\application\classes\Controller\Frontend\Gifts.php(44): Model_OrderGifts->letter_after_order('emailman1@email...', 'en')
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Frontend_Gifts->action_order()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Gifts))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:97
+2014-08-26 14:51:40 --- DEBUG: Email to emailman1@email.com with subject '=?UTF-8?B?dmRhdGUgLSBPcmRlciBnaWZ0cyBhbmQgZmxvd2Vycw==?=' accepted for delivery. in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:80
+2014-08-26 14:55:24 --- DEBUG: Email to emailman1@email.com with subject '=?UTF-8?B?dmRhdGUgLSBPcmRlciBnaWZ0cyBhbmQgZmxvd2Vycw==?=' accepted for delivery. in Z:\home\vdate\www\application\classes\Model\OrderGifts.php:80
+2014-08-26 15:11:23 --- CRITICAL: ErrorException [ 8 ]: Trying to get property of non-object ~ APPPATH\classes\Controller\Backend\OrderGifts.php [ 41 ] in Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php:41
+2014-08-26 15:11:23 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php(41): Kohana_Core::error_handler(8, 'Trying to get p...', 'Z:\home\vdate\w...', 41, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Backend_OrderGifts->action_edit()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Backend_OrderGifts))
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php:41
+2014-08-26 15:11:59 --- CRITICAL: ErrorException [ 8 ]: Trying to get property of non-object ~ APPPATH\classes\Controller\Backend\OrderGifts.php [ 41 ] in Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php:41
+2014-08-26 15:11:59 --- DEBUG: #0 Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php(41): Kohana_Core::error_handler(8, 'Trying to get p...', 'Z:\home\vdate\w...', 41, Array)
+#1 Z:\home\vdate\www\system\classes\Kohana\Controller.php(84): Controller_Backend_OrderGifts->action_edit()
+#2 [internal function]: Kohana_Controller->execute()
+#3 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Backend_OrderGifts))
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#6 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#7 {main} in Z:\home\vdate\www\application\classes\Controller\Backend\OrderGifts.php:41
+2014-08-26 16:19:16 --- CRITICAL: Kohana_Exception [ 0 ]: The page_title property does not exist in the Model_Page class ~ MODPATH\orm\classes\Kohana\ORM.php [ 687 ] in Z:\home\vdate\www\modules\orm\classes\Kohana\ORM.php:603
+2014-08-26 16:19:16 --- DEBUG: #0 Z:\home\vdate\www\modules\orm\classes\Kohana\ORM.php(603): Kohana_ORM->get('page_title')
+#1 Z:\home\vdate\www\application\classes\Controller\Frontend\Main.php(22): Kohana_ORM->__get('page_title')
+#2 Z:\home\vdate\www\system\classes\Kohana\Controller.php(69): Controller_Frontend_Main->before()
+#3 [internal function]: Kohana_Controller->execute()
+#4 Z:\home\vdate\www\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Frontend_Main))
+#5 Z:\home\vdate\www\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#6 Z:\home\vdate\www\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#7 Z:\home\vdate\www\index.php(118): Kohana_Request->execute()
+#8 {main} in Z:\home\vdate\www\modules\orm\classes\Kohana\ORM.php:603

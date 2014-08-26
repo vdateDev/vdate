@@ -18,7 +18,7 @@
                     </div>   
                     <div class="item_col">
                         <label class="title_1">Status:</label>                          
-                        <select name="role">
+                        <select name="status">
                             <?php foreach($arr_status AS $key=>$val): ?>
                                 <option value="<?php echo $key; ?>" <?php echo $key == $order->status ? 'selected' : ''; ?>><?php echo $val; ?></option>
                             <?php endforeach; ?>
@@ -28,6 +28,7 @@
        
                 <div class="item_f_wrap">                    
                     <table class="table1">
+                        <label class="title_1">List of gifts and flowers:</label>   
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
@@ -37,17 +38,17 @@
                         <tr>
                             <td><?php echo $item->gift_id; ?></td>
                             <td><?php echo $item->name; ?></td>
-                            <td><?php echo $item->cost; ?></td>
+                            <td><?php echo $item->cost; ?> Credits</td>
                         </tr>
                         <?php endforeach; ?>
                         <tr>
                             <td colspan="2">Delivery</td>
-                            <td><?php echo $order->delivery; ?></td>
+                            <td><?php echo $order->delivery; ?> Credits</td>
                         </tr>
                         
                         <tr>
-                            <td colspan="2">Total</td>
-                            <td><?php echo $total_cost;?></td>
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td><?php echo $total_cost;?> Credits</td>
                         </tr>
                     </table>
                 </div>

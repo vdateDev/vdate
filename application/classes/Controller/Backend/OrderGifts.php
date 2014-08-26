@@ -32,12 +32,16 @@ class Controller_Backend_OrderGifts extends Controller_Backend {
     public function action_edit() {
         $id=$this->request->param('id');
         
-        $order=  Model_OrderGifts::get_order($id);
-        $gifts=  Model_OrderItemGifts::get_gifts_of_order($order->id, 'en');
+ 
         
         if ($this->request->method()==HTTP_Request::POST) {
             $post=$this->request->post();
+            $ordergifts=ORM::factory('OrderGifts',$id);
+            $ordergifts=$ordergifts->edit_order($post);
         }
+        
+        $order=  Model_OrderGifts::get_order($id);
+        $gifts=  Model_OrderItemGifts::get_gifts_of_order($order->id, 'en');
         
         $total_cost=  Model_OrderGifts::get_total_cost($id);
         

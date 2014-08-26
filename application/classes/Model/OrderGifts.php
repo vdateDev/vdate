@@ -46,6 +46,21 @@ class Model_OrderGifts extends ORM {
         return $this;
     }
     
+    public function edit_order($data) {
+        
+        if (!$this->loaded()) {
+
+            return; 
+            
+        }
+        $values=array();
+        $values['status']=$data['status'];
+        $this->values($values);
+        $this->save();
+        
+        return $this;
+    }
+    
     public function letter_after_order($user_email,$language) {
         
         $settings = Kohana::$config->load('site');
@@ -64,7 +79,7 @@ class Model_OrderGifts extends ORM {
         $gifts=  Model_OrderItemGifts::get_gifts_of_order($this->id, $language);
         $data['order_content']=View::factory('frontend/gifts/letter_order')->bind('gifts', $gifts)
                                                                            ->bind('total_cost',$total_cost)
-                                                                           ->bind('delivery', $this->delivery);
+                                                                           ->set('delivery_cost', $this->delivery);
         $data['close_link']=Route::url('default',array('language'=>$language,'controller'=>'manaccount','action'=>'orders','id'=>$this->id));
         
         $message = str_replace($search, $data, $letter->text);
@@ -94,7 +109,7 @@ class Model_OrderGifts extends ORM {
         $gifts=  Model_OrderItemGifts::get_gifts_of_order($this->id, 'en');
         $data['order_content']=View::factory('frontend/gifts/letter_order')->bind('gifts', $gifts)
                                                                            ->bind('total_cost',$total_cost)
-                                                                           ->bind('delivery', $this->delivery);
+                                                                           ->set('delivery_cost', $this->delivery);
         
         $message = str_replace($search, $data, $letter->text);
         

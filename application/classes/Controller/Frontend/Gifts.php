@@ -41,6 +41,7 @@ class Controller_Frontend_Gifts extends Controller_Frontend {
            $total_cost=  Model_OrderGifts::get_total_cost($order->id);
            if ($total_cost<=$this->user->men->balance) {
                 $this->user->men->balance= $this->user->men->balance-$total_cost;
+                $this->user->men->update();
                 $order->letter_after_order($this->user->email,$this->language);
                 $this->set_site_message('order_gifts_flowers');
            } else {

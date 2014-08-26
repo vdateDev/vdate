@@ -9,12 +9,12 @@ class Controller_Backend_Slideshow extends Controller_Backend {
         $pagination = Pagination::factory(array(
             'items_per_page' => $limit,
             'view' => 'backend/pagination/basic',
-            'total_items' => ORM::factory('Slideshow')->count_all(),
+            'total_items' => ORM::factory('SlideShow')->count_all(),
         ))->route_params(array(
             'controller' => $this->controller,            
         ));
         
-        $slides = Model_Slideshow::get_backend_slides($limit, $pagination->offset);
+        $slides = Model_SlideShow::get_backend_slides($limit, $pagination->offset);
         
         $this->template->content = View::factory('backend/slideshow/index')
                                     ->bind('pagination', $pagination)
@@ -23,7 +23,7 @@ class Controller_Backend_Slideshow extends Controller_Backend {
     
     public function action_add() {
      
-        $mSlideshow = Model::factory('Slideshow');
+        $mSlideshow = Model::factory('SlideShow');
          
         $languages = Model_Language::get_languages_frontend();
         
@@ -58,7 +58,7 @@ class Controller_Backend_Slideshow extends Controller_Backend {
         
         $id = $this->request->param('id');
 
-        $slide = ORM::factory('Slideshow', $id);
+        $slide = ORM::factory('SlideShow', $id);
         
         $languages = Model_Language::get_languages_frontend();
         
@@ -118,7 +118,7 @@ class Controller_Backend_Slideshow extends Controller_Backend {
         
         $id = (int) $this->request->param('id');
         
-        $slide = ORM::factory('Slideshow', $id);
+        $slide = ORM::factory('SlideShow', $id);
         
         if ($slide->loaded()) {
             
@@ -141,7 +141,7 @@ class Controller_Backend_Slideshow extends Controller_Backend {
             
                 foreach ($list AS $key => $value) {
 
-                    $slide = ORM::factory('Slideshow', $value);
+                    $slide = ORM::factory('SlideShow', $value);
                     
                     if ($slide->loaded()) {
                         
@@ -167,7 +167,7 @@ class Controller_Backend_Slideshow extends Controller_Backend {
             
             if (!empty($id)) {
                 
-                $news = ORM::factory('Slideshow', $id);
+                $news = ORM::factory('SlideShow', $id);
                 
                 if ($news->loaded()) {
                     

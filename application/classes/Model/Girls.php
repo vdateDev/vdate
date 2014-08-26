@@ -516,13 +516,13 @@ class Model_Girls extends ORM {
     
     public function get_weight() {
         
-        $weight=ORM::factory('weight',$this->weight);
+        $weight=ORM::factory('Weight',$this->weight);
         return $weight->get_weight_kg_ibs();
     }
     
     public function get_height() {
         
-        $height=ORM::factory('height',$this->height);
+        $height=ORM::factory('Height',$this->height);
         return $height->get_height_cm_feet();
         
     }

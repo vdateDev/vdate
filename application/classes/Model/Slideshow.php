@@ -178,7 +178,7 @@ class Model_SlideShow extends ORM {
     public static function get_frontend_slides($lang,$limit = NULL) {
         
         $slides = self::factory('Slideshow')
-                    ->join('Slideshow_languages')
+                    ->join('slideshow_languages')
                     ->on('slideshow.id','=','slideshow_languages.slide_id')
                     ->select(array('slideshow_languages.text','text'))
                     ->where('slideshow_languages.language','=',$lang)
