@@ -527,5 +527,102 @@ class Model_Girls extends ORM {
         
     }
     
+	public function search($data) {
+        
+        $list = ORM::factory('Girls')
+                ->join('sprav_languages','LEFT OUTER')
+                ->on('sprav_languages.id','=','girls.drinking')
+                ->on('sprav_languages.id','=','girls.smoking')
+                ->on('sprav_languages.id','=','girls.marital_status')
+                ->on('sprav_languages.id','=','girls.religion')
+                ->join('weight','LEFT OUTER')
+                ->on('weight.id','=','girls.weight')
+                ->join('height','LEFT OUTER')
+                ->on('height.id','=','girls.height')
+                ->select(DB::expr("(year(now()) - year(DATE_FORMAT(FROM_UNIXTIME(girls.birthday),'%Y-%m-%d'))) as age"));
+        
+        if(isset($data['id'])) {
+            $list = $list->where('girls.id','=',$data['id']);
+        } else {
+            
+            if(isset($data['ageFrom'])) {
+                $list = $list->having('age','>=',$data['ageFrom']);
+            }
+            
+            if(isset($data['ageTo'])) {
+                $list = $list->having('age','<=',$data['ageTo']);
+            }
+            
+            if(isset($data['children'])) {
+                $list = $list->where('girls.children','=',$data['children']);
+            }
+            
+            if(isset($data['country'])) {
+                $list = $list->where('girls.country','=',$data['country']);
+            }
+            
+            if(isset($data['drinking'])) {
+                $list = $list->where('sprav_languages.text','=',$data['drinking']);
+            }
+            
+            if(isset($data['english'])) {
+                $list = $list->where('sprav_languages.text','=',$data['english']);
+            }
+            
+            if(isset($data['eyes'])) {
+                $list = $list->where('sprav_languages.text','=',$data['eyes']);
+            }
+            
+            if(isset($data['hair'])) {
+                $list = $list->where('sprav_languages.text','=',$data['hair']);
+            }
+            
+            if(isset($data['heightFrom'])) {
+                $list = $list->where('height.zna','>=',$data['heightFrom']);
+            }
+            
+            if(isset($data['heightTo'])) {
+                $list = $list->where('height.zna','<=',$data['heightTo']);
+            }
+            
+            if(isset($data['keywords'])) {
+                $keys = explode(',',$data['keywords']);
+                $list = $list->and_where_open();
+                
+                    foreach ($keys as $key) {
+                        $list = $list->or_where_open();
+                        $list = $list->where('girls.hobbies','LIKE',DB::expr('"%'.$key.'%"'));
+                        $list = $list->or_where('girls.about','LIKE',DB::expr('"%'.$key.'%"'));
+                        $list = $list->or_where('girls.relationships','LIKE',DB::expr('"%'.$key.'%"'));
+                        $list = $list->or_where_close();
+                    }
+                
+                $list = $list->and_where_close();
+            }
+            
+            if(isset($data['regions'])) {
+                $list = $list->where('girls.region','=',$data['regions']);
+            }
+            
+            if(isset($data['religions'])) {
+                $list = $list->where('sprav_languages.text','=',$data['religions']);
+            }
+            
+            if(isset($data['smoking'])) {
+                $list = $list->where('sprav_languages.text','=',$data['smoking']);
+            }
+            
+            if(isset($data['weigthFrom'])) {
+                $list = $list->where('weight.zna','>=',$data['weigthFrom']);
+            }
+            
+            if(isset($data['weigthTo'])) {
+                $list = $list->where('weight.zna','<=',$data['weigthTo']);
+            }
+        }
+       
+       
 
+        return $list->order_by('id','DESC')->find_all();
+    }
 }
