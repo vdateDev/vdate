@@ -171,6 +171,7 @@ return array(
     'cost'                                      => 'Cost',
     'delivery'                                  => 'Delivery',
     'total_cost'                                => 'Total cost',
+    'name_of_virtualgift'                       => 'Name of Virtual Gift',
     
     
 

@@ -16,7 +16,7 @@
                         <li class="lco_available"><a href="#" class="lcoCO"><span><?php echo __('camera_on'); ?></span></a></li>
                         <li><a href="#" class="lcoATF add_to_fav" data-id="<?php echo $girl->user_id; ?>"><span><?php echo __('add_to_favorites'); ?></span></a></li>
                         <li><a href="#" class="lcoSFF"><span><?php echo __('send_free_flirt'); ?></span></a></li>
-                        <li><a href="#" class="lcoSVG"><span><?php echo __('send_virtual_gifts'); ?></span></a></li>
+                        <li><a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'virtualgifts','id'=>$girl->user_id))); ?>" class="lcoSVG"><span><?php echo __('send_virtual_gifts'); ?></span></a></li>
                         <li><a href="#" class="lcoDT"><span><?php echo __('date_me'); ?></span></a></li>
                 </ul><!-- .leftContentOptions -->
                 <div class="clear"></div>

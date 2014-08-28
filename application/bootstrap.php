@@ -221,6 +221,63 @@ Route::set('backend_sprav', '<directory>/<controller>/<category>/<action>(/<id>)
             'action'        => 'index',
         ));
 
+/**
+ * Agency
+ */
+Route::set('agency_ajax', 'agency_ajax/<controller>/<action>')
+        ->defaults(array(
+            'directory'     => 'Agency'
+        ));
+
+Route::set('agency_auth', '<directory>/<action>', 
+        array(
+            'directory'     => 'agency',
+            'action'        => 'login|logout',
+        ))
+        ->defaults(array(
+            'directory'     => 'Agency',
+            'controller'    => 'Auth',
+            'action'        => 'login'
+        ));
+
+Route::set('agency_dialogue', '<directory>/<controller>/u-<uid>/d-<did>',
+        array(
+            'controller'    => 'dialogues',
+            'uid'           => '[0-9]*',
+            'did'           => '[0-9]*',
+        ))->defaults(array(
+            'directory'     => 'Agency',
+            'controller'    => 'Dialogues',
+            'action'        => 'index',
+        ));
+
+
+Route::set('agency', '<directory>(/<controller>(/<action>(/<id>)(/page-<page>)))',
+        array(
+            'directory'     => 'agency',
+            'page'          => '[0-9]*',
+            'id'            => '[0-9]*'
+        ))
+        ->defaults(array(
+            'directory'     => 'Agency',
+            'controller'    => 'Main',
+            'action'        => 'index',
+        ));
+
+Route::set('agency_sprav', '<directory>/<controller>/<category>/<action>(/<id>)',
+        array(
+            'directory'     => 'agency',
+            'controler'     => 'sprav',
+            'id'            => '[0-9]*'
+        ))
+        ->defaults(array(
+            'directory'     => 'Agency',
+            'controller'    =>  'Sprav',
+            'category'    => 'eyes',
+            'action'        => 'index',
+        ));
+
+
 
 
 /**

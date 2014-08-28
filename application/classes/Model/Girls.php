@@ -257,7 +257,7 @@ class Model_Girls extends ORM {
         
         $girls = ORM::factory('Girls')
                     ->join('agency','left')
-                    ->on('girls.agency_id', '=', 'agency.id')
+                    ->on('girls.agency_id', '=', 'agency.user_id')
                     ->select(
                             array('agency.name','agency_name')
                         )
@@ -526,7 +526,7 @@ class Model_Girls extends ORM {
         return $height->get_height_cm_feet();
         
     }
-    
+	
 	public function search($data) {
         
         $list = ORM::factory('Girls')
@@ -625,4 +625,6 @@ class Model_Girls extends ORM {
 
         return $list->order_by('id','DESC')->find_all();
     }
+    
+
 }

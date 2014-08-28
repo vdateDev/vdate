@@ -32,6 +32,8 @@
         <div class="order">
             <input type="hidden" name="girl" value="<?php echo $girl->user_id; ?>">
             <input type="hidden" name="delivery" value="<?php echo $delivery; ?>">
+            <div class="order_gifts">
+            </div>
         </div>
         <div class="contentBlock myCartFooter">
                 <p><?php echo __('your_order_a _gift_for'); ?> <a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'profile','action'=>'girl','id'=>$girl->user_id))); ?>"><?php echo $girl->firstname; ?></a> (ID:<span><?php echo $girl->user_id; ?></span>) <?php echo __('for'); ?> <b class="cpt">484</b> <?php echo __('credits'); ?>, <?php echo __('wich_will_be_delivered_in_3_days'); ?></p>

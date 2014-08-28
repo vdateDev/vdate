@@ -112,11 +112,15 @@ $(document).ready(function() {
             }
         });
         
-    /*gifts and flowers */
+    /*gifts and flowers, virtual gifts */
             /*add input to form*/
             $('.contentBlock').on('click', '.presADD', function(event) {
                var str ='<input type="hidden" name="items[]" value="'+$(this).attr('data-id')+'">';
-               $('.order').append(str);
+               $('.order_gifts').append(str);
+            });
+            
+            $('.contentBlock').on('click', '.clearCart', function(event) {
+                $('.order_gifts').html('');
             });
     
 

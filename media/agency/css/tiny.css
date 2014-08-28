@@ -1,0 +1,101 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, 
+big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, 
+time, mark, audio, video {  margin: 0;  padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block;}
+ol, ul {list-style: none;}
+b, strong {font-weight:bold;}
+em, i {  font-style:italic;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+input, textarea, button, select {outline: none}
+a,a:link, a:visited, a:hover{outline:none;}
+html,body { height:100%;  margin:0;  padding:0;}
+
+body{
+  color: #515253;
+  font: 13px/18px Arial, sans-serif;  
+  -webkit-backface-visibility:hidden;
+}
+
+a { text-decoration:underline; color: #366799;}
+a:hover { text-decoration:underline; color: #d70017;}
+::selection {
+  color: #fff;
+  background: #2597ff;
+  text-shadow: none;
+}
+
+h1 {
+  font: 36px/38px Georgia, Times, "Times New Roman", serif;
+  color: #E41A74;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font: 28px/30px Georgia, Times, "Times New Roman", serif;
+  color: #E41A74;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font: 24px/26px Georgia, Times, "Times New Roman", serif;
+  color: #E41A74;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font: 20px/22px Georgia, Times, "Times New Roman", serif;
+  color: #E41A74;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+ul, ol {
+  margin-bottom: 1em;
+}
+
+li {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+table {
+  width: 100%;
+  margin: 10px 0 18px;
+  max-width: 100%;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+table th, table td {
+  padding: 8px;
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+  text-align: left;
+  line-height: 18px;
+  vertical-align: top;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table thead th {
+  vertical-align: bottom;
+}

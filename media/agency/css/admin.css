@@ -1,0 +1,24 @@
+.login_form div {margin:0 auto; width:400px;}
+.login_form div p label {width:150px; font-weight:bold; color:#444; display:inline-block; text-align:right}
+.login_form div h1 {margin: 0 auto;
+display: inline-block;
+width: auto;
+text-align: center;
+width: 100%;}
+#commentForm.login_form #login_button{width:123px; }
+.login_form .contorl_edit{width:120px; border:none; margin-left:154px;}
+.error.red{ font-weight:bold; display:block;}
+.login_form .error{text-align:center;}
+.tree  .coll_item2, .coll_title .coll_item2 { display:inline-block; //display:inline; //zoom:1; width:220px; text-align:center; color:#fff;}
+.for_message_display td {border-top:1px solid #eee;border-bottom:1px solid #eee; padding:5px;}
+.for_message_display td.title {text-align:right; width:120px; font-weight:bold; vertical-align:central; padding-right:5px;}
+
+.pagination {margin: 5px 20px 0;padding: 5px 0 15px;font-weight: bold;font-size: 14px;text-align: center;clear: both;}
+.pagination a:link, .pagination a:visited {margin: 0 5px;padding: 2px 4px;color: #1D6696; text-decoration:none;}
+.pagination a:hover, .pagination a:active {background-color: #1D6696;color: white;}
+
+
+.sort_arrow img{height:20px; vertical-align:middle;}
+.feedback_icon {    background: url("/media/agency/pic/feedback_razdel.png") no-repeat scroll 50% 0 transparent;}
+.events_icon {    background: url("/media/agency/pic/events_razdel.png") no-repeat scroll 50% 0 transparent;}
+.preorder_icon {    background: url("/media/agency/pic/order-icon.png") no-repeat scroll 50% 0 transparent;}

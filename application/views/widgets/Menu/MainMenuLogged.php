@@ -6,7 +6,7 @@
                                 <li><a href="<?php echo strtolower(Route::url('news', array('language'=>$language))); ?>" <?php if ($controller=='news') echo 'class="curMenu"'; ?>><?php echo __('news'); ?></a></li>
                                 <li><a href="#"><?php echo __('inbox'); ?></a></li>
                                 <li><a href="#"><?php echo __('outbox'); ?></a></li>
-                                <li><a href="#" <?php if ($controller=='search') echo 'class="curMenu"'; ?>><?php echo __('search'); ?></a></li>
+                                <li><a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'search'))); ?>" <?php if ($controller=='search') echo 'class="curMenu"'; ?>><?php echo __('search'); ?></a></li>
                         </ul>
                 </div>
                 <div class="overBlock smV"></div>

@@ -8,7 +8,7 @@ class Controller_Backend_OrderGifts extends Controller_Backend {
         
         $get=$this->request->query();
         
-        if (!isset($get['status'])) $status=4; else   $status= Arr::get($get, 'status');
+        if (!isset($get['status'])) $status=5; else   $status= Arr::get($get, 'status');
         
         $pagination = Pagination::factory(array(
             'items_per_page' => $limit,
@@ -38,6 +38,36 @@ class Controller_Backend_OrderGifts extends Controller_Backend {
             $post=$this->request->post();
             $ordergifts=ORM::factory('OrderGifts',$id);
             $ordergifts=$ordergifts->edit_order($post);
+			
+		   if (isset($post['delete_image1'])) {
+                
+                $ordergifts->delete_image(1);
+                
+            } else if (isset($post['delete_image2'])) {
+                
+                $ordergifts->delete_image(2);
+            } else {
+            
+                $image1 = isset($_FILES['photo1']) ? $_FILES['photo1'] : NULL;
+                $image2 = isset($_FILES['photo2']) ? $_FILES['photo2'] : NULL;
+                $ordergifts=$ordergifts->edit_order($post,$image1,$image2);
+				
+				if (isset($post['deny'])) {
+					 $ordergifts->status=3;
+					 $ordergifts->update();
+				}
+				
+				if (isset($post['confirm'])) {
+					 $ordergifts->status=2;
+                                         $ordergifts->date_depature=time();
+					 $ordergifts->update();
+					 $ordergifts->send_photo_to_man();
+					 $this->session->set('backend_success_message', 'Photos sended to man!');
+				}
+                
+               
+            }
+			
         }
         
         $order=  Model_OrderGifts::get_order($id);

@@ -17,7 +17,7 @@
                                 <li><a href="#" class="prf_chatinvitations"><?php echo __('chat_invitations'); ?></a><span>3</span></li>
                                 <li><a href="#" class="prf_notifications"><?php echo __('notifications'); ?></a><span>2</span></li>
                                 <li><a href="#" class="prf_photolikes"><?php echo __('photo_likes'); ?></a><span>1354 <b>(23 new!)</b></span></li>
-                                <li><a href="#" class=""><?php echo __('virtual_gifts'); ?></a><span>10</span></li>
+                                <li><a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'girlaccount','action'=>'myvirtualgifts'))); ?>" class=""><?php echo __('virtual_gifts'); ?></a><span><?php echo $cnt_virtual_gifts; ?><?php if ($cnt_new_virtual_gifts>0): ?><b>(<?php echo $cnt_new_virtual_gifts; ?> new!)</b><?php endif; ?></span></li>
                         </ul>
                 </div>
         </div>

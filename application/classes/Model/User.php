@@ -238,8 +238,24 @@ class Model_User extends Model_Auth_User {
     public static function get_profile($user_id) {
         $user=self::factory('User',$user_id);
         $role=$user->get_user_role();
-        if ($role->name=='man') $profile=$user->men;
-        if ($role->name=='girls') $profile=$user->girl;
+        if ($role->name=='man') {
+           $profile=ORM::factory('Men')
+                   ->where('user_id','=',$user->id)
+                   ->join('users')
+                   ->on('users.id','=','men.user_id')
+                   ->select(array('users.user_language','user_language'))
+                   ->find();
+                        
+        }
+        if ($role->name=='girls') {
+           $profile=ORM::factory('Girls')
+                   ->where('user_id','=',$user->id)
+                   ->join('users')
+                   ->on('users.id','=','girls.user_id')
+                   ->select(array('users.user_language','user_language'))
+                   ->find();
+                        
+        }
         return $profile;
     }
     

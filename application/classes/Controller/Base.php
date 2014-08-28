@@ -18,9 +18,10 @@ class Controller_Base extends Controller_Template {
     protected $ajax;
     
     protected $orders_status=array( '0' => 'New',
-                                    '1' => 'In work',
-                                    '2' => 'Canceled by user',
-                                    '3' => 'Delivered',
+                                    '1' => 'Delivered',
+                                    '2' => 'Confirmed',
+                                    '3' => 'Denied',
+                                    '4' => 'Cancelled'
                 );
     
     

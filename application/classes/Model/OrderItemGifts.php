@@ -35,7 +35,7 @@ class Model_OrderItemGifts extends ORM {
         $gifts=ORM::factory('OrderItemGifts')
                 ->where('order_id', '=', $order_id)
                 ->join('gifts_languages')
-                ->on('gifts_languages.gift_id', '=', 'orderItemGifts.gift_id')
+                ->on('gifts_languages.gift_id', '=', 'OrderItemGifts.gift_id')
                 ->select(array('gifts_languages.name','name'))
                 ->where('gifts_languages.language', '=', $language)
                 ->find_all();

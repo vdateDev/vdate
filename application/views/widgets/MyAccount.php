@@ -19,7 +19,7 @@
         <div class="tmOpen"></div>
         <div class="tmUp"><?php echo __('hi'); ?>, <span class="usrName"><?php echo $user->men->firstname; ?></span>!</div>
         <div class="tmBt">
-                <a href="#" class="crdBuy"><?php echo __('buy_credits'); ?> <span class="crdCnt"><?php echo (int) $user->men->balance; ?></span></a>
+                <a href="<?php echo strtolower(Route::url('default',array('language'=>$language,'controller'=>'credits'))); ?>" class="crdBuy"><?php echo __('buy_credits'); ?> <span class="crdCnt"><?php echo (int) $user->men->balance; ?></span></a>
                 <a href="<?php echo strtolower(Route::url('auth',array('language'=>$language,'action'=>'logout'))); ?>" class="lgOut"><?php echo __('log_out'); ?></a>
         </div>
 </div>

@@ -50,7 +50,7 @@
                             <select name="agency_id">
                                 <option></option>
                                 <?php foreach ($agency as $list): ?>
-                                <option value="<?php echo $list->id; ?>" <?php if ($data['agency_id']==$list->id)echo 'selected'; ?>><?php echo $list->name; ?></option>
+                                <option value="<?php echo $list->user_id; ?>" <?php if ($data['agency_id']==$list->user_id)echo 'selected'; ?>><?php echo $list->name; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

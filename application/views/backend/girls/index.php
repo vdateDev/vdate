@@ -31,7 +31,7 @@
                     <select class="middle" name="agency_id">
                         <option value="0">All</option>
                         <?php foreach ($agency as $list): ?>
-                        <option value="<?php echo $list->id; ?>" <?php if ($list->id==$agency_id) echo 'selected'; ?>><?php echo $list->name; ?></option>
+                        <option value="<?php echo $list->user_id; ?>" <?php if ($list->user_id==$agency_id) echo 'selected'; ?>><?php echo $list->name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>  

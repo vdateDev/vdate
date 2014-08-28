@@ -23,6 +23,8 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
             $cnt_admires = Model_Favorites::count_admires($this->user->id);
             $cnt_new_admires=  Model_Favorites::count_new_admires($this->user->id);
             $cnt_matches=  Model_Favorites::count_matches($this->user->id);
+            $cnt_virtual_gifts=  Model_OrderVirtualGifts::cnt_gifts_by_user($this->user->id);
+            $cnt_new_virtual_gifts= Model_OrderVirtualGifts::cnt_gifts_by_user($this->user->id,0);;
             
         
             $this->template->content= View::factory('frontend/girlaccount/profile')
@@ -32,7 +34,9 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
                                ->bind('cnt_favorites', $cnt_favorites)
                                ->bind('cnt_admires',$cnt_admires)
                                ->bind('cnt_new_admires',$cnt_new_admires)
-                               ->bind('cnt_matches',$cnt_matches);
+                               ->bind('cnt_matches',$cnt_matches)
+                               ->bind('cnt_virtual_gifts',$cnt_virtual_gifts)
+                               ->bind('cnt_new_virtual_gifts',$cnt_new_virtual_gifts);
         
     }
     
@@ -258,6 +262,12 @@ class Controller_Frontend_GirlAccount extends Controller_Frontend {
                        ->bind('pagination',$pagination)
                        ->bind('sort',$sort)
                        ->bind('count',$count);
+        
+    }
+    
+    public function action_myVirtualGifts() {
+        
+        Model_OrderVirtualGifts::update_status($this->user->id);
         
     }
     

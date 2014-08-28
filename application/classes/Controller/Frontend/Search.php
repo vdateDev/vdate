@@ -7,10 +7,7 @@ class Controller_Frontend_Search extends Controller_Frontend {
 
     public function before() {
         
-        $this->page_title = 'Search';
-        $this->page_description = 'Search';
-        $this->page_keywords = 'Search';
-        $this->page_name = 'Search';
+
         
         parent::before();
     }

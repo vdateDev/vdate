@@ -7,7 +7,7 @@
                 <div class="filter_item">
                     <label class="middle"><strong>Status:</strong></label>
                     <select class="middle" name="status">
-                        <option value="4">All</option>
+                        <option value="5">All</option>
                         <?php foreach ($arr_status as $key=>$val): ?>
                             <option value="<?php echo $key; ?>" <?php if ($status==$key) echo 'selected'; ?>><?php echo $val; ?></option>
                         <?php endforeach; ?>
@@ -22,7 +22,8 @@
     <div>
         <div class="ps_table_title">
             <div class="coll_title">
-                <span class="coll_item">Date</span>
+                <span class="coll_item">Date of order</span>
+                <span class="coll_item">Date of depature</span>
                 <span class="coll_item">Status</span>
                 <span class="coll_item2">Actions</span>                
             </div>
@@ -37,6 +38,11 @@
                         <span class="coll_item">
                             [
                             <span class="ps_coll"><?php echo date('d.m.Y',$item->created_at); ?></span>
+                            ]
+                        </span>
+                        <span class="coll_item">
+                            [
+                            <span class="ps_coll"><?php if ($item->date_depature) echo date('d.m.Y',$item->date_depature); ?></span>
                             ]
                         </span>
                         <span class="coll_item">
