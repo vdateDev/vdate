@@ -183,6 +183,7 @@
 		white-space: nowrap;
 		margin-bottom: 20px;
 	}
+	.presentCatList.virtualGift { display: block !important; }
 	.titleOpener {
 		padding: 10px 0 !important;
 		text-align: center !important;
@@ -288,6 +289,7 @@
 }
 
 @media only screen and (max-width:540px) {
+	.presentCatList.virtualGift ul li { width: 200px; }
 	.chatControlBottom .fll { float: none; width: 100%; }
 	.chatControlBottom .flr { float: none; width: 100%;}
 	.cSend { display: block; width: 100% !important; margin: 0 0 15px;}

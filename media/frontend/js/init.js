@@ -40,6 +40,10 @@ $(document).ready(function() {
 
     $(window).load(function() {
 
+        if ($('.loading_input').length) {
+            $('.loading_input').preimage();
+        }
+
         // newPage 
 
         if ($('.langSelect').length) {
@@ -218,9 +222,13 @@ $(document).ready(function() {
             $('.cartPrice').each(function(index, el) {
                 cartprice = cartprice + parseFloat($(this).children('span').text());
             });
-            cartpricedeliv = cartprice + parseFloat($('.delivPrice').children('span').text());
+            if ($('.delivPrice').length) {
+                cartpricedeliv = cartprice + parseFloat($('.delivPrice').children('span').text());
+                $('.cartPriceTotal span').text(cartpricedeliv);
+            } else {
+                $('.cartPriceTotal span').text(cartprice);
+            }
             $('.cpt').text(cartprice);
-            $('.cartPriceTotal span').text(cartpricedeliv);
         }
 
         function myCartADD(add) {
@@ -371,6 +379,7 @@ $(document).ready(function() {
             });
 
         }
+
 
         function tabsNew(x) {
             x.parent('.tNav').children('.curr').removeClass('curr');

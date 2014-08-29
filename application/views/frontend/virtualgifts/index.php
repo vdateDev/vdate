@@ -1,5 +1,6 @@
 <div class="contentBlock">
-    <ul class="presentCatList">
+    <div class="contentBlock_title titleBiger titleOpener">Select a Gift</div>
+    <ul class="presentCatList virtualGift">
         <li>
              <ul class="presentList">
                      <?php foreach ($gifts as $gift): ?>
@@ -13,6 +14,7 @@
                              <span class="presPrc"><span><?php echo $gift->cost; ?></span> <?php echo __('credits'); ?></span>
                              <a href="#" class="presADD" data-id="<?php echo $gift->id; ?>"><?php echo __('add'); ?></a>
                      </li>
+                     
                      <?php endforeach; ?>
              </ul>
         </li>
